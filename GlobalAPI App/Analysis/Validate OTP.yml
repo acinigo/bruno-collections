@@ -1,0 +1,17 @@
+info:
+  name: Validate OTP
+  type: http
+  seq: 20
+
+http:
+  method: GET
+  url: "{{url}}/api/analysis/78aee961-1e90-481a-b318-4080b3cc5039/validateotp"
+  auth:
+    type: bearer
+    token: "{{acces_token_app}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

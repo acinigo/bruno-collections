@@ -1,0 +1,31 @@
+info:
+  name: Analysis Change ChannelUser
+  type: http
+  seq: 2
+
+http:
+  method: PATCH
+  url: "{{url}}/api/analysis/64c0ddb5f012f4048798b4a2/channelUser"
+  headers:
+    - name: user
+      value: Testbelen
+    - name: channel
+      value: Postman
+  body:
+    type: json
+    data: "{\r
+
+      \    \"channelName\": \"string\",\r
+
+      \    \"channelUserId\": \"string\"\r
+
+      }"
+  auth:
+    type: bearer
+    token: "{{acces_token_app}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

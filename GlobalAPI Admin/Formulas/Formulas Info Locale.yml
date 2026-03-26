@@ -1,0 +1,17 @@
+info:
+  name: Formulas Info Locale
+  type: http
+  seq: 5
+
+http:
+  method: GET
+  url: "{{url}}/api/tenants/f981c55e-d765-44d2-a1ed-417d96ecc960/formulasinfo/locale/en"
+  auth:
+    type: bearer
+    token: "{{acces_token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

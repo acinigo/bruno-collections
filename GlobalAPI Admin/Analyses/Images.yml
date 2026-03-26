@@ -1,0 +1,24 @@
+info:
+  name: Images
+  type: http
+  seq: 5
+
+http:
+  method: GET
+  url: "{{url}}/api/analysis/6733449084bc82c3371d123a/images/source"
+  headers:
+    - name: user
+      value: Test2
+    - name: channel
+      value: Postman
+    - name: tenantId
+      value: bb2ac69c-a8e3-4ce1-bd40-8bc4a5ebc9a8
+  auth:
+    type: bearer
+    token: "{{acces_token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

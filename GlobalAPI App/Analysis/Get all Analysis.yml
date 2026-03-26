@@ -1,0 +1,222 @@
+info:
+  name: Get all Analysis
+  type: http
+  seq: 9
+
+http:
+  method: GET
+  url: "{{url}}/api/analysis/"
+  headers:
+    - name: user
+      value: Test
+    - name: channel
+      value: Postman
+  body:
+    type: multipart-form
+    data:
+      - name: user
+        type: text
+        value: Test2
+      - name: channel
+        type: text
+        value: Postman
+  auth:
+    type: bearer
+    token: "{{acces_token_app}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Get all Analysis
+    request:
+      url: "{{url}}/api/analysis/?format=excel"
+      method: GET
+      headers:
+        - name: user
+          value: Test
+        - name: channel
+          value: Postman
+      params:
+        - name: format
+          value: excel
+          type: query
+      body:
+        type: multipart-form
+        data:
+          - name: user
+            type: text
+            value: Test
+          - name: channel
+            type: text
+            value: Postman
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: X-Powered-By
+          value: Express
+        - name: Content-Type
+          value: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+        - name: Content-Disposition
+          value: attachment; filename=AnalysisExported.xlsx
+        - name: Date
+          value: Thu, 08 Jun 2023 09:05:37 GMT
+        - name: Connection
+          value: keep-alive
+        - name: Keep-Alive
+          value: timeout=5
+        - name: Transfer-Encoding
+          value: chunked
+      body:
+        type: text
+        data: "PK\x03\x04
+
+          \0\0\0\b\0�H�V���\tY\x01\0\0�\x04\0\0\x13\0\0\0[Content_Types].xml��Mn�0\x10��=E�-J\f]TUE¢��\x16��\0�xB,\x1c���w\x12(�* �`\x13+�7�{��\x19O��I�\x18H;��Q6\x14\t��)m\x17������\"�\bV�q\x16s�C\x12��n<�y���-墎�?IIe�\rP�
+
+          <Z�T.4\x10�6,��r\t\v����,��hc\x1a[\x0fQ��X����eˏ�A\x02\x1a\x12��^زr\x01�\e]B�\\[���\x1e\b\x19wv\x1a���\x01\v�
+
+          \    <Ih+�\x01��w�L�
+
+          �\x19��\x06\r���ȍ\v�/��e�\x13)]U�\x12�+W\r�d�\x03��\x1a16&�֬\x01m\a��NL�[F7\x0er���\x11�}��z}�Φ\aHqg�n=�δ�\\C@�\x11\x03\x1f��\a��}�]_I��i�\rS�m����<�\x11\r��]����;�l�!�ˣ=\x12���b;+��\x04[v?��\ePK\x03\x04
+
+          \0\0\0\0\0�H�V\0\0\0\0\0\0\0\0\0\0\0\0\x06\0\0\0_rels/PK\x03\x04
+
+          \0\0\0\b\0�H�V�I��\0\0\0K\x02\0\0\v\0\0\0_rels/.rels���N�0\f@�|E���nH\b��� ��&4>�$n\e���ă�@\f�i\a�q��g���<��R�\x1c\f,�\x1a\x14\x05�·����iq\x0f*\v\x06�#\a2p�\f��f�L#J�ɽ�Y\x15H�\x06z���u�=M�+�\x14�O�iB)���v������t�ɀ愩��@ں%��1�5ln[o��a� gZ��(dL\x1d��y�W�*P��]V׻�=��HС���h\x11S�N��Z�u\x1c�]\t�όKB���\x1c���#wY\tc�2�'7�|\0PK\x03\x04
+
+          \0\0\0\0\0�H�V\0\0\0\0\0\0\0\0\0\0\0\0\x03\0\0\0xl/PK\x03\x04
+
+          \0\0\0\0\0�H�V\0\0\0\0\0\0\0\0\0\0\0\0\t\0\0\0xl/_rels/PK\x03\x04
+
+          \0\0\0\b\0�H�V�$�V�\0\0\0�\x02\0\0\x1a\0\0\0xl/_rels/workbook.xml.rels���j�0\x10D��
+
+          ��ZvZJ)�s)�\\[�\x03���LlIh7m��U\eH\x1c\b�\a�Ĭؙ�H���8�OL�\a��*J\x10�M���\x14|4��g\x10��[=\x04�
+
+          &$��w�7\x1c4�\x1dr}$�M<)p��EJ2\x0eGME���M\eҨ9��ɨ�^w(We�$��\x03�\vO��
+
+          ��V �)��C��\x06_�9���J�$���/\x1a�:d\x05G]d\x1f���WK�s��s��<\x0e�[\f\x0f�V�tB��)?���\x16��0_!��!�\x19�4�E�ǩ\x19y���\x1fPK\x03\x04
+
+          \0\0\0\0\0�H�V\0\0\0\0\0\0\0\0\0\0\0\0\x0e\0\0\0xl/worksheets/PK\x03\x04
+
+          \0\0\0\b\0�H�V2?��y\a\0\0\x02+\0\0\x18\0\0\0xl/worksheets/sheet1.xml��[W�Z\x14��ϯ�ཌྷ�\0�a�\0��j�F{{�\x11��$d\0����Cb��7W�۾t\x18��\x1d�{O�\\��\x17_\x16��cVVy�\x1c{��[^'[Ί�|y7���\x0e���NU�˛t^,���5��\x17{��~.�O�}�՝f�e5���z���V��l�VϋU�l�mQ.Һ�X�u�U��7��ż���
+
+          ��4_zO#�2Fq{�ϲ�b��Ȗ�� e6O�����|U}\x1fm1���\x16i��a�lV,V�\x10\x1f�y^�\f�u\x16���ݲ(ӏ�沿����؛\x0ff�E>+�����7�};Q{����n3���M�\\�Z�N�ݎ����LB��������$���Mv�>�����q�����\x1c�^�x���2;�\x1e�y���\x16�%�|sls�;7_��j��5�|�\x13�b^m��,���7W�~\x19{���|�o���PS<{��b��ہu]��ps��i�����N�\x19�Z��e��Y�b~w�y�o.z��r�|�9T5�\x1f��v��끿���zdI�����l@v�fC��6�Ɏ�, ;n��l�f#��m�Mv�k\x17aN\x01E�3@��\x15�h�\x1aP�9\a\x14u.\0E�K@�g
+
+          (\x02]\x01�B�X\x01��\e@Q�-�(�\x0eP\x14z\x0f(
+
+          }\0\x14�\",��H\x14a��E���]D�����R�\x05?\x10�\",���\x14a�\x0fD�\b�~ JEX�\x03�*��\x1f�VX�\x03�
+
+          ��Za�\x0fT+���j\x05\x03\fU+8`�Z�\x02C�
+
+          \x1e\x18�V0�P��\v��\x15l0T����j\x05#\fU+8a�Z�
+
+          �j\x05/��U\f/��U\f/��U\f/��U\f/��U\f/��U�ۿh\x15�\v�h\x15�\v�h\x15�\v��r�B�Z�\v�j\x05/\x04�\x15�\x10�V�B�Z�\v�j\x05/\x04�\x15�\x10�V�B�Z�\v�j\x05/��\x15�\x10�V�B�Z�\v�j\x05/��\x15�\x10�V�B(Z%�B(Z%�B(Z%��H�J����'xa$Z%��H�J���h��\v#�*a �_�n�\x1eD�~;B��������\x16\x01U^@Qw�\r�E�\x03@��\x10P�=\x02\x14e�\x01E�\t���\x12P������\x05�\\þrU�v�s@��\v@��K@����l�ڰ�%\x13zM*3��T��-���;R������\aR��#b��cb��\x13b���{ڂD\a�\x1a�\x0e�5\x0f\x1d\x11k :&�D4!�H��XU;!V�N�U�3bU\r��i[\x12�&V�ΉU�\v��_�ڤL�##�C{���YL��\a\x06�{^D��ֈ\x0e1�\x11-��QL�hw\x14s>�=�9\x1f�\x1fŜ\x0fm�b·vH�X#\a'D{��7,m�bΈvI1oY�&Ŝ\x12�bN�6J1�D;��S��R»��J\t�Z�,%�ki����R»��K�ѯ0�ˠ\x1d^�߅��+�\0jx\x01��҆&�\0jx\x01��9\x06�|\x02��\x04P���\x05�\\þrU�v��\x01&Z��@�\x06\x14�jBA��+�jO}M�\t�T\x13
+
+          �&\x14RM(��PHMB!6\t��$\x14b�P����\x0e�MB!6\t��$\x14b�P�MB!6\t\x05�&\x14V�'`��\x11\x18�y\x06\x06�\rxDg؄�>s�C��h��dD{h{\x1f];��\x0f�PPl\x12
+
+          �MB!6\t��$\x14b�P�mB!6\t��$\x14b�P�MB!6\t��$\x14b�P�MB!6\t�wa�P�MB!6\t��$\x14b�P�MB!6\t��$\x147�]��\f\f\x01f�W��7t\x05\x18@\r0�\x1a`��\x04\x18@���!�Q� \x15�/IE�)~V�\x02W�U�'ģ�K��Ճ/�%���wIﻤ�]���F\x19�\x02�\x1a�P��2�(���R9�kR��\eR��[RYJ�He)�'���T���X��X�p�nOg0�'�M��X��Cb�*��5\x17\x1d\x13�6
+
+          \        <!V��$V�N�\x17vJl\x1e츫_\x11���>w�\v7�tc��Ħ6��s���YL�؄b\x13�Xlb\x13��M�&6\x11��\x04lc\x13��M�&6\x11��Dlb\x13��M�&6\x11��Dlb\x13��M�66\x11��Dlb\x13��M�&6\x11��Dlb\x13��M��؜���E�ks\x06��\x19P7�64�3�n�\x01�\x03B/���\"���NQk�\x14�b�������`\x14����K�Х}��>ti\x1f��\x0f!�f�Щ=k�NYkB)��\x16�Щ}��r�*�����._V�yv�Q��.��C��]\x17��_��>\x16u],���қ�\\j��ۢ���>�;��U�(�f&7oo��UQ�e��Mqs�ߢ\x01��U�4'���v\x10���q\x1f���g?\x01Us0[�����^^_\x15?^\\|�����͋�?^_��\x0fPK\x03\x04
+
+          \0\0\0\b\0�H�V(�r�*\v\0\0a#\0\0\x14\0\0\0xl/sharedStrings.xml�Ym�\x1c�\x11�ί��\a�H޹~\x01ۈ\x18#��c|gP\x14E�ٙ����3�Y��ɻ6\t؀#�\x17�\bY�\x12�� �$
+
+          (\x18�K�g���ٽ�����9�N3�OWUWWW=5w�����w��E���6��6<��Y\x14��c\e綟m�\r�(�4
+
+          �,5�6F��x��cG���`iZ\x1c�������\"�~P����0���~P�k��,\x06�\t��gL�O6\tBb�\x1f��\x17fô<�A����i|ahN�F\b�\eǏ\x16����\x17��IN\a}st�<~t�\x0e/M�+L�|�:\x19\f\x06�`i� -����\v��\x12,3��� ȃ~��\\\x18Ư��U\x06�����\x17�0HL\x13�(�a����\e\0/�\t�4A�&X�\x04o�\x10M\x13��m�Ɖ�;\x1f��rX������i����8��\0נ��(\x18��\x0e�\x1f�#?φ�^j
+
+          G�>�D�\aYn\x1a'� ?�5��F�05\x17M�u>N��4�^���|b��q�W�\x1c\x1d�{�t\x0e\x03�ĝʆe�0\x02�\x02��ۭ��\x19�\x01\0\\�\v�c\x13\f�щ8\x0f�IPB�X\x0f��y˰sk]���:��/�7�\x1eu2M��k�3u�\f=�\x14b+��G\a�^������h\r�8H�\x03<r�\x14q\x12�\x03q[�,+\x0f���e�|���C_|��FQ~�H��� �
+
+          a�͸�8\x05�su>v��ym�\x04i����F�K��A����''\0\v/�Iw�m\x1d\x1a�J��3N͂R\f���&��D�?��j
+
+          �\x05H�9/�i\f�\x05Ё�}\x01�&\x12\x16P�b\x01v�|c^Y��O*����(\v��t�BjR��ӛ��\x02��1IvjC:����W1���Hx)H�k��8��þ�t\x113�\x12\a*}9�\a�ٽ�YD�5]\b��L�E�\x10�_�4����]�Z?�ԭ�\t� )Gϗf�^\x1e�F8�\x13����sIi=��\t<9�%p��,�Ln�����Q�U��\x11}OBkO�\x10�O�Uɏ\x1e����-��w1a���_�,��:\t\x10,�\x1e��\x19 �\x1e\r�����t=⠶���P�gL\x11��&�[\vHzN���,?\x05I�f�LV�\x102��ۦ(W�\x18�A(�j\x05BG-�%i)�I���N�&�
+
+          ��T\"�(��N\v\a\x11�5���!j�\x02e����`\x12��\x01r3\f��u��X\v�J0��\tB\x03���V��?~a��O\x12�g\x0fG��\f-�3��.���x�q�\\EUk\x1a\x169�p�N�\b�(R�HM\f1\x14��16�N\x18� �����mb�,�s3\x0eas\x1c͘/4&D\x12E�\x14L�\x02(�5�\x02s��R�:\x12(�U5I\x19��c�lI��s-\x18\x120M%vDH�S�(BJa�\x05s��})(��KdM�N\fV��\x12S�)E\x18\v�Q���J\t\x02��M�\x1c\x1dҗ\x14�\x13�\x10�HA`8J�O\x15\x03\x10W�+�\\\x11���(���\0s\x1a!|\x01ڹ\x12V\x04��F�\x0f^b\x02�;��ԱA
+
+          \x1f\x13Xˑu$\x1c�\x03���s�\x04\x1cN�f�\r
+
+          �L\x10�9&�Á8'\x0e�!�Ɯ1M��9�5�\x13�J�\x1c\v*\x15&\x10��D�|̐�T�4\r\x0e�Q�5�\x10\x02�i�\x1d�\x1c6\x05\0)\t\x13\x14C\x06�s�ҿ\x1a\0�0����\b�w�{��;��^\\x�Dg�5/��F�\0��\x15��Yx���\x03��\e�J20��:\aT����X\v+<�@^�阰4��l������.a\x1cVx#����ɳ�w�%/\x0fF�Wf^���\t
+
+          �ͺ\x05o�]�\x02\x10�ױ��\x1d�NeqQ\x0eA�\v@Г#ޫ�8��M(������J��\x18�6�Zcl��[����\x1e�4�������t��t|k:������7>�{�=x�N��N�1��y:��tr\x05�߽��t2���v��w+\0<�z:�:\x1d������~q\t�,�J\x03����/�����&�������eɷw�|���o@B���.\x1c=[��er�ޕ�\x0f>�9\x1d�~zi�����n�{�ʭ��M'oO'�\x1e|��t�Β�ɍooߴB&��\x1e�����y{�/����?L�צ��\x1eص7v?}����?���4�\e�\v߲��o\e,\x1fV���{_~�{�������\x01���2�?�x������\x1fO/�g���g��F�\x01�0x\07���\ew�\0��\t��s�����G�-�[��|���?͎r:�b�3\0_���޺���_�����V����4�a5&�>9\bu�M'���J�?���r\x1d=셗���\x1a��o�נ\x01�\x06f�������M�`9�Jk�W�7\fC!SPԚ�V\0*����D(�n\x06c(\r\x12;3\v6B\x19��zdi\x18\x1df�P=D��a�\x01��5[�Ԓ��(�*���YI�-5*\x19Uu�,\x0e�Zb���D1\0>ylc\0)��\x17���\b���:�@=u�\v�yn��9(\t;A\x18\x0e�6I��5
+
+          F���Z�m;�\0��J���\f\x13�\a��Tٹg'f\t�tD�\x1aG%\x0fC%\"�\r\x03�'H\e��\\�)ƌ�\x18\tp�VZ\0�rH\f%���e�2{\b`�@H\x1f!&)\"Hr�\\
+
+          \x02�\x11qɠXSK�4sy\x10�\x05�J�1\x01��\\N�|��DZH�1 \x1dZJ��\x05\x05�G\x11c@?��\x190�9��PX`�\x15'.��\x05Q�\x15�{̦�:^
+
+          \f˲Z�%U��l��\f6��V�l/��\0_�\x1f1b�2,�\08�5�5�� .�Km��\t�\x04\b)�T\x02��~\x01Ց\x04)�\x188�!�
+
+          �B\x11\x06�D��T\rg\x04\x02\b�L\0g\x05%���J\x1f���Rk�\x14A.�S�\\sK]\x05\x06�[�\v^\x05�D�\x05hG\0g>�p�J)�LY�I
+
+          1� t)�\x13�=Ά�ឪ��\a�\x10�iK\x12t\bo#�\x03�iنx��@���e�����=��Ce�Ǔ��\x1fDYX�\x06�����n��cvԾx���1��\x0fV�\x13�\e�K���4y\x1a$ޖ��{��\x16��\x0f�I���\x19=���\x03���\x03b8\x03ٿu\x0f�B\x13A�\x02\x0e9�Q}{�2ګA\x01�9h'�r\\ ă�@��hpn.\f���w2.{ �|(\x18H���I\x16D :��f\\\x1c�̤\x03��\v�� ���\a�������O�\x05+�\x10��Ճ,-\f$O㜰\x13ƌ�m��A�;�T�\r\x1c�\f
+
+          �\x0e�\x1a�[\v��M*6�a\x06ɍ� �ijz]�\x04��0$A\x0eQ\\s���Š�\x02��v�P99�\x1e\x11�\e\x15n\x02����\ae����!7�\"h��g���(��ݹF�GD*��%��%k\x1aMhv%x\x01.3���;L08]�G8(�\b�\t�d���\fr\x19�\x15�۬�jr\x15�a�$Z��\x18$NG���W\0(^��\x15��\x01(�kp�\"�>�溮�F��\tTO��1rTh\x046p�\x01\x04u\x10Zޚ��9�;�[ZI`{���Z\\\a�d�6j\rz\x19\\�\x1fR�����f�\x069u8a\"\x19v\x04
+
+          �\x0e\x02�T�-�>\\��vur\x1e�6��<�?PK\x03\x04
+
+          \0\0\0\0\0�H�V\0\0\0\0\0\0\0\0\0\0\0\0\t\0\0\0xl/theme/PK\x03\x04
+
+          \0\0\0\b\0�H�Vv�0�!\x06\0\0\x19\x1f\0\0\x13\0\0\0xl/theme/theme1.xml�YMo�6\x18��W\x10���R'�SĎ�nm� q;�HK�Ć\x12\x05�N���\x1e\a\f\x18�\r�\f�m�a[�\x16إ�5�:l\x1dп�Wև)�j�&�P 98\"�<�\x17��%i_�q\x1c2tH��<�X��5\v���\x1e���u8�Ҷ�T8�0�\x11�XS\"�\e�\x1f]�\e* !A@��\x06�X�R�mK\x17����c\x12��1\x17!V0\x14��\t|\x04bCf7j�5;�4�P�C�zo<�.A�D���r�}\x06\x1f���\x19��}w�S�h�>�/���\x04:Ĭc�.�\x1f\rɱ�\x10�R���U��Y6��9��*�F\x1d��rjN�\x0e\x1a)U���[\x1f�֯mϵ42-\x06h�����s�)\x04�.�]_��\x06�z�����g��^ͩ�\x16(���2e���:�eJS���)��Zk�Q��4�c��뭕)�FY[�\f����\x16(),`4:X&$�=_�9h��-3�\r�v�!\x1a��R0�\x11�ʌ\f�#.\x06�H�\x1e+\x1a!5��\x18����p$(�i�\e\x04k��9W.�%
+
+          �t\x05�U��$�P>s̛�?�y�\x1c�y����ǿ�<yr��\x17\x13�\x16�|����/���3����_?��� u�\x1f?��o_U ��|�ͳ?_<{��\x17��Ԅ�\x12x��4$\x12�%Gh����I\x05\x19�3R�\x01�%
+
+          \x0e\0jB�UPBޝbf\x04vI9�\x0f\x04�\v#���Q���@L\x145!o\aa\t��9�ra��v�N�i\x12�\x15��D\a�a|hT�[X��$�ܦF����L�e���'\x11Q(y�\x0f\b1�\x1eRZ��\x0eu\x05�|��C����\x033�#efݢ!,��h#�z)B;\x0fP�3��mrX�B�`f\x14JX)�7�D��l5\x0e�\x0e��U`4t*�RूE�\t��\x11)��{bZ2�6�6e΀\x1d6\r�P��\x11z\as�C��A/�al��F�\x0e�X\x1e@�b�˕�\x0e^��d\f\v���@�:c�ߧ~`N���D\x18k��r�N�\x18�(�\x04ʽ<��[;;���/;�Bg߂��XQ���\x12��v�m<�v\tT�e\x13�l�M�m\x15�>Z�֬m�ȞJ
+
+          �\x0f�c�ؾ�2rG��^���\0f�ьW�\x1a�\0\x1es�e�/�l�\x04W�R\x15�\a8\x06]�T�/s��D1�pe��\x15�Wc
+
+          ��&��2\vx�v���7K��BR:�eI]3\x11����󫬧ؕu֝
+
+          ��i:m=�P[\b'_k��\x1a�\x05�E�\x11/Y�LH�X�{��5}�\x02�\x11Ӽ�k�����і��{�\x10w�P{,Z\x18�����4\x1c\v�8�Xc8��c\x18�L�4(���c�*�u��]�~�\"��5�����XH��e�\x12g�/z\"͑��J�rQ�\x18�Ъ�4����\x16{i��xL\\U5���|���\x0f�#4b\x13����V�z\x1e��m4��oeYY.�\x16�N�+\v�8�YA���H\t頰#\x1d�F�U>��O�\v�ɹ�)��]8\x137�ٳ\v\a\x05�Q��\x1d�\v\x15ph]q@݁��E�\x11�CP:�i�%_�'6�C�ݥR���\aj��HPh�*\x10�������\e�]7\x17�����2�\x1eF䐰aR�kI0,\x14��'�J�\\ZH�X�#�\x01\x1c�Z／�յζ����C�T��o�j����Q�~�y�N����p�A�\a�\0T�L;'\x0f�\x1ed\x06*�\x12\br�J;+�br\x04��u?\x13a����]�\t\x17~z��߬���J�\x13�\x10~���ۆ����R:\\�q��\x1e�\x05�p\t��lJ�0̞vE���{���ɴ�d�)6\b\x16�1��q��\vQ�~��\x1f\x19�2=I(
+
+          ns\x15n��6���X�_p6�i���<�2��?ed\x190o��ر��Q\\ɓ�(��|�(����\x14Eu|j\x14�����$�J�^��\x1e���%��PK\x03\x04
+
+          \0\0\0\b\0�H�V\x05;�^v\x02\0\0\x03\x06\0\0\r\0\0\0xl/styles.xml��]o�0\x14���+,�S\x03\r,��ji�T��*5�v�I��\x03\x19ӑM��;\x06\x12\x12uڦ��ǯ����3��@/�4\\�\x14\aW>FL\x15��j�⯛ܛc�X�J*�b)>�\x06�d\x1f��\x1e\x04{�3f\x11\x10T�⽵�����3I�+]3\x05#�6�Z�\x1dij�hٸIR���c\")Wx ,e�?\x10I�s[{��5�|�\x05�����,��;�\r�
+
+          p�\x053Z�.�Mx��K��H^\x18���^\x01���\x05{�uA\x16�\x16\x13\t�o#\x05\x11��a�YRie\eT�VY�}�;��g����\r9q�ʒB\vm��R��\x04t*�8�\x17*R\x1c:�7�\x06Ar؊^�1\bA?G�c�-\x15|k�\x13�P�o\x1a�r!N�B<\bY\x02\en�Q9t�\x18o\x0e5�Qp5\x06L���읡� ��&�\r��jS�U���(e�`��\t������&n�Z��,)9�iE�C\x1eg�\x01`\v&ē��ߪ\vvW!��\\��2�p���!\x18\x1a�\x013t\x1c��6�ߍE]u�?��B\x17����I���{\ebB�m˅��\x0f��Yv��~Ժ�rY\x05\x18%�h+��4��)��J�����_�\x1d�����T\x10�\x1a��\x0f��[�\x1a��w����]\x1ezs5�f�,�\x16�j�E���z�/�п�u�j��fǇ\x06�e# ˌ�\x1d�?MZ��:��~�����E\x18������k?�f1�{��:��(\b��lu\x17�љ�荿�O�`2\x1f--�Lp�.�o�U8$��e\x11�x\x12d����PK\x03\x04
+
+          \0\0\0\0\0�H�V\0\0\0\0\0\0\0\0\0\0\0\0\t\0\0\0docProps/PK\x03\x04
+
+          \0\0\0\b\0�H�VF\x05�v�\x01\0\0%\x03\0\0\x10\0\0\0docProps/app.xml��Ao�0\f���\x15�n(�@VQ�\ezX�\0I�3+ӱPY\x12D�H��';��;��H><��n\x0f�+zLd���rQ�\x02�\t���J<��_}\x15\x051�\x1a\\�X�#��՟�&���-R�\x13<U�e�+)ɴ�\x01-���I\x13R\a�˴��i���`�:�,���F���X_�)P�\x12W=�oh\x1d��Gϻc�yZ���\x01�?�\x1f�I�B�ŷ�A��|�r�\x16�[�|ԥ��Rm\r8\\�`݀#T�\x1e\x10��m�&Ҫ�U��C*���[�\x16�\v\x10\x0e8��!Y�,N�S1j\x17���\x15�+��LJN�Qνsm���h���('��/\x11w�\x1d��f\x03��A��\x13�\fb�\b\x1eܑ�#��[��C\x17��\x15�I=�=\x0e�I������.�\x03�yǗM�m!a��ez���\x1e2lr�݂�c}�|\x1c\f\x17�|�z��Y���r<�sO��\x03�\0PK\x03\x04
+
+          \0\0\0\b\0�H�V�p��_\x01\0\0�\x02\0\0\x11\0\0\0docProps/core.xml�R�n�0\x10��+\"߃\x13P\x11D!HmũH�Jժ7�^�%�-{i���y��ʩ�����>�.OE\x1e��uR�\x05�G\x11\t@q-��-��f\x15�H��)�r�`A*pd�ݥ�$\\[x�ڀE\t.�F�%�,�\x1e�$�:�����W(On�-\x18zhw�0~`;��(��\x02�\t��ֆ��\x1dIg)xoi�6o\f\x04��C\x01
+
+          \x1d�G1\x1d�\b�p7\v\x1a�BYH�\fܔ��^}r�\x17�e9*'���\x1fӏ��k3j(U�*\x0e$K\x05O�\x05��fo�t�Rz��y��C֤��G���\r\x1c�t\x0f|,�q+\r�;��U�\0U��p��B��\x18�N۪�\x06�A�\x1c����\x12�C5���J�ݶ3�\b�N�v�g�}���Y�l\x1c�'a4\r��&�'�}\x12�?랯�\aâ{�ߎg�n����\x02PK\x03\x04
+
+          \0\0\0\b\0�H�V�ߗY[\x01\0\0s\x02\0\0\x0f\0\0\0xl/workbook.xml��Mo�0\f���\x15Q��\x16\x18l\x15\x05i�&q�8��M�BD���@��ܖN��pɇ\x1d?~mg��j��胴���8�\f���4���>G/��\b�\x04e\r\x16���׫�������\x13�x\x13
+
+          ~���I\x12�\x115��uh�SY�!��\x1f��<B\x19��Q�d���D�4�'��\x11��*)�݊Z��=ģ�H��Q�0дx\x04���j7\x12V;B쥒�頜i�o\x0e�z�+���=\x0fd:ޡ�\x14�\x06[�1�n\"����$���W�J*�����/�m\x16ř�\x10?J\x19�,8�T���\f�vo�Tty��S���&����
+
+          j\x15w�j��L�4�8��\x11���3���ml�.�v֭���1�)\x02\x03�\t4��\x0fD2�e��\x11ґKz�7��$\x03H�\x12$��:�\"K'��� s�\vPK\x01\x02\x14\0
+
+          \0\0\0\b\0�H�V���\tY\x01\0\0�\x04\0\0\x13\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0[Content_Types].xmlPK\x01\x02\x14\0
+
+          \0\0\0\0\0�H�V\0\0\0\0\0\0\0\0\0\0\0\0\x06\0\0\0\0\0\0\0\0\0\x10\0\0\0�\x01\0\0_rels/PK\x01\x02\x14\0
+
+          \0\0\0\b\0�H�V�I��\0\0\0K\x02\0\0\v\0\0\0\0\0\0\0\0\0\0\0\0\0�\x01\0\0_rels/.relsPK\x01\x02\x14\0
+
+          \0\0\0\0\0�H�V\0\0\0\0\0\0\0\0\0\0\0\0\x03\0\0\0\0\0\0\0\0\0\x10\0\0\0�\x02\0\0xl/PK\x01\x02\x14\0
+
+          \0\0\0\0\0�H�V\0\0\0\0\0\0\0\0\0\0\0\0\t\0\0\0\0\0\0\0\0\0\x10\0\0\0�\x02\0\0xl/_rels/PK\x01\x02\x14\0
+
+          \0\0\0\b\0�H�V�$�V�\0\0\0�\x02\0\0\x1a\0\0\0\0\0\0\0\0\0\0\0\0\0\b\x03\0\0xl/_rels/workbook.xml.relsPK\x01\x02\x14\0
+
+          \0\0\0\0\0�H�V\0\0\0\0\0\0\0\0\0\0\0\0\x0e\0\0\0\0\0\0\0\0\0\x10\0\0\0)\x04\0\0xl/worksheets/PK\x01\x02\x14\0
+
+          \0\0\0\b\0�H�V2?��y\a\0\0\x02+\0\0\x18\0\0\0\0\0\0\0\0\0\0\0\0\0U\x04\0\0xl/worksheets/sheet1.xmlPK\x01\x02\x14\0
+
+          \0\0\0\b\0�H�V(�r�*\v\0\0a#\0\0\x14\0\0\0\0\0\0\0\0\0\0\0\0\0\x04\f\0\0xl/sharedStrings.xmlPK\x01\x02\x14\0
+
+          \0\0\0\0\0�H�V\0\0\0\0\0\0\0\0\0\0\0\0\t\0\0\0\0\0\0\0\0\0\x10\0\0\0`\x17\0\0xl/theme/PK\x01\x02\x14\0
+
+          \0\0\0\b\0�H�Vv�0�!\x06\0\0\x19\x1f\0\0\x13\0\0\0\0\0\0\0\0\0\0\0\0\0�\x17\0\0xl/theme/theme1.xmlPK\x01\x02\x14\0
+
+          \0\0\0\b\0�H�V\x05;�^v\x02\0\0\x03\x06\0\0\r\0\0\0\0\0\0\0\0\0\0\0\0\0�\x1d\0\0xl/styles.xmlPK\x01\x02\x14\0
+
+          \0\0\0\0\0�H�V\0\0\0\0\0\0\0\0\0\0\0\0\t\0\0\0\0\0\0\0\0\0\x10\0\0\0z \0\0docProps/PK\x01\x02\x14\0
+
+          \0\0\0\b\0�H�VF\x05�v�\x01\0\0%\x03\0\0\x10\0\0\0\0\0\0\0\0\0\0\0\0\0� \0\0docProps/app.xmlPK\x01\x02\x14\0
+
+          \0\0\0\b\0�H�V�p��_\x01\0\0�\x02\0\0\x11\0\0\0\0\0\0\0\0\0\0\0\0\0Q\"\0\0docProps/core.xmlPK\x01\x02\x14\0
+
+          \0\0\0\b\0�H�V�ߗY[\x01\0\0s\x02\0\0\x0f\0\0\0\0\0\0\0\0\0\0\0\0\0�#\0\0xl/workbook.xmlPK\x05\x06\0\0\0\0\x10\0\x10\0�\x03\0\0g%\0\0\0\0"

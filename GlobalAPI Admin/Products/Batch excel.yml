@@ -1,0 +1,27 @@
+info:
+  name: Batch excel
+  type: http
+  seq: 5
+
+http:
+  method: POST
+  url: "{{url}}/api/products/batch/excel"
+  headers:
+    - name: tenantId
+      value: b839e41e-880d-4fd3-9526-006aed7b0d52
+  body:
+    type: multipart-form
+    data:
+      - name: file
+        type: file
+        value:
+          - /C:/Users/raul2/OneDrive/Documents/Shiseido/productsLoad.xlsx
+  auth:
+    type: bearer
+    token: "{{acces_token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

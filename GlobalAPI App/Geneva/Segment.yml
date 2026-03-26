@@ -1,0 +1,43 @@
+info:
+  name: Segment
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{url}}/api/geneva/segment"
+  headers:
+    - name: forceCalculation
+      value: "true"
+      disabled: true
+  body:
+    type: multipart-form
+    data:
+      - name: model
+        type: text
+        value: normal
+      - name: type
+        type: text
+        value: color
+      - name: crop
+        type: text
+        value: "true"
+      - name: result_size
+        type: text
+        value: original
+      - name: enhance
+        type: text
+        value: "true"
+      - name: file
+        type: file
+        value:
+          - /C:/Users/Milucho/Desktop/FOTOS/photo (30).png
+  auth:
+    type: bearer
+    token: "{{acces_token_app}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

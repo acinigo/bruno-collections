@@ -1,0 +1,21 @@
+info:
+  name: Get stats of a tenant
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{url}}/api/tenants/1f84abcf-03f3-419a-96a3-24c6575b952b/stats?toDate=20250127"
+  params:
+    - name: toDate
+      value: "20250127"
+      type: query
+  auth:
+    type: bearer
+    token: "{{acces_token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

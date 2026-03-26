@@ -1,0 +1,22 @@
+info:
+  name: Analysis facemesh
+  type: http
+  seq: 14
+
+http:
+  method: GET
+  url: "{{url}}/api/analysis/6438191df58eaba05b5f790c/facemesh"
+  headers:
+    - name: channel
+      value: Postman1
+    - name: user
+      value: Test1
+  auth:
+    type: bearer
+    token: "{{acces_token_app}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

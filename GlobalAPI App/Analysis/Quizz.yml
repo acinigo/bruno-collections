@@ -1,0 +1,28 @@
+info:
+  name: Quizz
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{url}}/api/analysis/67ef9ce8a42e77d2ec609e26/quizz"
+  headers:
+    - name: channel
+      value: Postman
+    - name: user
+      value: Test2
+  body:
+    type: json
+    data: |-
+      {
+         "locale": "en"
+      }
+  auth:
+    type: bearer
+    token: "{{acces_token_app}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

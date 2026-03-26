@@ -1,0 +1,43 @@
+info:
+  name: Execute Task Copy_1
+  type: http
+  seq: 15
+
+http:
+  method: POST
+  url: http://localhost:6000/api/planner/executetask
+  headers:
+    - name: tenants
+      value: f981c55e-d765-44d2-a1ed-417d96ecc960
+      disabled: true
+    - name: collections
+      value: ""
+      disabled: true
+  body:
+    type: json
+    data: "{\r
+
+      \    \"planner\": \"SendMailSFMC\",\r
+
+      \    \"settings\": {\r
+
+      \        \"type\": \"recommendation\",\r
+
+      \        \"requestData\": {\r
+
+      \            \"email\": \"raul272+test@gmail.com\"\r
+
+      \        }\r
+
+      \    }\r
+
+      }"
+  auth:
+    type: bearer
+    token: "{{acces_token_app}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

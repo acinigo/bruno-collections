@@ -1,0 +1,46 @@
+info:
+  name: Post task planners
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{url}}/api/planner/1c9491f6-fd46-44eb-a4da-b70f09eee8b5/taskplanners"
+  headers:
+    - name: encryptSettings
+      value: connectionString
+    - name: collections
+      value: ""
+      disabled: true
+  body:
+    type: json
+    data: "{\r
+
+      \    \"name\" : \"ExportAnalysesSendMail\",\r
+
+      \    \"executorName\" : \"SendMailAzure\",\r
+
+      \    \"concurrentTasks\" : 10.0,\r
+
+      \    \"retries\" : 5.0,\r
+
+      \    \"secondsBetweenRetries\" : 5.0,\r
+
+      \    \"settings\" : {\r
+
+      \        \"connectionString\": \"endpoint=https://fca-email-sender.communication.azure.com/;accesskey=5IS+8C/2ePSA6mza3JljTvuPM8E8XkOLc6kJ01eG+usFvC90bj9Q3JKN5/DajOpxiOuN1Saf9wKmVlMDEZxXAQ==\",\r
+
+      \        \"email\": \"DoNotReply@mail.btl-dto.com\"\r
+
+      \    }\r
+
+      }"
+  auth:
+    type: bearer
+    token: "{{acces_token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,30 @@
+info:
+  name: ChannelUsers Copy
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{url}}/api/channelUsers/"
+  headers:
+    - name: tenantId
+      value: "{{tenantId}}"
+      disabled: true
+  body:
+    type: json
+    data: "{\r
+
+      \  \"channel\": \"test2\",\r
+
+      \  \"channelUserId\": \"12345\"\r
+
+      }"
+  auth:
+    type: bearer
+    token: "{{acces_token_app}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

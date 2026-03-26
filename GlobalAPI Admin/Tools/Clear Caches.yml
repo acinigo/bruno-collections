@@ -1,0 +1,23 @@
+info:
+  name: Clear Caches
+  type: http
+  seq: 6
+
+http:
+  method: POST
+  url: "{{url}}/api/heartbeat/clearcache"
+  body:
+    type: json
+    data: |-
+      {
+          "names": ["analyses"]
+      }
+  auth:
+    type: bearer
+    token: "{{acces_token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

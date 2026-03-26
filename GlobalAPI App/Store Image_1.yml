@@ -1,0 +1,30 @@
+info:
+  name: Store Image_1
+  type: http
+  seq: 11
+
+http:
+  method: POST
+  url: "{{url}}/api/storage/image/test_face"
+  body:
+    type: multipart-form
+    data:
+      - name: fileId
+        type: text
+        value: test.jpg
+      - name: file
+        type: file
+        value:
+          - /C:/projects/shiseido/pruebas-python/fca_0002.jpg
+      - name: anonymize
+        type: text
+        value: "true"
+  auth:
+    type: bearer
+    token: "{{acces_token_app}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

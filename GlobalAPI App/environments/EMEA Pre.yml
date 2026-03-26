@@ -1,0 +1,32 @@
+name: EMEA Pre
+variables:
+  - name: url
+    value: https://fca-global-api-pre-westeurope.azurefd.net
+  - name: appId
+    value: Visualizer_FR
+  - name: appSecret
+    value: 1235889d528c04658435204322c2dde70e906add
+  - name: adminEmail
+    value: admin@mail.com
+  - secret: true
+    name: adminPassword
+  - secret: true
+    name: adminSecret
+  - name: issuer
+    value: DTO
+  - name: label
+    value: emeaPre
+  - name: acces_token_app
+    value: ""
+  - name: tenantId
+    value: ""
+  - name: acces_token
+    value: ""
+  - name: saEmail
+    value: sa@mail.com
+  - secret: true
+    name: saPassword
+  - secret: true
+    name: saSecret
+  - name: useAdminOrSA
+    value: admin

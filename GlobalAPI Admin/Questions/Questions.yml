@@ -1,0 +1,912 @@
+info:
+  name: Questions
+  type: http
+  seq: 2
+
+http:
+  method: GET
+  url: "{{url}}/api/tenants/f981c55e-d765-44d2-a1ed-417d96ecc960/questions"
+  body:
+    type: json
+    data: ""
+  auth:
+    type: bearer
+    token: "{{acces_token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Questions
+    request:
+      url: "{{url}}/api/tenants/723db05d-ebbf-4717-91db-0a3630ccddc5/questions"
+      method: GET
+      body:
+        type: json
+        data: ""
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Mon, 05 Feb 2024 01:37:04 GMT
+        - name: Content-Type
+          value: application/json; charset=utf-8
+        - name: Transfer-Encoding
+          value: chunked
+        - name: Connection
+          value: keep-alive
+        - name: x-powered-by
+          value: Express
+        - name: etag
+          value: W/"2c84-nOUdwzofk/F/hqc5rQV33YAdhpw"
+        - name: vary
+          value: Accept-Encoding
+        - name: content-encoding
+          value: gzip
+        - name: req-cost-time
+          value: "22"
+        - name: req-arrive-time
+          value: "1707097024765"
+        - name: resp-start-time
+          value: "1707097024788"
+        - name: x-envoy-upstream-service-time
+          value: "22"
+        - name: server
+          value: istio-envoy
+        - name: Strict-Transport-Security
+          value: max-age=31536000
+      body:
+        type: json
+        data: |-
+          [
+              {
+                  "ageVariable": "",
+                  "maxAge": 0,
+                  "minAge": 0,
+                  "maxValue": 120,
+                  "minValue": 0,
+                  "icon": "",
+                  "type": "integer",
+                  "condition": "",
+                  "priority": 1,
+                  "text": {
+                      "en": "How old are you?"
+                  },
+                  "variable": "age",
+                  "tenantId": "723db05d-ebbf-4717-91db-0a3630ccddc5",
+                  "id": "637b2ffab85b61165d148d92"
+              },
+              {
+                  "maxChoices": 0,
+                  "minChoices": 0,
+                  "icon": "",
+                  "type": "options",
+                  "choices": [
+                      {
+                          "value": "87.5",
+                          "text": {
+                              "en": "Not dry",
+                              "zh": "不太干燥"
+                          },
+                          "checked": false,
+                          "icon": ""
+                      },
+                      {
+                          "value": "62.5",
+                          "text": {
+                              "en": "Not slightly dry",
+                              "zh": "局部干燥"
+                          },
+                          "checked": false,
+                          "icon": ""
+                      },
+                      {
+                          "value": "37.5",
+                          "text": {
+                              "en": "Slightly dry",
+                              "zh": "全脸略干"
+                          },
+                          "checked": false,
+                          "icon": ""
+                      },
+                      {
+                          "value": "12.5",
+                          "text": {
+                              "en": "Dry",
+                              "zh": "经常干燥"
+                          },
+                          "checked": false,
+                          "icon": ""
+                      }
+                  ],
+                  "condition": "",
+                  "priority": 2,
+                  "text": {
+                      "en": "How dry is your skin during day time?",
+                      "zh": "您白天面部肌肤干燥情况如何？"
+                  },
+                  "variable": "q1a",
+                  "subtype": "single",
+                  "linkedNext": true,
+                  "id": "637fa24ef6a05ba31e865df3"
+              },
+              {
+                  "maxChoices": 0,
+                  "minChoices": 0,
+                  "icon": "",
+                  "type": "options",
+                  "choices": [
+                      {
+                          "value": "12.5",
+                          "text": {
+                              "en": "Not oily",
+                              "zh": "不太出油"
+                          },
+                          "checked": false,
+                          "icon": ""
+                      },
+                      {
+                          "value": "37.5",
+                          "text": {
+                              "en": "Not slightly oily",
+                              "zh": "局部泛油 "
+                          },
+                          "checked": false,
+                          "icon": ""
+                      },
+                      {
+                          "value": "62.5",
+                          "text": {
+                              "en": "Slightly oily",
+                              "zh": "全脸略油"
+                          },
+                          "checked": false,
+                          "icon": ""
+                      },
+                      {
+                          "value": "87.5",
+                          "text": {
+                              "en": "Oily",
+                              "zh": "经常出油"
+                          },
+                          "checked": false,
+                          "icon": ""
+                      }
+                  ],
+                  "condition": "",
+                  "priority": 4,
+                  "text": {
+                      "en": "How oily is your skin during day time?",
+                      "zh": "您白天面部肌肤的出油情况如何？"
+                  },
+                  "variable": "q1b",
+                  "subtype": "single",
+                  "linkedNext": false,
+                  "minLength": 1,
+                  "maxLength": 1,
+                  "ageVariable": "",
+                  "minAge": 1,
+                  "maxAge": 1,
+                  "datatype": "string",
+                  "minValue": 1,
+                  "maxValue": 1,
+                  "id": "637fa2c61a85de53ca490ce1"
+              },
+              {
+                  "maxChoices": 11,
+                  "minChoices": 1,
+                  "icon": "",
+                  "type": "options",
+                  "choices": [
+                      {
+                          "value": "1",
+                          "text": {
+                              "en": "Dry",
+                              "zh": "干燥"
+                          },
+                          "checked": false,
+                          "icon": "icon-moisture.png"
+                      },
+                      {
+                          "value": "2",
+                          "text": {
+                              "en": "Oily",
+                              "zh": "容易出油"
+                          },
+                          "checked": false,
+                          "icon": "icon-sebum.png"
+                      },
+                      {
+                          "value": "3",
+                          "text": {
+                              "en": "Coarse pore",
+                              "zh": "毛孔粗大"
+                          },
+                          "checked": false,
+                          "icon": "icon-rp.png"
+                      },
+                      {
+                          "value": "4",
+                          "text": {
+                              "en": "No obsorption",
+                              "zh": "护肤品不吸收"
+                          },
+                          "checked": false,
+                          "icon": "icon-stratum_corneum.png"
+                      },
+                      {
+                          "value": "5",
+                          "text": {
+                              "en": "Acne",
+                              "zh": "粉刺 肌肤粗糙"
+                          },
+                          "checked": false,
+                          "icon": "icon-acc.png"
+                      },
+                      {
+                          "value": "6",
+                          "text": {
+                              "en": "Dullness",
+                              "zh": "肤色暗沉"
+                          },
+                          "checked": false,
+                          "icon": "icon-translucence.png"
+                      },
+                      {
+                          "value": "7",
+                          "text": {
+                              "en": "Freckle",
+                              "zh": "色斑"
+                          },
+                          "checked": false,
+                          "icon": "icon-spots.png"
+                      },
+                      {
+                          "value": "8",
+                          "text": {
+                              "en": "Eye dullness",
+                              "zh": "眼周暗沉"
+                          },
+                          "checked": false,
+                          "icon": "icon-uedc.png"
+                      },
+                      {
+                          "value": "9",
+                          "text": {
+                              "en": "Wrinkle",
+                              "zh": "皱纹"
+                          },
+                          "checked": false,
+                          "icon": "icon-firmness.png"
+                      },
+                      {
+                          "value": "10",
+                          "text": {
+                              "en": "Skin loose",
+                              "zh": "松弛"
+                          },
+                          "checked": false,
+                          "icon": "icon-sagging.png"
+                      },
+                      {
+                          "value": "11",
+                          "text": {
+                              "en": "Edema",
+                              "zh": "水肿"
+                          },
+                          "checked": false,
+                          "icon": "icon-accumulation.png"
+                      }
+                  ],
+                  "condition": "",
+                  "priority": 5,
+                  "text": {
+                      "en": "Please check your skin concerns (multiple answers allowed)",
+                      "zh": "您有什么肌肤烦恼？ "
+                  },
+                  "variable": "q2",
+                  "subtype": "multiple",
+                  "tenantId": "723db05d-ebbf-4717-91db-0a3630ccddc5",
+                  "id": "637b2ffab85b61165d148d93"
+              },
+              {
+                  "maxChoices": 12,
+                  "minChoices": 1,
+                  "icon": "",
+                  "type": "options",
+                  "choices": [
+                      {
+                          "value": "1",
+                          "text": {
+                              "en": "Remover",
+                              "zh": "卸妆产品"
+                          },
+                          "checked": false,
+                          "icon": ""
+                      },
+                      {
+                          "value": "2",
+                          "text": {
+                              "en": "Cleanser",
+                              "zh": "洁面"
+                          },
+                          "checked": false,
+                          "icon": ""
+                      },
+                      {
+                          "value": "3",
+                          "text": {
+                              "en": "Lotion",
+                              "zh": "化妆水"
+                          },
+                          "checked": false,
+                          "icon": ""
+                      },
+                      {
+                          "value": "4",
+                          "text": {
+                              "en": "Cream",
+                              "zh": "面霜"
+                          },
+                          "checked": false,
+                          "icon": ""
+                      },
+                      {
+                          "value": "5",
+                          "text": {
+                              "en": "Serum",
+                              "zh": "精华"
+                          },
+                          "checked": false,
+                          "icon": ""
+                      },
+                      {
+                          "value": "6",
+                          "text": {
+                              "en": "UV protection",
+                              "zh": "防晒"
+                          },
+                          "checked": false,
+                          "icon": ""
+                      },
+                      {
+                          "value": "7",
+                          "text": {
+                              "en": "ME lotion emulsion",
+                              "zh": "ME 乳液"
+                          },
+                          "checked": false,
+                          "icon": ""
+                      },
+                      {
+                          "value": "8",
+                          "text": {
+                              "en": "Moisturizing",
+                              "zh": "保湿护理"
+                          },
+                          "checked": false,
+                          "icon": ""
+                      },
+                      {
+                          "value": "9",
+                          "text": {
+                              "en": "Whitening",
+                              "zh": "美白护理"
+                          },
+                          "checked": false,
+                          "icon": ""
+                      },
+                      {
+                          "value": "10",
+                          "text": {
+                              "en": "Anti aging",
+                              "zh": "抗衰老护理"
+                          },
+                          "checked": false,
+                          "icon": ""
+                      },
+                      {
+                          "value": "11",
+                          "text": {
+                              "en": "Others",
+                              "zh": "其他"
+                          },
+                          "checked": false,
+                          "icon": ""
+                      },
+                      {
+                          "value": "12",
+                          "text": {
+                              "en": "Sensitive skin",
+                              "zh": "敏感肌专用产品"
+                          },
+                          "checked": false,
+                          "icon": ""
+                      }
+                  ],
+                  "condition": "",
+                  "priority": 10,
+                  "text": {
+                      "en": "Please check your daily skin care (multiple answers allowed)",
+                      "zh": "请选择您的日常护理产品 "
+                  },
+                  "variable": "q3",
+                  "subtype": "multiple",
+                  "tenantId": "723db05d-ebbf-4717-91db-0a3630ccddc5",
+                  "id": "637b2ffab85b61165d148d94"
+              },
+              {
+                  "maxChoices": 0,
+                  "minChoices": 0,
+                  "icon": "qa-icon-3_e77c3fc1d233b4ef227f9854b569c40f.png",
+                  "type": "options",
+                  "choices": [
+                      {
+                          "value": "1",
+                          "text": {
+                              "en": "Always",
+                              "zh": "非常"
+                          },
+                          "checked": false,
+                          "icon": ""
+                      },
+                      {
+                          "value": "3",
+                          "text": {
+                              "en": "Sometimes",
+                              "zh": "一般"
+                          },
+                          "checked": false,
+                          "icon": ""
+                      },
+                      {
+                          "value": "5",
+                          "text": {
+                              "en": "Never",
+                              "zh": "不"
+                          },
+                          "checked": false,
+                          "icon": ""
+                      }
+                  ],
+                  "condition": "",
+                  "priority": 11,
+                  "text": {
+                      "en": "Concerned about roughness and stiff skin",
+                      "zh": "您的皮肤粗糙、容易长闭口吗？"
+                  },
+                  "variable": "q4",
+                  "subtype": "single",
+                  "tenantId": "723db05d-ebbf-4717-91db-0a3630ccddc5",
+                  "id": "637b2ffab85b61165d148d96"
+              },
+              {
+                  "maxChoices": 0,
+                  "minChoices": 0,
+                  "icon": "qa-icon-4_9c7f0516430e9b1c6cdb6ae0c848ffc7.png",
+                  "type": "options",
+                  "choices": [
+                      {
+                          "value": "5",
+                          "text": {
+                              "en": "Always",
+                              "zh": "好"
+                          },
+                          "checked": false,
+                          "icon": ""
+                      },
+                      {
+                          "value": "3",
+                          "text": {
+                              "en": "Sometimes",
+                              "zh": "一般"
+                          },
+                          "checked": false,
+                          "icon": ""
+                      },
+                      {
+                          "value": "1",
+                          "text": {
+                              "en": "Never",
+                              "zh": "不好"
+                          },
+                          "checked": false,
+                          "icon": ""
+                      }
+                  ],
+                  "condition": "",
+                  "priority": 12,
+                  "text": {
+                      "en": "Feel that the permeation of skincare is not good",
+                      "zh": "平常使用护肤品的时候吸收好吗?"
+                  },
+                  "variable": "q5",
+                  "subtype": "single",
+                  "tenantId": "723db05d-ebbf-4717-91db-0a3630ccddc5",
+                  "id": "637b2ffab85b61165d148d97"
+              },
+              {
+                  "maxChoices": 0,
+                  "minChoices": 0,
+                  "icon": "qa-icon-5_a7a53c8c0dbf4beaf4fb00f13585e0fe.png",
+                  "type": "options",
+                  "choices": [
+                      {
+                          "value": "1",
+                          "text": {
+                              "en": "Always",
+                              "zh": "经常有"
+                          },
+                          "checked": false,
+                          "icon": ""
+                      },
+                      {
+                          "value": "2",
+                          "text": {
+                              "en": "Sometimes",
+                              "zh": "偶尔有"
+                          },
+                          "checked": false,
+                          "icon": ""
+                      },
+                      {
+                          "value": "3",
+                          "text": {
+                              "en": "No",
+                              "zh": "从来没有"
+                          },
+                          "checked": false,
+                          "icon": ""
+                      }
+                  ],
+                  "condition": "",
+                  "priority": 13,
+                  "text": {
+                      "en": "Puffy feel of skin and body",
+                      "zh": "您容易浮肿吗？"
+                  },
+                  "variable": "q6",
+                  "subtype": "single",
+                  "tenantId": "723db05d-ebbf-4717-91db-0a3630ccddc5",
+                  "id": "637b2ffab85b61165d148d98"
+              },
+              {
+                  "maxChoices": 0,
+                  "minChoices": 0,
+                  "icon": "qa-icon-6_242212b93d589a14c66c7d641a53ee7b.png",
+                  "type": "options",
+                  "choices": [
+                      {
+                          "value": "1",
+                          "text": {
+                              "en": "5 days or more",
+                              "zh": "五次或以上"
+                          },
+                          "checked": false,
+                          "icon": ""
+                      },
+                      {
+                          "value": "2",
+                          "text": {
+                              "en": "2-4 days",
+                              "zh": "二至四次"
+                          },
+                          "checked": false,
+                          "icon": ""
+                      },
+                      {
+                          "value": "3",
+                          "text": {
+                              "en": "1 day or less",
+                              "zh": "一次或没有"
+                          },
+                          "checked": false,
+                          "icon": ""
+                      }
+                  ],
+                  "condition": "",
+                  "priority": 14,
+                  "text": {
+                      "en": "How many days of a week do you ingest meal with high salt contents  (e.g. convenience storeboxed meals, fast food, snacks, etc…)",
+                      "zh": "您每周平均吃多少次高盐分的食物呢? <tips>比如外卖、火锅、炸薯条等</tips>"
+                  },
+                  "variable": "q7",
+                  "subtype": "single",
+                  "tenantId": "723db05d-ebbf-4717-91db-0a3630ccddc5",
+                  "id": "637b2ffab85b61165d148d99"
+              },
+              {
+                  "maxChoices": 0,
+                  "minChoices": 0,
+                  "icon": "qa-icon-7_360b50a2703ac4304897da3081530775.png",
+                  "type": "options",
+                  "choices": [
+                      {
+                          "value": "1",
+                          "text": {
+                              "en": "5 days or more",
+                              "zh": "五次或以上"
+                          },
+                          "checked": false,
+                          "icon": ""
+                      },
+                      {
+                          "value": "2",
+                          "text": {
+                              "en": "2-4 days",
+                              "zh": "二至四次"
+                          },
+                          "checked": false,
+                          "icon": ""
+                      },
+                      {
+                          "value": "3",
+                          "text": {
+                              "en": "less than 1",
+                              "zh": "一次或没有"
+                          },
+                          "checked": false,
+                          "icon": ""
+                      }
+                  ],
+                  "condition": "",
+                  "priority": 15,
+                  "text": {
+                      "en": "How many days of a week do you exercise for 1 hour or more in a day (include walking)",
+                      "zh": "您每周做多少次一小时以上的运动呢？ <tips>包括走路哦</tips>"
+                  },
+                  "variable": "q8",
+                  "subtype": "single",
+                  "tenantId": "723db05d-ebbf-4717-91db-0a3630ccddc5",
+                  "id": "637b2ffab85b61165d148d9a"
+              },
+              {
+                  "maxChoices": 0,
+                  "minChoices": 0,
+                  "icon": "qa-icon-8_78e09e344413a7aeea9a42ec1959e8bb.png",
+                  "type": "options",
+                  "choices": [
+                      {
+                          "value": "1",
+                          "text": {
+                              "en": "Yes",
+                              "zh": "是"
+                          },
+                          "checked": false,
+                          "icon": ""
+                      },
+                      {
+                          "value": "0",
+                          "text": {
+                              "en": "No",
+                              "zh": "否"
+                          },
+                          "checked": false,
+                          "icon": ""
+                      }
+                  ],
+                  "condition": "",
+                  "priority": 16,
+                  "text": {
+                      "en": "Now, when you go out in daytime do you always take measures against UV rays? ",
+                      "zh": "<tips>现在</tips> 您是否会采取防晒措施？ <tips>比如戴帽子、打遮阳伞、涂防晒霜等</tips>"
+                  },
+                  "variable": "q9b",
+                  "subtype": "single",
+                  "tenantId": "723db05d-ebbf-4717-91db-0a3630ccddc5",
+                  "linkedNext": true,
+                  "id": "637b2ffab85b61165d148d9c"
+              },
+              {
+                  "maxChoices": 0,
+                  "minChoices": 0,
+                  "icon": "",
+                  "type": "options",
+                  "choices": [
+                      {
+                          "value": "1",
+                          "text": {
+                              "en": "Yes",
+                              "zh": "是"
+                          },
+                          "checked": false,
+                          "icon": ""
+                      },
+                      {
+                          "value": "0",
+                          "text": {
+                              "en": "No",
+                              "zh": "否"
+                          },
+                          "checked": false,
+                          "icon": ""
+                      }
+                  ],
+                  "condition": "",
+                  "priority": 17,
+                  "text": {
+                      "en": "During teenage, when you go out in daytime do you always take measures against UV rays? ",
+                      "zh": "<tips>青少年时期</tips> 您是否有做好防晒措施？"
+                  },
+                  "variable": "q9c",
+                  "subtype": "single",
+                  "tenantId": "723db05d-ebbf-4717-91db-0a3630ccddc5",
+                  "id": "637b2ffab85b61165d148d9d"
+              },
+              {
+                  "maxChoices": 0,
+                  "minChoices": 0,
+                  "icon": "qa-icon-9_5f7e38935749e5ef0cdc25b5df7cd123.png",
+                  "type": "options",
+                  "choices": [
+                      {
+                          "value": "0",
+                          "text": {
+                              "en": "Yes",
+                              "zh": "是"
+                          },
+                          "checked": false,
+                          "icon": ""
+                      },
+                      {
+                          "value": "1",
+                          "text": {
+                              "en": "No",
+                              "zh": "否"
+                          },
+                          "checked": false,
+                          "icon": ""
+                      }
+                  ],
+                  "condition": "",
+                  "priority": 18,
+                  "text": {
+                      "en": "During summer with air-conditioner, do you tends to feel cold on a daily basis?",
+                      "zh": "<tips>夏天</tips> 在空调房内，您是否会手脚冰凉"
+                  },
+                  "variable": "q10a",
+                  "subtype": "single",
+                  "tenantId": "723db05d-ebbf-4717-91db-0a3630ccddc5",
+                  "linkedNext": true,
+                  "id": "637b2ffab85b61165d148d9e"
+              },
+              {
+                  "maxChoices": 0,
+                  "minChoices": 0,
+                  "icon": "",
+                  "type": "options",
+                  "choices": [
+                      {
+                          "value": "0",
+                          "text": {
+                              "en": "Yes",
+                              "zh": "是"
+                          },
+                          "checked": false,
+                          "icon": ""
+                      },
+                      {
+                          "value": "1",
+                          "text": {
+                              "en": "No",
+                              "zh": "否"
+                          },
+                          "checked": false,
+                          "icon": ""
+                      }
+                  ],
+                  "condition": "",
+                  "priority": 19,
+                  "text": {
+                      "en": "During winter, do you tends to feel cold on a daily basis?",
+                      "zh": "<tips>冬天</tips> 您是否会手脚冰凉？"
+                  },
+                  "variable": "q10b",
+                  "subtype": "single",
+                  "tenantId": "723db05d-ebbf-4717-91db-0a3630ccddc5",
+                  "id": "637b2ffab85b61165d148d9f"
+              },
+              {
+                  "maxChoices": 9,
+                  "minChoices": 1,
+                  "icon": "qa-icon-10_e3c3c4131ceff2b546f1038938441e67.png",
+                  "type": "options",
+                  "choices": [
+                      {
+                          "value": "1",
+                          "text": {
+                              "en": "Air Dryness",
+                              "zh": "空气干燥"
+                          },
+                          "checked": false,
+                          "icon": "icon-da.png"
+                      },
+                      {
+                          "value": "3",
+                          "text": {
+                              "en": "Pollen",
+                              "zh": "花粉"
+                          },
+                          "checked": false,
+                          "icon": "icon-pollen.png"
+                      },
+                      {
+                          "value": "5",
+                          "text": {
+                              "en": "Air Pollution",
+                              "zh": "空气污染"
+                          },
+                          "checked": false,
+                          "icon": "icon-ap.png"
+                      },
+                      {
+                          "value": "9",
+                          "text": {
+                              "en": "UV Rays",
+                              "zh": "紫外线*##*紫外线指一周有四天或者四天以上在户外待超过30分钟。"
+                          },
+                          "checked": false,
+                          "icon": "icon-uv.png"
+                      },
+                      {
+                          "value": "7",
+                          "text": {
+                              "en": "Irregular Diet",
+                              "zh": "饮食不规律"
+                          },
+                          "checked": false,
+                          "icon": "icon-id.png"
+                      },
+                      {
+                          "value": "2",
+                          "text": {
+                              "en": "Tired",
+                              "zh": "劳累"
+                          },
+                          "checked": false,
+                          "icon": "icon-unhappy.png"
+                      },
+                      {
+                          "value": "6",
+                          "text": {
+                              "en": "Stress",
+                              "zh": "感到压力"
+                          },
+                          "checked": false,
+                          "icon": "icon-pressure.png"
+                      },
+                      {
+                          "value": "4",
+                          "text": {
+                              "en": "Lack of Sleep",
+                              "zh": "缺少睡眠"
+                          },
+                          "checked": false,
+                          "icon": "icon-los.png"
+                      },
+                      {
+                          "value": "8",
+                          "text": {
+                              "en": "Irregular Dmenstruation",
+                              "zh": "例假易不规律"
+                          },
+                          "checked": false,
+                          "icon": "icon-md.png"
+                      }
+                  ],
+                  "condition": "",
+                  "priority": 20,
+                  "text": {
+                      "en": "Please check your life environment and lifestyle (multiple answers allowed)",
+                      "zh": "请选择您的生活环境和生活方式 "
+                  },
+                  "variable": "q11",
+                  "subtype": "multiple",
+                  "tenantId": "723db05d-ebbf-4717-91db-0a3630ccddc5",
+                  "id": "637b2ffab85b61165d148d95"
+              }
+          ]

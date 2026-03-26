@@ -1,0 +1,17 @@
+info:
+  name: Formulas csv tests_1
+  type: http
+  seq: 4
+
+http:
+  method: GET
+  url: "{{url}}/api/tenants/2f85947a-ce5b-412c-8ab1-60faeb79fed9/formulas/tests"
+  auth:
+    type: bearer
+    token: "{{acces_token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

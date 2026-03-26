@@ -1,0 +1,1258 @@
+info:
+  name: Analysis Pipelines results
+  type: http
+  seq: 7
+
+http:
+  method: GET
+  url: "{{url}}/api/analysis/690df98af39d6638f86842f2/pipelines/default_pipeline2/results"
+  headers:
+    - name: user
+      value: Test2
+      disabled: true
+    - name: channel
+      value: Postman
+      disabled: true
+    - name: recalculate
+      value: "true"
+      disabled: true
+  auth:
+    type: bearer
+    token: "{{acces_token_app}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Analysis
+    request:
+      url: "{{url}}/api/analysis/676d0396167d1b031a3bdb5d"
+      method: GET
+      headers:
+        - name: user
+          value: Test2
+        - name: channel
+          value: Postman
+        - name: recalculate
+          value: "true"
+          disabled: true
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Thu, 26 Dec 2024 07:20:08 GMT
+        - name: Content-Type
+          value: application/json; charset=utf-8
+        - name: Transfer-Encoding
+          value: chunked
+        - name: Connection
+          value: keep-alive
+        - name: X-Powered-By
+          value: Express
+        - name: ETag
+          value: W/"abd6-UcDbGUCzafltsgBRVRs70negbk0"
+        - name: Vary
+          value: Accept-Encoding
+        - name: Content-Encoding
+          value: gzip
+        - name: x-azure-ref
+          value: 20241226T072007Z-164ff6c68f8h4xsshC1MADpm9n0000000kbg000000004egv
+        - name: X-Cache
+          value: CONFIG_NOCACHE
+      body:
+        type: json
+        data: |-
+          {
+              "createdAt": "2024-12-26T07:19:50.230Z",
+              "channelName": "Postman",
+              "channelUserId": "Test2",
+              "appId": "Visualizer_MN",
+              "tenantId": "44db4c56-fe01-40bf-859a-c7244540807f",
+              "storageContainer": "visualizer-mn-faceimages",
+              "params": {},
+              "storageFileName": "676d0396167d1b031a3bdb5d-EIQA20002.jpg",
+              "status": "processed",
+              "numAnalysisChannelUser": 5,
+              "numAnalysisTodayChannelUser": 1,
+              "primary": {
+                  "roughness": 30.706648454466176,
+                  "redness": 54.00045601694272,
+                  "pores": 37.91961785631278,
+                  "darkSpots": 3.5578101712522825,
+                  "unevenSkinTone": 93.20735214606145,
+                  "wrinklesRightEye": 24.10081238335915,
+                  "wrinklesLeftEye": 17.630885911253245,
+                  "wrinklesRightMouth": 0,
+                  "wrinklesLeftMouth": 24.689799989375775,
+                  "sagging": 25.22390189603887,
+                  "saggingLowerEyelid": 13.116369495452547,
+                  "saggingUpperCheek": 25.490296183384267,
+                  "saggingLowerCheek": 32.91871907509317,
+                  "smileLine": 0
+              },
+              "processedAt": "2024-12-26T07:19:52.296Z",
+              "secondary": {
+                  "_gender": "Female",
+                  "_age": null,
+                  "vis4BeautyCirculation": 30,
+                  "vis4DarkSpots": 78.6804745718693,
+                  "vis4Dryness": null,
+                  "vis4EnlargedPores": 82.58482696381034,
+                  "vis4PC1": null,
+                  "vis4Radiance": 30,
+                  "vis4Resilience": 30,
+                  "vis4Roughness": 47.851721224267834,
+                  "vis4Sagging": 60.011672983602054,
+                  "vis4Smoothness": 30,
+                  "vis4SpeedCir": 32,
+                  "vis4SpeedCirlevel": null,
+                  "vis4UnevenSkinTone": 30,
+                  "vis4VisiblePores": 30,
+                  "vis4Wrinkles": 30,
+                  "vis4WrinklesEye": 20.865849147306196,
+                  "vis4YourBeautyCir": 27.068773830655772,
+                  "vis5SkinVitalityIndex": 1,
+                  "vis5SkinVitalityIndexRaw": null,
+                  "vis5CCN2Index": 1,
+                  "vis5CCN2IndexRaw": null,
+                  "vis4TotalScore": 30
+              },
+              "secondaryRanges": {},
+              "id": "676d0396167d1b031a3bdb5d",
+              "recommender": {
+                  "radianceValue": "No",
+                  "minimums": [
+                      "dehydration",
+                      "wrinkles",
+                      "visiblePores"
+                  ],
+                  "wrinkleScore": "☓",
+                  "Order": {
+                      "WomanRecommendation": {
+                          "RegularProducts": {
+                              "recommendationTriangle": 3,
+                              "SpecialtyItems": 4,
+                              "recommendationEyeCare": 5,
+                              "recommendUltimume": 2,
+                              "recommendEudermine": 1,
+                              "recommendationSeasonal": 6
+                          },
+                          "PremiumProducts": {
+                              "recommendationTrianglePremium": 1,
+                              "SpecialtyItemsPremium": 2,
+                              "recommendationEyeCarePremium": 3,
+                              "recommendationSeasonalPremium": 4
+                          }
+                      },
+                      "MenRecommendation": {
+                          "recommendationTriangle": 2,
+                          "SpecialtyItemsMen": 3,
+                          "recommendationEyeCareMen": 4,
+                          "recommendUltimuneMen": 1,
+                          "recommendationSeasonalMen": 5
+                      }
+                  },
+                  "WomanRecommendation": {
+                      "RegularProducts": {
+                          "recommendationTriangle": [
+                              "1012099730"
+                          ],
+                          "SpecialtyItems": [
+                              "1011964710",
+                              "1012085740",
+                              "1011452830"
+                          ],
+                          "recommendationEyeCare": "1012085740",
+                          "recommendUltimume": "1011964710",
+                          "recommendEudermine": "1011964710",
+                          "recommendationSeasonal": "",
+                          "recommendationIndex": "1021728430"
+                      },
+                      "PremiumProducts": {
+                          "recommendationTrianglePremium": [
+                              ""
+                          ],
+                          "SpecialtyItemsPremium": [
+                              ""
+                          ],
+                          "recommendationEyeCarePremium": "",
+                          "recommendationSeasonalPremium": "",
+                          "recommendationIndexPremium": ""
+                      }
+                  },
+                  "MenRecommendation": {
+                      "recommendationTriangle": "1011840910",
+                      "SpecialtyItemsMen": [
+                          "1012085010",
+                          "1011841010",
+                          "1011715230"
+                      ],
+                      "recommendationEyeCareMen": "1011841010",
+                      "recommendUltimuneMen": "1011964710",
+                      "recommendationSeasonalMen": "",
+                      "recommendationIndexMen": "1011715330"
+                  },
+                  "OrderOfUse": {
+                      "TS": {
+                          "Cleansing": {
+                              "AM": [
+                                  "1012125530"
+                              ],
+                              "PM": [
+                                  "1012125530"
+                              ]
+                          },
+                          "Softener_Lotion": {
+                              "AM": [
+                                  "1011964710",
+                                  "1012104310"
+                              ],
+                              "PM": [
+                                  "1011964710",
+                                  "1012104310"
+                              ]
+                          },
+                          "Ultimune": {
+                              "AM": [
+                                  "1021728430"
+                              ],
+                              "PM": [
+                                  "1021728430"
+                              ]
+                          },
+                          "Serum": {
+                              "AM": [
+                                  "1011687130"
+                              ],
+                              "PM": [
+                                  "1012182610"
+                              ]
+                          },
+                          "Moisturizer": {
+                              "AM": [
+                                  "1011493730"
+                              ],
+                              "PM": [
+                                  "1012099730"
+                              ]
+                          },
+                          "EyeCare": {
+                              "AM": [
+                                  "1011637930",
+                                  "1011638030"
+                              ],
+                              "PM": [
+                                  "1011637930",
+                                  "1011638030"
+                              ]
+                          },
+                          "Protection": {
+                              "AM": [
+                                  "1011595440"
+                              ],
+                              "PM": []
+                          },
+                          "SpecialCare": {
+                              "AM": [],
+                              "PM": []
+                          },
+                          "Other": {
+                              "AM": [
+                                  "1011695610",
+                                  "1011695710"
+                              ],
+                              "PM": [
+                                  "1011695610",
+                                  "1011695710"
+                              ]
+                          }
+                      },
+                      "LX": {
+                          "Cleansing": {
+                              "AM": [
+                                  "1012125530"
+                              ],
+                              "PM": [
+                                  "1012125530"
+                              ]
+                          },
+                          "Softener_Lotion": {
+                              "AM": [
+                                  "1012125630"
+                              ],
+                              "PM": [
+                                  "1012125630"
+                              ]
+                          },
+                          "Ultimune": {
+                              "AM": [],
+                              "PM": []
+                          },
+                          "Serum": {
+                              "AM": [
+                                  "1011595010"
+                              ],
+                              "PM": [
+                                  "1011595010"
+                              ]
+                          },
+                          "Moisturizer": {
+                              "AM": [
+                                  "1012126630"
+                              ],
+                              "PM": [
+                                  "1011649930"
+                              ]
+                          },
+                          "EyeCare": {
+                              "AM": [
+                                  "1012084910"
+                              ],
+                              "PM": [
+                                  "1012084910"
+                              ]
+                          },
+                          "Protection": {
+                              "AM": [
+                                  "1011595440"
+                              ],
+                              "PM": []
+                          },
+                          "SpecialCare": {
+                              "AM": [],
+                              "PM": []
+                          },
+                          "Other": {
+                              "AM": [],
+                              "PM": []
+                          }
+                      },
+                      "MEN": {
+                          "Cleansing": {
+                              "AM": [
+                                  "1011715230"
+                              ],
+                              "PM": [
+                                  "1011715230"
+                              ]
+                          },
+                          "Softener_Lotion": {
+                              "AM": [
+                                  "1012085010"
+                              ],
+                              "PM": [
+                                  "1012085010"
+                              ]
+                          },
+                          "Ultimune": {
+                              "AM": [
+                                  "1011715330"
+                              ],
+                              "PM": [
+                                  "1011715330"
+                              ]
+                          },
+                          "Serum": {
+                              "AM": [
+                                  "1011604320SHI"
+                              ],
+                              "PM": [
+                                  "1011604320SHI"
+                              ]
+                          },
+                          "Moisturizer": {
+                              "AM": [
+                                  "1011840910"
+                              ],
+                              "PM": [
+                                  "1011840910"
+                              ]
+                          },
+                          "EyeCare": {
+                              "AM": [
+                                  "1011841010"
+                              ],
+                              "PM": [
+                                  "1011841010"
+                              ]
+                          },
+                          "Protection": {
+                              "AM": [
+                                  "1011821240"
+                              ],
+                              "PM": []
+                          },
+                          "SpecialCare": {
+                              "AM": [],
+                              "PM": []
+                          },
+                          "Other": {
+                              "AM": [],
+                              "PM": []
+                          }
+                      }
+                  }
+              },
+              "explanations": {
+                  "vis4Radiance": {
+                      "en_us": "Your radiance score is not at its best. To improve it, protect your skin from UV rays, and enhance beauty circulation with appropriate skincare.",
+                      "ja_jp": "あなたの透明感あふれる輝きスコアはやや低めです。\n紫外線から肌を守る適切なスキンケアをおすすめします",
+                      "en_gb": "",
+                      "en_ca": "",
+                      "en_au": "",
+                      "en_ph": "Your radiance score is not at its best. To improve it, protect your skin from UV rays, and enhance beauty circulation with appropriate skincare.",
+                      "en_my": "Your radiance score is not at its best. To improve it, protect your skin from UV rays, and enhance beauty circulation with appropriate skincare.",
+                      "en_sg": "Your radiance score is not at its best. To improve it, protect your skin from UV rays, and enhance beauty circulation with appropriate skincare.",
+                      "zh_cn": "",
+                      "zh_hk": "你肌膚的光澤度未及理想。建議選擇合適自己的護膚方案，重點提升肌底微循環和預防紫外線對肌膚造成傷害。",
+                      "zh_tw": "您肌膚的透明感偏低。\n建議您預防紫外線的傷害，並加強適合自己的護膚保養方法。",
+                      "ko_kr": "당신의 피부 광채 점수는 다소 낮습니다. 자외선으로부터 피부를 보호하고 적절한 스킨케어를 하는 것을 추천합니다.",
+                      "es_es": "",
+                      "vi_vn": "Độ rạng rỡ của làn da hiện tại chưa đạt được mức tốt nhất. \nĐể cải thiện độ rạng rỡ của làn da, hãy bảo vệ da khỏi các tia UV và tăng cường phát huy khả năng tuần hoàn sắc đẹp bằng những sản phẩm phù hợp. ",
+                      "fr_fr": "",
+                      "fr_ca": "",
+                      "it_it": "",
+                      "pt_pt": "",
+                      "pt_br": "",
+                      "de_de": "",
+                      "nl_nl": "",
+                      "ru_ru": "",
+                      "el_gr": "",
+                      "th_th": "ระดับคะแนนความกระจ่างใสของผิวคุณอยู่ในเกณฑ์ปานกลาง การฟื้นบำรุงผิวควรเน้นการปกป้องผิวจากรังสี UV และ เสริมประสิทธิภาพ beauty circulation ของผิว ด้วยผลิตภัณฑ์บำรุงผิวที่เหมาะสม ",
+                      "ms_my": "Skor seri anda tidak begitu baik.\nUntuk meningkatkan seri anda, Untuk memperbaikinya, lindungi kulit anda dari sinar UV, dan tingkatkan peredaran kecantikan dengan penjagaan kulit yang sesuai.",
+                      "ar_sa": "",
+                      "ar_ae": "درجة إشراق بشرتكم ليست في أفضل حالاتها. لتحسينها، قوموا بحماية بشرتكم من الأشعة ما فوق البنفسجية، والعمل على تعزيز الدورة الدموية لتحفيز الجمال الطبيعي من خلال مستحضرات العناية بالبشرة التي تناسبكم.",
+                      "mn_mn": "",
+                      "my_mm": "",
+                      "si_lk": "",
+                      "id_id": "Kejernihan cahaya kulit Anda tidak dalam kondisi terbaik. Untuk mengatasinya, lindungi kulit Anda dari sinar UV, dan tingkatkan sirkulasi kecantikan dengan perawatan kulit yang tepat."
+                  },
+                  "vis4Smoothness": {
+                      "en_us": "Your smoothness score is not at its best.\nYour smoothness score can be improved by hydrating/moisturizing your skin with an appropriate skincare product(s). ",
+                      "ja_jp": "あなたのなめらかさスコアはやや低めです。保湿効果の高いスキンケアをおすすめします",
+                      "en_gb": "",
+                      "en_ca": "",
+                      "en_au": "",
+                      "en_ph": "Your smoothness score is not at its best.\nYour smoothness score can be improved by hydrating/moisturizing your skin with an appropriate skincare product(s). ",
+                      "en_my": "Your smoothness score is not at its best.\nYour smoothness score can be improved by hydrating/moisturizing your skin with an appropriate skincare product(s). ",
+                      "en_sg": "Your smoothness score is not at its best.\nYour smoothness score can be improved by hydrating/moisturizing your skin with an appropriate skincare product(s). ",
+                      "zh_cn": "",
+                      "zh_hk": "你肌膚的柔滑度未及理想。\n為提升肌膚的細緻度，建議你使用高效保濕的護膚方案。",
+                      "zh_tw": "您肌膚的細緻度偏低。\n若想提高肌膚的細緻度，建議您使用保濕效果佳的護膚保養方法。",
+                      "ko_kr": "당신의 피부 매끄러움 점수는 약간 낮습니다. 매끄러운 피부를 위해서는 보습 효과가 높은 스킨케어로 수분을 유지하는 것을 추천합니다.",
+                      "es_es": "",
+                      "vi_vn": "Độ ẩm mượt của làn da hiện tại chưa đạt được mức tốt nhất. Để cải thiện, tăng cường dưỡng ẩm và duy trì khả năng giữ ẩm cao bằng những sản phẩm dưỡng da phù hợp.",
+                      "fr_fr": "",
+                      "fr_ca": "",
+                      "it_it": "",
+                      "pt_pt": "",
+                      "pt_br": "",
+                      "de_de": "",
+                      "nl_nl": "",
+                      "ru_ru": "",
+                      "el_gr": "",
+                      "th_th": "ระดับคะแนนความเรียบเนียนของผิวอยู่ในเกณฑ์ปานกลาง \nการฟื้นบำรุงผิวควรเน้นการเติมความชุ่มชื้นและเน้นการคงความชุ่มชื้นให้ผิวตลอดวัน ด้วยการเลือกใช้ผลิตภัณฑ์บำรุงผิวที่เหมาะสม ",
+                      "ms_my": "Skor kelicinan anda tidak begitu baik.Untuk memperbaikinya, hidrat kulit anda dan jaga kelembapannya sepanjang hari dengan penjagaan kulit yang sesuai.",
+                      "ar_sa": "",
+                      "ar_ae": "درجة نعومة بشرتكم ليست في أفضل حالاتها.\nيمكن تحسين درجة نعومة البشرة عن طريق ترطيبها/ باستخدام منتج (منتجات) الترطيب المناسبة للعناية بالبشرة.",
+                      "mn_mn": "",
+                      "my_mm": "",
+                      "si_lk": "",
+                      "id_id": "Kehalusan kulit  Anda tidak dalam kondisi terbaik. \nHal ini dapat ditingkatkan dengan menghidrasi/melembabkan kulit Anda dengan produk perawatan kulit yang sesuai."
+                  },
+                  "vis4Resilience": {
+                      "en_us": "Your resilience score is not at its best. \nYour resilience score can be improved by energizing your skin.  It is also affected by moisture level so please use an appropriate product(s) to energize and moisturize your skin. ",
+                      "ja_jp": "あなたのハリ・弾力スコアはやや低めです。\n肌のうるおいレベルが不足していることがスコアに影響している場合もあるため、肌の状態に合わせた最適なスキンケアをおすすめします",
+                      "en_gb": "",
+                      "en_ca": "",
+                      "en_au": "",
+                      "en_ph": "Your resilience score is not at its best. \nYour resilience score can be improved by energizing your skin.  It is also affected by moisture level so please use an appropriate product(s) to energize and moisturize your skin. ",
+                      "en_my": "Your resilience score is not at its best. \nYour resilience score can be improved by energizing your skin.  It is also affected by moisture level so please use an appropriate product(s) to energize and moisturize your skin. ",
+                      "en_sg": "Your resilience score is not at its best. \nYour resilience score can be improved by energizing your skin.  It is also affected by moisture level so please use an appropriate product(s) to energize and moisturize your skin. ",
+                      "zh_cn": "",
+                      "zh_hk": "你的肌膚彈性未及理想。\n建議你就現時的肌膚狀態，針對性提升肌膚的再生力，由內而外改善肌膚彈性。",
+                      "zh_tw": "您肌膚的彈力偏低。\n有可能是肌膚的水分不足而影響。建議根據您的肌膚狀況，大量補充水分並為肌膚提升能量，通過適當的護膚保養方法提升肌膚彈力。",
+                      "ko_kr": "당신의 피부 탄력 점수는 약간 낮습니다.\n피부 탄력도는 피부의 수분 보유력과 연관이 깊기 때문에, 수분을 유지하면서 탄력을 증진시킬 수 있는 스킨케어법을 추천합니다.  ",
+                      "es_es": "",
+                      "vi_vn": "Độ đàn hồi của làn da hiện tại chưa đạt được mức tốt nhất. Thỉnh thoảng, da thiếu ẩm có thể gây ảnh hưởng tới độ đàn hồi của da. Để cải thiện, hãy cấp ẩm và tăng cường năng lượng cho da cũng như tăng độ đàn hồi cho làn da bằng những sản phẩm chăm sóc da phù hợp. ",
+                      "fr_fr": "",
+                      "fr_ca": "",
+                      "it_it": "",
+                      "pt_pt": "",
+                      "pt_br": "",
+                      "de_de": "",
+                      "nl_nl": "",
+                      "ru_ru": "",
+                      "el_gr": "",
+                      "th_th": "ระดับคะแนนความยืดหยุ่นของผิวอยู่ในเกณฑ์ปานกลาง เมื่อความชุ่มชื้ื้นภายในผิวไม่เพียงพออาจส่งผลต่อระดับความยืดหยุ่นของผิว แนะนำให้ฟื้นบำรุงผิวด้วยการเลือกใช้ผลิตภัณฑ์ที่ช่วยเติมความชุ่มชื้นพร้อมมอบพลังการบำรุงอย่างล้ำลึก ",
+                      "ms_my": "Skor ketahanan kulit anda tidak begitu baik.Kadang-kadang kekurangan kelembapan boleh mempengaruhi skor ketahanan anda. Untuk memperbaikinya, menghidrat dan memberi tenaga pada kulit anda, serta menargetkan ketahanan dengan penjagaan kulit yang sesuai.",
+                      "ar_sa": "",
+                      "ar_ae": "درجة مرونة بشرتكم ليست في أفضل حالاتها.\nيمكن تحسين درجة المرونة هذه من خلال تنشيط البشرة وتحفيزها. كما وتتأثر البشرة بمستوى الرطوبة، لذا يرجى استخدام منتج (منتجات) مناسبة لتنشيط وترطيب البشرة.",
+                      "mn_mn": "",
+                      "my_mm": "",
+                      "si_lk": "",
+                      "id_id": "Kekenyalan kulit Anda tidak dalam kondisi terbaik. \nKekenyalan kulit dapat ditingkatkan dengan memberi energi pada kulit Anda. Hal ini juga dipengaruhi oleh tingkat kelembapan, jadi gunakan produk yang sesuai untuk memberi energi dan melembabkan kulit Anda."
+                  },
+                  "vis5DarkSpots": {
+                      "en_us": "Your skin shows no signs of noticeable dark spots. We recommend continuing to protect your skin from UV rays.",
+                      "ja_jp": "特に目立ったシミがない状態です。\n継続して紫外線から肌を守りましょう。",
+                      "en_gb": "",
+                      "en_ca": "",
+                      "en_au": "",
+                      "en_ph": "Your skin does not show any visible dark spots. We recommend continuing to protect your skin from UV rays.",
+                      "en_my": "Your skin shows no signs of noticeable dark spots. We recommend continuing to protect your skin from UV rays.",
+                      "en_sg": "Your skin shows no signs of noticeable dark spots. We recommend continuing to protect your skin from UV rays.",
+                      "zh_cn": "",
+                      "zh_hk": "你的肌膚未有色斑煩惱。\n\n建議你配合+G231不同環境選擇具足夠防曬指數、防水防汗或抗熱抗炎功效的防曬產品，預防黑色素形成。",
+                      "zh_tw": "您的肌膚目前未顯示明顯的黑斑跡象。\n建議繼續做好紫外線防護，以維持膚色的均勻與健康。",
+                      "ko_kr": "특별하게 눈에 띄는 다크 스팟은 없는 편 입니다. 지금처럼 자외선으로부터 피부를 잘 보호해 주세요.",
+                      "es_es": "",
+                      "vi_vn": "Da của bạn không có dấu hiệu xuất hiện các đốm nâu đáng chú ý. Chúng tôi khuyên bạn nên tiếp tục bảo vệ làn da của mình khỏi tia UV.",
+                      "fr_fr": "",
+                      "fr_ca": "",
+                      "it_it": "",
+                      "pt_pt": "",
+                      "pt_br": "",
+                      "de_de": "",
+                      "nl_nl": "",
+                      "ru_ru": "",
+                      "el_gr": "",
+                      "th_th": "ผิวของคุณไม่มีสัญญาณของจุดด่างดำที่สังเกตเห็นได้ เราแนะนำให้คุณปกป้องผิวจากรังสียูวีต่อไป\n",
+                      "ms_my": "Kulit anda tidak menunjukkan tanda noda yang ketara. Kami mencadangkan agar anda terus melindungi kulit daripada sinaran UV.",
+                      "ar_sa": "",
+                      "ar_ae": "لا تظهر على بشرتكِ أي علامات تدل على وجود بقع داكنة ملحوظة. نوصي بمواصلة حماية بشرتكِ من الأشعة فوق البنفسجية.",
+                      "mn_mn": "",
+                      "my_mm": "",
+                      "si_lk": "",
+                      "id_id": "Kulit Anda tidak menunjukkan tanda-tanda bintik hitam yang kentara. Kami sarankan untuk terus melindungi kulit Anda dari sinar UV."
+                  },
+                  "vis5UnevenSkinTone": {
+                      "en_us": "There are signs of unevenness in your skin tone. We recommend incorporating a gentle massage into your morning skincare routine to help promote circulation and using moisture-rich products.",
+                      "ja_jp": "肌色が均一ではなく、色ムラが目立ちやすくなっています。\n朝のスキンケアを塗布するときに軽くマッサージをしながら血行を促進したり、保湿成分の高いスキンケアアイテムでお手入れをしましょう。",
+                      "en_gb": "",
+                      "en_ca": "",
+                      "en_au": "",
+                      "en_ph": "Your skin shows some unevenness in tone. We suggest adding a gentle massage to your morning skincare routine to stimulate circulation and using products that are rich in moisture.",
+                      "en_my": "There are signs of unevenness in your skin tone. We recommend incorporating a gentle massage into your morning skincare routine to help promote circulation and using moisture-rich products.",
+                      "en_sg": "There are signs of unevenness in your skin tone. We recommend incorporating a gentle massage into your morning skincare routine to help promote circulation and using moisture-rich products.",
+                      "zh_cn": "",
+                      "zh_hk": "你的肌膚可見明顯的膚色不均煩惱。\n\n建議選用能促進肌底微循環，維持肌膚新陳代謝處於穩定水平，預防老化角質和黑色素積聚的護膚品。",
+                      "zh_tw": "您的肌膚顯示出膚色不均的跡象。\n建議在護膚程序中加入輕柔的按摩，以促進血液循環，並使用富含水分的護膚品。",
+                      "ko_kr": "피부색이 고르지 않고, 불규칙합니다. 아침 스킨케어를 도포할 때 가볍게 마사지를 하면서 혈액 순환을 촉진하거나 보습 효과가 높은 스킨케어 제품으로 관리를 해 주세요.",
+                      "es_es": "",
+                      "vi_vn": "Có dấu hiệu da không đều màu. Chúng tôi khuyên bạn nên kết hợp massage nhẹ nhàng vào quy trình chăm sóc da buổi sáng để giúp thúc đẩy lưu thông máu và sử dụng các sản phẩm giàu độ ẩm.",
+                      "fr_fr": "",
+                      "fr_ca": "",
+                      "it_it": "",
+                      "pt_pt": "",
+                      "pt_br": "",
+                      "de_de": "",
+                      "nl_nl": "",
+                      "ru_ru": "",
+                      "el_gr": "",
+                      "th_th": "มีสัญญาณของสีผิวที่ไม่สม่ำเสมอ เราแนะนำให้คุณเพิ่มการนวดเบา ๆ เข้าไปในกิจวัตรการดูแลผิวตอนเช้าของคุณเพื่อช่วยส่งเสริมการไหลเวียนโลหิต และใช้ผลิตภัณฑ์ที่มีความชุ่มชื้นสูง",
+                      "ms_my": "Terdapat tanda ketidaksekataan pada tona kulit anda. Cadangan untuk melibatkan urutan lembut ke dalam rutin penjagaan kulit pagi anda bagi membantu meningkatkan peredaran darah serta menggunakan produk pelembapan yang tinggi.",
+                      "ar_sa": "",
+                      "ar_ae": "تظهر علامات لون غير موحد في بشرتكِ. لذا نوصي باستخدام التدليك اللطيف في روتين العناية بالبشرة الصباحي للمساعدة على تعزيز الدورة الدموية مع استخدام المنتجات الغنية بالترطيب.",
+                      "mn_mn": "",
+                      "my_mm": "",
+                      "si_lk": "",
+                      "id_id": "Ada tanda-tanda ketidakrataan pada warna kulit Anda. Kami sarankan untuk memasukkan pijatan lembut ke dalam rutinitas perawatan kulit pagi Anda untuk membantu melancarkan sirkulasi dan menggunakan produk yang kaya akan kelembapan."
+                  },
+                  "vis5Sagging": {
+                      "en_us": "Your skin shows signs of decreased firmness in areas like under the eyes and nasolabial folds. We recommend using skincare products that target firmness and elasticity, along with a massage once or twice a week.",
+                      "ja_jp": "目の下やほうれい線などの部位に肌のふっくらさが失われている状態です。ハリ・弾力を高めるスキンケアアイテムを使用しましょう。週に１～2回程度のマッサージも効果的です。",
+                      "en_gb": "",
+                      "en_ca": "",
+                      "en_au": "",
+                      "en_ph": "Your skin shows a loss of firmness, particularly in areas such as under the eyes and around the nasolabial folds. We recommend using skincare products that focus on enhancing firmness and elasticity, along with incorporating a facial massage once or twice a week.",
+                      "en_my": "Your skin shows signs of decreased firmness in areas like under the eyes and nasolabial folds. We recommend using skincare products that target firmness and elasticity, along with a massage once or twice a week.",
+                      "en_sg": "Your skin shows signs of decreased firmness in areas like under the eyes and nasolabial folds. We recommend using skincare products that target firmness and elasticity, along with a massage once or twice a week.",
+                      "zh_cn": "",
+                      "zh_hk": "你面部局部位置如眼部下方和虎紋等的彈性不足，出現紋理和鬆弛問題。\n\n建議你可使用重點修復產品，以提升局部肌膚的緊緻和彈性度，重塑年輕飽滿嫩肌。",
+                      "zh_tw": "您的肌膚在眼下和法令紋等區域顯示出緊實度下降的跡象。\n建議使用針對緊實和彈性的護膚品，並每週進行一至兩次的臉部按摩。",
+                      "ko_kr": "눈 밑이나 팔자 주름을 중심으로 탄력이 저하된 상태입니다. 피부 탄력을 회복시켜 주는 스킨케어 아이템을 사용하세요. 일주일에 1~2회 정도 마사지도 효과적입니다.",
+                      "es_es": "",
+                      "vi_vn": "Da của bạn có dấu hiệu giảm độ săn chắc ở những vùng như dưới mắt và nếp gấp mũi má/ rãnh cười. Chúng tôi khuyên bạn nên sử dụng các sản phẩm chăm sóc da có chức năng tập trung tăng độ săn chắc và đàn hồi, kết hợp với massage một hoặc hai lần một tuần.",
+                      "fr_fr": "",
+                      "fr_ca": "",
+                      "it_it": "",
+                      "pt_pt": "",
+                      "pt_br": "",
+                      "de_de": "",
+                      "nl_nl": "",
+                      "ru_ru": "",
+                      "el_gr": "",
+                      "th_th": "ผิวของคุณแสดงสัญญาณของความกระชับที่ลดลงในบริเวณใต้ตาและร่องแก้ม เราแนะนำให้ใช้ผลิตภัณฑ์ดูแลผิวที่เน้นความกระชับและความยืดหยุ่น พร้อมกับการนวดสัปดาห์ละครั้งหรือสองครั้ง",
+                      "ms_my": "Kulit anda menunjukkan tanda-tanda penurunan kekencangan di kawasan seperti bawah mata dan lipatan nasolabial. Kami mencadangkan penggunaan produk penjagaan kulit yang memberi tumpuan kepada kekencangan dan keanjalan, serta melakukan urutan sekali atau dua kali seminggu.",
+                      "ar_sa": "",
+                      "ar_ae": "تظهر على بشرتكِ علامات تدل على انخفاض تماسكها في مناطق معينة، مثل أسفل العينين والثنيات الأنفية الشفوية. ومن ثم نوصي باستخدام منتجات للعناية بالبشرة تستهدف تماسك البشرة ومرونتها، إلى جانب تدليكها مرة أو مرتين في الأسبوع.",
+                      "mn_mn": "",
+                      "my_mm": "",
+                      "si_lk": "",
+                      "id_id": "Kulit Anda menunjukkan tanda-tanda berkurangnya kekencangan di area seperti bawah mata dan lipatan nasolabial. Kami sarankan untuk menggunakan produk perawatan kulit yang menargetkan kekencangan dan elastisitas, disertai pijatan sekali atau dua kali seminggu."
+                  },
+                  "vis5Wrinkles": {
+                      "en_us": "Wrinkles are noticeable around your eyes and mouth, where the skin is thin and constantly moving with facial expressions. We recommend skincare that focuses on enhancing firmness and elasticity from within to keep wrinkles from deepening, while also providing moisture to prevent dry surface.",
+                      "ja_jp": "表情が豊かで皮ふがうすい目の周りや動きが激しい口の周りなどにはっきりしたシワが目立つ状態です。\nシワが深くならないように肌内部のハリ・弾力を高めるお手入れや、肌表面が水分不足にならないよううるおいを保つお手入れをしましょう。",
+                      "en_gb": "",
+                      "en_ca": "",
+                      "en_au": "",
+                      "en_ph": "Wrinkles are noticeable around your eyes and mouth, areas where the skin is thin and constantly in motion due to facial expressions. We recommend using skincare that targets firmness and elasticity to prevent wrinkles from deepening, while also providing moisture to keep the skin hydrated and smooth.",
+                      "en_my": "Wrinkles are noticeable around your eyes and mouth, where the skin is thin and constantly moving with facial expressions. We recommend skincare that focuses on enhancing firmness and elasticity from within to keep wrinkles from deepening, while also providing moisture to prevent dry surface.",
+                      "en_sg": "Wrinkles are noticeable around your eyes and mouth, where the skin is thin and constantly moving with facial expressions. We recommend skincare that focuses on enhancing firmness and elasticity from within to keep wrinkles from deepening, while also providing moisture to prevent dry surface.",
+                      "zh_cn": "",
+                      "zh_hk": "你面部的紋理較為明顯，尢其於眼部和嘴邊位置上的紋理更深和較長。\n\n建議你可使用重建真皮層結構，提升纖維母細胞機能和數量，促進膠原纖維及彈性纖維增生的護膚產品以改善較明顯的紋理。",
+                      "zh_tw": "眼部和口周圍的細紋較為明顯，這些部位的肌膚較薄且隨著面部表情不斷移動。\n建議您使用針對內部緊實與彈性的護膚產品，幫助防止細紋加深，同時補充水分以防止肌膚乾燥。",
+                      "ko_kr": "표정이 풍부하고 피부가 얇은 눈 주위나 움직임이 심한 입가를 중심으로 뚜렷하게 주름이 눈에 띄는 상태입니다.\n주름이 깊어지지 않도록 피부 내부의 탄력을 높여 주고, 피부 표면의 수분이 부족해지지 않도록 보습에 신경써 주세요.",
+                      "es_es": "",
+                      "vi_vn": "Các nếp nhăn xuất hiện xung quanh mắt và miệng, nơi da mỏng và liên tục chuyển động theo biểu cảm gương mặt. Chúng tôi khuyên bạn nên chăm sóc da tập trung vào việc tăng cường độ săn chắc và đàn hồi từ bên trong để giữ cho nếp nhăn không sâu hơn, đồng thời cung cấp độ ẩm để ngăn ngừa khô bề mặt.",
+                      "fr_fr": "",
+                      "fr_ca": "",
+                      "it_it": "",
+                      "pt_pt": "",
+                      "pt_br": "",
+                      "de_de": "",
+                      "nl_nl": "",
+                      "ru_ru": "",
+                      "el_gr": "",
+                      "th_th": "ริ้วรอยสามารถสังเกตเห็นได้รอบดวงตาและปาก ซึ่งเป็นบริเวณที่ผิวหนังบางและเคลื่อนไหวอยู่ตลอดเวลาจากการแสดงอารมณ์บนใบหน้า เราแนะนำผลิตภัณฑ์ดูแลผิวที่เน้นการเพิ่มความกระชับและความยืดหยุ่นจากภายในเพื่อป้องกันไม่ให้ริ้วรอยลึกขึ้น รวมถึงให้ความชุ่มชื้นเพื่อป้องกันความแห้งกร้านบนพื้นผิว",
+                      "ms_my": "Kedutan jelas kelihatan di sekitar mata dan mulut anda, di mana kulitnya nipis dan sentiasa bergerak akibat ekspresi wajah. Kami mencadangkan penggunaan produk penjagaan kulit yang memberi fokus kepada meningkatkan kekencangan dan keanjalan dari dalam untuk mencegah kedutan menjadi lebih dalam, sambil memberikan kelembapan bagi mengelakkan permukaan kulit menjadi kering.",
+                      "ar_sa": "",
+                      "ar_ae": "تظهر تجاعيد بشكل واضح حول عينيكِ وفمكِ، لأن الجلد في هذه المناطق يكون رقيقاً ودائم الحركة مع تعابير الوجه. لذا نوصي باستخدام منتجات للعناية بالبشرة تركز على تعزيز تماسك البشرة ومرونتها من الداخل لمنع ازدياد عمق التجاعيد، إلى جانب توفير الترطيب أيضاً من أجل منع جفاف سطح البشرة.",
+                      "mn_mn": "",
+                      "my_mm": "",
+                      "si_lk": "",
+                      "id_id": "Kerutan terlihat jelas di sekitar mata dan mulut, di mana kulit tipis dan terus bergerak mengikuti ekspresi wajah. Kami merekomendasikan perawatan kulit yang berfokus pada peningkatan kekencangan dan elastisitas dari dalam untuk mencegah kerutan semakin dalam, sekaligus memberikan kelembapan untuk mencegah permukaan kulit kering."
+                  },
+                  "vis5EnlargedPores": {
+                      "en_us": "Enlarged pores are not noticeable in your cheeks and other areas. To maintain this condition, we recommend moisture-rich skincare products to keep your skin plump and hydrated.",
+                      "ja_jp": "頬などの毛穴の目立ちがない状態です。\n現在の肌状態を維持するために、保湿効果の高いスキンケアアイテムで肌がうるおいふっくらした状態に保ちましょう。",
+                      "en_gb": "",
+                      "en_ca": "",
+                      "en_au": "",
+                      "en_ph": "Your cheeks and other areas show no noticeable enlarged pores. To maintain this condition, we recommend using moisture-rich skincare products to keep your skin plump and hydrated.",
+                      "en_my": "Enlarged pores are not noticeable in your cheeks and other areas. To maintain this condition, we recommend moisture-rich skincare products to keep your skin plump and hydrated.",
+                      "en_sg": "Enlarged pores are not noticeable in your cheeks and other areas. To maintain this condition, we recommend moisture-rich skincare products to keep your skin plump and hydrated.",
+                      "zh_cn": "",
+                      "zh_hk": "你沒有毛孔粗大的肌膚煩惱。\n\n為了保持目前的肌膚狀態，建議你使用含豐富水分的護膚產品，使你的肌膚保持飽滿緊緻。",
+                      "zh_tw": "您的臉頰及其他部位並未顯示毛孔擴大的跡象。\n為了保持這個狀態，建議您使用富含水分的護膚產品，幫助保持肌膚飽滿和水潤。",
+                      "ko_kr": "볼 등 모공이 눈에 띄지 않는 상태입니다.\n현재의 피부 상태를 유지하기 위해 보습 효과가 높은 스킨케어 아이템으로 피부를 촉촉하고 탄탄한 상태로 유지해 주세요.",
+                      "es_es": "",
+                      "vi_vn": "Không có lỗ chân lông to xuất hiện đáng kể ở vùng má và các khu vực khác. Để duy trì tình trạng này, chúng tôi khuyên dùng các sản phẩm chăm sóc da giàu độ ẩm để giữ cho làn da của bạn luôn căng mọng và ngậm nước.",
+                      "fr_fr": "",
+                      "fr_ca": "",
+                      "it_it": "",
+                      "pt_pt": "",
+                      "pt_br": "",
+                      "de_de": "",
+                      "nl_nl": "",
+                      "ru_ru": "",
+                      "el_gr": "",
+                      "th_th": "ไม่ปรากฎ รูขุมขนกว้าง ที่เห็นได้ชัดบริเวณแก้มและบริเวณอื่นๆ เพื่อรักษาสภาพผิวนี้ เราแนะนำให้ใช้ผลิตภัณฑ์ดูแลผิวที่มีความชุ่มชื้นสูงเพื่อให้ผิวของคุณดูอิ่มเอิบและชุ่มชื้น",
+                      "ms_my": "Liang pori tidak kelihatan ketara di pipi dan kawasan lain. Untuk mengekalkan keadaan ini, kami mencadangkan produk penjagaan kulit yang kaya dengan kelembapan untuk memastikan kulit kekal montok dan terhidrat.",
+                      "ar_sa": "",
+                      "ar_ae": "لا تظهر مسام واسعة في الخدين والمناطق الأخرى. للحفاظ على البشرة في هذه الحالة، نوصي بمنتجات للعناية بالبشرة غنية بالترطيب من أجل الحفاظ على مظهر بشرتكِ الممتلئ وترطيبها.",
+                      "mn_mn": "",
+                      "my_mm": "",
+                      "si_lk": "",
+                      "id_id": "Pori-pori yang membesar tidak terlihat di pipi dan area lainnya. Untuk menjaga kondisi ini, kami merekomendasikan produk perawatan kulit yang kaya akan pelembap agar kulit tetap kencang dan terhidrasi."
+                  },
+                  "vis5Roughness": {
+                      "en_us": "Your skin shows signs of roughness. We recommend skincare focused on promoting healthy turnover while removing old keratinocytes and other buildups to enhance moisture retention.",
+                      "ja_jp": "肌表面のなめらかさが失われている状態です。\n肌のターンオーバーを促し肌表面にとどまっている古い角層などを取り除き、うるおいが保てる肌状態にお手入れしましょう。",
+                      "en_gb": "",
+                      "en_ca": "",
+                      "en_au": "",
+                      "en_ph": "Your skin shows signs of roughness. We recommend using skincare that promotes healthy skin turnover and helps remove old keratinocytes and other buildup to improve moisture retention.",
+                      "en_my": "Your skin shows signs of roughness. We recommend skincare focused on promoting healthy turnover while removing old keratinocytes and other buildups to enhance moisture retention.",
+                      "en_sg": "Your skin shows signs of roughness. We recommend skincare focused on promoting healthy turnover while removing old keratinocytes and other buildups to enhance moisture retention.",
+                      "zh_cn": "",
+                      "zh_hk": "你的肌膚有明顯粗糙的情況。\n\n建議你使用可鞏固屏障保護功能，加速新陳代謝，確保細胞更新維持穩定水平的護膚產品。\n",
+                      "zh_tw": "您的肌膚顯示出粗糙的跡象。\n建議您使用專注於促進健康更新的護膚品，同時去除老化角質細胞及其他堆積物，以增強肌膚的保濕能力。",
+                      "ko_kr": "피부 표면의 매끄러움이 둔화된 상태입니다.\n피부 턴 오버를 촉진시켜 피부 표면에 남아 있는 오래된 각질 등을 제거하고, 수분이 유지되는 상태로 관리해 주세요.",
+                      "es_es": "",
+                      "vi_vn": "Da bạn đang có dấu hiệu thô ráp. Chúng tôi khuyên bạn nên tập trung vào việc thúc đẩy chu kì tái tạo da khỏe mạnh đồng thời loại bỏ các tế bào sừng cũ và các chất tích tụ khác để tăng cường khả năng giữ ẩm.",
+                      "fr_fr": "",
+                      "fr_ca": "",
+                      "it_it": "",
+                      "pt_pt": "",
+                      "pt_br": "",
+                      "de_de": "",
+                      "nl_nl": "",
+                      "ru_ru": "",
+                      "el_gr": "",
+                      "th_th": "ผิวของคุณแสดงสัญญาณของความหยาบกร้าน เราแนะนำให้ใช้ผลิตภัณฑ์ดูแลผิวที่เน้นการส่งเสริมการผลัดเซลล์ผิวที่มีสุขภาพดี ในขณะเดียวกันก็ช่วยขจัดเซลล์เคราตินเก่าและสิ่งสะสมอื่น ๆ เพื่อเพิ่มการกักเก็บความชุ่มชื้น",
+                      "ms_my": "Kulit anda menunjukkan tanda-tanda kekasaran. Kami mencadangkan produk penjagaan kulit yang mempromosikan peralihan kulit yang sihat sambil menghilangkan keratinosit lama dan penumpukan lain untuk meningkatkan pengekalan kelembapan.",
+                      "ar_sa": "",
+                      "ar_ae": "تظهر على بشرتكِ علامات الخشونة. لذا نوصي باتباع نظام للعناية بالبشرة يركز على تعزيز التجديد الصحي للخلايا مع إزالة الخلايا الكيراتينية القديمة والتراكمات الأخرى من أجل تعزيز الاحتفاظ بالترطيب.",
+                      "mn_mn": "",
+                      "my_mm": "",
+                      "si_lk": "",
+                      "id_id": "Kulit Anda menunjukkan tanda-tanda kekasaran. Kami merekomendasikan perawatan kulit yang difokuskan pada peningkatan pergantian sel kulit yang sehat sekaligus menghilangkan keratinosit lama dan timbunan lainnya untuk meningkatkan retensi kelembapan."
+                  },
+                  "vis5Dryness": {
+                      "en_us": "Your skin has difficulty retaining moisture and oils. To address this, we recommend using a moisture-rich lotion to hydrate from within, followed by a cream to lock in hydration for longer-lasting moisture.",
+                      "ja_jp": "肌の水分・油分を保持しにくい状態です。肌の乾燥を予防するために保湿効果の高いローションで肌内部を水分で満たし、その上からクリームでラップするように長時間肌にうるおを保つことができる状態にしましょう。",
+                      "en_gb": "",
+                      "en_ca": "",
+                      "en_au": "",
+                      "en_ph": "Your skin has trouble retaining moisture and oils. To improve this, we recommend using a moisture-rich lotion to hydrate deeply, followed by a cream to seal in the moisture for long-lasting hydration.",
+                      "en_my": "Your skin has difficulty retaining moisture and oils. To address this, we recommend using a moisture-rich lotion to hydrate from within, followed by a cream to lock in hydration for longer-lasting moisture.",
+                      "en_sg": "Your skin has difficulty retaining moisture and oils. To address this, we recommend using a moisture-rich lotion to hydrate from within, followed by a cream to lock in hydration for longer-lasting moisture.",
+                      "zh_cn": "",
+                      "zh_hk": "你的肌膚十分乾燥，正處於水油失衡的狀態。\n\n建議你可使用滋潤肌膚及鎖緊水份，持久補濕，維持水油平衡，提升細胞修復和再生機能的護膚產品。\n",
+                      "zh_tw": "您的肌膚難以保持水分和油分。\n為了解決這個問題，建議您使用富含水分的乳液來深入保濕，再使用乳霜鎖住水分，保持長時間的水潤感。",
+                      "ko_kr": "피부에 필요한 수분, 유분을 유지하기 어려운 상태입니다. 피부 건조를 예방하기 위해 보습 효과가 높은 로션(에멀전)으로 피부 내부를 수분으로 채우고, 그 위에서 크림으로 랩핑하듯 케어하여 장시간 피부에 촉촉함을 유지할 수 있는 상태로 만들어 주세요.",
+                      "es_es": "",
+                      "vi_vn": "Da bạn khó giữ được độ ẩm và dầu. Để giải quyết vấn đề này, chúng tôi khuyên bạn nên sử dụng kem dưỡng da giàu độ ẩm để cấp ẩm từ bên trong, sau đó dùng kem khóa ẩm để giữ ẩm lâu hơn.",
+                      "fr_fr": "",
+                      "fr_ca": "",
+                      "it_it": "",
+                      "pt_pt": "",
+                      "pt_br": "",
+                      "de_de": "",
+                      "nl_nl": "",
+                      "ru_ru": "",
+                      "el_gr": "",
+                      "th_th": "ผิวของคุณไม่สามารถกักเก็บ ความชุ่มชื้นและน้ำมัน เพื่อแก้ไขปัญหานี้ เราแนะนำให้ใช้โลชั่นที่มีความชุ่มชื้นสูงเพื่อให้ความชุ่มชื้นจากภายใน ตามด้วยครีมเพื่อล็อคความชุ่มชื้นให้คงอยู่ในผิวได้ยาวนานขึ้น",
+                      "ms_my": "Kulit anda sukar mengekalkan kelembapan dan minyak. Gunakan losen kaya kelembapan untuk hidrasi dari dalam, diikuti dengan krim untuk mengunci kelembapan lebih lama.",
+                      "ar_sa": "",
+                      "ar_ae": "تواجه بشرتكِ صعوبة في الاحتفاظ بالترطيب والزيوت. لحل هذه المشكلة، نوصي باستخدام غسول غني بالترطيب من أجل ترطيب البشرة من الداخل، متبوعاً بكريم يمنع البشرة من فقدان الترطيب ومن ثم يدوم لفترة أطول.",
+                      "mn_mn": "",
+                      "my_mm": "",
+                      "si_lk": "",
+                      "id_id": "Kulit Anda sulit mempertahankan kelembapan dan minyak. Untuk mengatasinya, kami sarankan untuk menggunakan losion yang kaya akan kelembapan untuk menghidrasi dari dalam, diikuti dengan krim untuk mengunci kelembapan agar kelembapan bertahan lebih lama."
+                  },
+                  "vis5VisiblePores": {
+                      "en_us": "Your pores may be clogged with sebum and impurities. We recommend thorough cleansing to remove buildup, along with skincare that focuses on maintaining proper hydration and oil balance.",
+                      "ja_jp": "毛穴に皮脂や汚れがつまりざらついている可能性があります。\n丁寧な洗顔で、毛穴につまった皮脂や汚れを取り除き、皮脂と水分のバランスをコントロールするスキンケアでお手入れをしましょう。",
+                      "en_gb": "",
+                      "en_ca": "",
+                      "en_au": "",
+                      "en_ph": "Your pores may be clogged with sebum and impurities. We recommend a thorough cleansing routine to remove any buildup, alongside skincare that helps maintain a proper balance of hydration and oil.",
+                      "en_my": "Your pores may be clogged with sebum and impurities. We recommend thorough cleansing to remove buildup, along with skincare that focuses on maintaining proper hydration and oil balance.",
+                      "en_sg": "Your pores may be clogged with sebum and impurities. We recommend thorough cleansing to remove buildup, along with skincare that focuses on maintaining proper hydration and oil balance.",
+                      "zh_cn": "",
+                      "zh_hk": "你肌膚的毛孔有明顯阻塞的煩惱。\n\n建議你使用能徹底潔淨毛孔污垢和皮脂的潔膚產品，同時又能滋潤保濕的護膚品。",
+                      "zh_tw": "您的毛孔可能被皮脂和雜質堵塞。\n建議您徹底清潔肌膚，去除堆積物，並使用專注於保持適當水分和油脂平衡的護膚品。",
+                      "ko_kr": "모공에 피지가 쌓이거나 노폐물이 배출되지 못해서 막혀 있을 가능성이 있습니다.\n꼼꼼한 세안으로 모공에 쌓인 피지와 노폐물을 제거하고 피지와 수분의 균형을 맞추는 스킨케어로 손질해 주세요.",
+                      "es_es": "",
+                      "vi_vn": "Lỗ chân lông của bạn có thể bị tắc nghẽn do bã nhờn và tạp chất. Chúng tôi khuyên bạn nên thực hiện bước rửa mặt thật kỹ lưỡng để loại bỏ chất bẩn tích tụ, kết hợp với việc tập trung vào việc duy trì độ ẩm và cân bằng dầu thích hợp. ",
+                      "fr_fr": "",
+                      "fr_ca": "",
+                      "it_it": "",
+                      "pt_pt": "",
+                      "pt_br": "",
+                      "de_de": "",
+                      "nl_nl": "",
+                      "ru_ru": "",
+                      "el_gr": "",
+                      "th_th": "รูขุมขนของคุณอาจอุดตันจากซีบัมและสิ่งสกปรก เราแนะนำให้ทำความสะอาดอย่างล้ำลึกเพื่อขจัดสิ่งอุดตัน พร้อมกับใช้ผลิตภัณฑ์ดูแลผิวที่เน้นการรักษาความชุ่มชื้นและสมดุลของน้ำมันอย่างเหมาะสม",
+                      "ms_my": "Liang pori anda mungkin tersumbat dengan sebum dan kekotoran. Lakukan pembersihan menyeluruh dan gunakan produk penjagaan kulit yang mengekalkan hidrasi dan keseimbangan minyak.",
+                      "ar_sa": "",
+                      "ar_ae": "قد تكون مسامك مسدودة بالدهون والشوائب. لذا نوصي بتنظيف البشرة بعمق لإزالة الشوائب المتراكمة، بالإضافة إلى استخدام منتجات للعناية بالبشرة تركز على الحفاظ على الترطيب المناسب وتوازن الزيوت.",
+                      "mn_mn": "",
+                      "my_mm": "",
+                      "si_lk": "",
+                      "id_id": "Pori-pori Anda mungkin tersumbat oleh sebum dan kotoran. Kami sarankan pembersihan menyeluruh untuk menghilangkan penumpukan, bersama dengan perawatan kulit yang berfokus pada menjaga hidrasi dan keseimbangan minyak yang tepat."
+                  },
+                  "vis5SkinVitalityIndex": {
+                      "en_us": "",
+                      "ja_jp": "",
+                      "en_gb": "",
+                      "en_ca": "",
+                      "en_au": "",
+                      "en_ph": "",
+                      "en_my": "",
+                      "en_sg": "",
+                      "zh_cn": "",
+                      "zh_hk": "",
+                      "zh_tw": "",
+                      "ko_kr": "",
+                      "es_es": "",
+                      "vi_vn": "",
+                      "fr_fr": "",
+                      "fr_ca": "",
+                      "it_it": "",
+                      "pt_pt": "",
+                      "pt_br": "",
+                      "de_de": "",
+                      "nl_nl": "",
+                      "ru_ru": "",
+                      "el_gr": "",
+                      "th_th": "",
+                      "ms_my": "",
+                      "ar_sa": "",
+                      "ar_ae": "",
+                      "mn_mn": "",
+                      "my_mm": "",
+                      "si_lk": "",
+                      "id_id": ""
+                  },
+                  "vis5CCN2Index": {},
+                  "vis4BeautyCirculation_short": {},
+                  "vis4BeautyCirculation_long": {},
+                  "vis4BeautyCirculation_Eveness": {}
+              },
+              "averages": {
+                  "vis4TotalScore": 66.51,
+                  "vis4Radiance": 63.21,
+                  "vis4BeautyCirculation": 52.63,
+                  "vis4DarkSpots": 66.34,
+                  "vis4UnevenSkinTone": 68.72,
+                  "vis4Resilience": 75.98,
+                  "vis4Sagging": 67.82,
+                  "vis4Wrinkles": 68.36,
+                  "vis4EnlargedPores": 65.23,
+                  "vis4Smoothness": 60.34,
+                  "vis4Roughness": 68.16,
+                  "vis4Dryness": 62.24,
+                  "vis4VisiblePores": 65.46,
+                  "vis4SpeedCir": "appropiate",
+                  "vis4YourBeautyCir": 62.29,
+                  "vis4WrinklesEye": "0"
+              },
+              "analysisId": "676d0396167d1b031a3bdb5d"
+          }
+  - name: Analysis
+    request:
+      url: "{{url}}/api/analysis/6853c176a90e20dd05b404de"
+      method: GET
+      headers:
+        - name: user
+          value: ITUser
+        - name: channel
+          value: IntegrationTest
+        - name: recalculate
+          value: "true"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Mon, 23 Jun 2025 09:51:25 GMT
+        - name: Content-Type
+          value: application/json; charset=utf-8
+        - name: Transfer-Encoding
+          value: chunked
+        - name: Connection
+          value: keep-alive
+        - name: X-Powered-By
+          value: Express
+        - name: ETag
+          value: W/"c53-y3tYpm9p9Z0q4gBboSWmdKPoO5s"
+        - name: Vary
+          value: Accept-Encoding
+        - name: Content-Encoding
+          value: gzip
+        - name: x-azure-ref
+          value: 20250623T095124Z-r1fb6bd9654lqcsfhC1MADw0d80000000cu000000000gghg
+        - name: X-Cache
+          value: CONFIG_NOCACHE
+      body:
+        type: json
+        data: |-
+          {
+              "createdAt": "2025-06-19T07:51:18.924Z",
+              "channelName": "IntegrationTest",
+              "channelUserId": "ITUser",
+              "appId": "IPSA_JP_Line",
+              "tenantId": "e50ff774-f6de-4402-8c1f-42f8e77f01ee",
+              "storageContainer": "ipsa-jp-line-faceimages",
+              "params": {
+                  "_quizzStack_": [
+                      1,
+                      2,
+                      3,
+                      4,
+                      5,
+                      6,
+                      7,
+                      8,
+                      9,
+                      10,
+                      11,
+                      12,
+                      13,
+                      14
+                  ],
+                  "_quizzLocale_": "en",
+                  "age": 30,
+                  "q1": [
+                      "201",
+                      "202"
+                  ],
+                  "q2": [
+                      "703",
+                      "702"
+                  ],
+                  "q3": [
+                      "601",
+                      "603"
+                  ],
+                  "q4": "5002",
+                  "q5": "5102",
+                  "q6": "5201",
+                  "q7": "5302",
+                  "q8": "5404",
+                  "q9a": "5508",
+                  "q9b": "5512",
+                  "q9c": "5505",
+                  "q10a": "5601",
+                  "q10b": "5603",
+                  "_quizzDone_": true
+              },
+              "status": "processed",
+              "analysisId": "6853c176a90e20dd05b404de",
+              "storageFileName": "6853c176a90e20dd05b404de-fca_0002.jpg",
+              "primary": {
+                  "roughness": 17.477538692185686,
+                  "redness": 31.09219156604407,
+                  "pores": 44.609015045393754,
+                  "darkSpots": 25.467206291245052,
+                  "unevenSkinTone": 32.8414372601709,
+                  "wrinklesRightEye": 0.2594949754921511,
+                  "wrinklesLeftEye": 6.171570976506042,
+                  "wrinklesRightMouth": 0,
+                  "wrinklesLeftMouth": 3.7380321735530164,
+                  "sagging": 16.49439731055989,
+                  "saggingLowerEyelid": 31.20247264877594,
+                  "saggingUpperCheek": 5.501200623370014,
+                  "saggingLowerCheek": 10.070924319965771,
+                  "smileLine": 0
+              },
+              "processedAt": "2025-06-19T07:51:24.464Z",
+              "recommended_care": {
+                  "acum_level": "80",
+                  "valuesMapped": {
+                      "moisture": {
+                          "name": "moisture",
+                          "value": 36.18,
+                          "priority": 1
+                      },
+                      "sebum": {
+                          "name": "sebum",
+                          "value": 75.65,
+                          "priority": 2
+                      },
+                      "elasticity": {
+                          "name": "elasticity",
+                          "value": 40,
+                          "priority": 3
+                      },
+                      "translucence": {
+                          "name": "translucence",
+                          "value": 38,
+                          "priority": 4
+                      },
+                      "stratumCorneum": {
+                          "name": "stratumCorneum",
+                          "value": 65,
+                          "priority": 5
+                      },
+                      "accumulationLevel": {
+                          "name": "accumulationLevel",
+                          "value": 80,
+                          "priority": 6
+                      },
+                      "resistance": {
+                          "name": "resistance",
+                          "value": 53.18,
+                          "priority": 7
+                      }
+                  },
+                  "res_moisture": "Bad",
+                  "res_sebum": "Bad",
+                  "res_elasticity": "Bad",
+                  "res_translucence": "Bad",
+                  "res_stratumCorneum": "Bad",
+                  "res_accumulationLevel": "Good",
+                  "res_resistance": "Good",
+                  "goodBadArray": {
+                      "bad": [
+                          "moisture",
+                          "sebum",
+                          "elasticity",
+                          "translucence",
+                          "stratumCorneum"
+                      ],
+                      "good": [
+                          "accumulationLevel",
+                          "resistance"
+                      ]
+                  },
+                  "result": {
+                      "worst": [
+                          {
+                              "name": "moisture",
+                              "value": 36.18,
+                              "priority": 1
+                          },
+                          {
+                              "name": "translucence",
+                              "value": 38,
+                              "priority": 4
+                          }
+                      ],
+                      "others": [
+                          {
+                              "name": "elasticity",
+                              "value": 40,
+                              "priority": 3
+                          },
+                          {
+                              "name": "stratumCorneum",
+                              "value": 65,
+                              "priority": 5
+                          },
+                          {
+                              "name": "sebum",
+                              "value": 75.65,
+                              "priority": 2
+                          },
+                          {
+                              "name": "resistance",
+                              "value": 53.18,
+                              "priority": 7
+                          },
+                          {
+                              "name": "accumulationLevel",
+                              "value": 80,
+                              "priority": 6
+                          }
+                      ]
+                  },
+                  "highest": "sagging",
+                  "worst_1": "101",
+                  "worst_2": "401",
+                  "others_1": "302",
+                  "others_2": "502",
+                  "others_3": "204",
+                  "others_4": "702",
+                  "others": [
+                      "302",
+                      "502",
+                      "204",
+                      "702"
+                  ]
+              },
+              "recommender": {
+                  "group1": [
+                      "43274",
+                      "43372"
+                  ],
+                  "group2": [
+                      "43240",
+                      "43646",
+                      "43244"
+                  ],
+                  "group4": [
+                      "43252",
+                      "43106",
+                      "43732",
+                      "43686"
+                  ],
+                  "group5": [
+                      "41653"
+                  ],
+                  "group6": [
+                      "43670",
+                      "43674",
+                      "43666",
+                      "43781"
+                  ],
+                  "group7": [
+                      "43787",
+                      "43736",
+                      "43706",
+                      "43777"
+                  ],
+                  "group8": [
+                      "43779",
+                      "41653",
+                      "43733"
+                  ],
+                  "group9": [
+                      "43651",
+                      "43348"
+                  ],
+                  "group10": [
+                      "43666",
+                      "43781"
+                  ]
+              },
+              "secondary": {
+                  "firmness": 40,
+                  "s_sagging": 38,
+                  "g_wrinkle": 50,
+                  "moisture": 36.17558137434815,
+                  "sebum": 75.65196046173519,
+                  "translucence": 38,
+                  "stratum_corneum": 65,
+                  "accumulation": 2,
+                  "oxygen": "High",
+                  "isSensitiveSkin": "No",
+                  "skin_engy": 57.17769045895333,
+                  "your_skin": 52.84678777231988,
+                  "_foundation": "0",
+                  "resistance": 53.18209756808674
+              },
+              "secondaryRanges": {},
+              "skin_type": {
+                  "result": "105"
+              },
+              "id": "6853c176a90e20dd05b404de"
+          }
+  - name: Analysis
+    request:
+      url: "{{url}}/api/analysis/689c2ae48e134faf1e114514"
+      method: GET
+      headers:
+        - name: user
+          value: Unknown
+        - name: channel
+          value: unknown
+        - name: recalculate
+          value: "true"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Wed, 13 Aug 2025 15:00:11 GMT
+        - name: Content-Type
+          value: application/json; charset=utf-8
+        - name: Transfer-Encoding
+          value: chunked
+        - name: Connection
+          value: keep-alive
+        - name: X-Powered-By
+          value: Express
+        - name: ETag
+          value: W/"7ce-EixmTVjYbGOgMRgCdiURR00uSnI"
+        - name: Vary
+          value: Accept-Encoding
+        - name: Content-Encoding
+          value: gzip
+        - name: x-azure-ref
+          value: 20250813T150011Z-164677f4764p9zb2hC1MAD8g480000000qc000000000344n
+        - name: X-Cache
+          value: CONFIG_NOCACHE
+      body:
+        type: json
+        data: |-
+          {
+              "createdAt": "2025-08-13T06:04:20.091Z",
+              "channelName": "unknown",
+              "channelUserId": "Unknown",
+              "appId": "CPB_HK",
+              "tenantId": "82da4a8f-b15d-41a7-828f-4bd3ee10c00d",
+              "storageContainer": "cpb-hk-faceimages",
+              "params": {
+                  "termVersion": "0.1.0",
+                  "Q1": [
+                      "LossOfFirmness",
+                      "Oiliness",
+                      "Lines"
+                  ],
+                  "Q2": [
+                      "MouthArea"
+                  ],
+                  "Q3": "Light",
+                  "Q4": [
+                      "UV"
+                  ],
+                  "Q5": "Stable",
+                  "age": 40,
+                  "spaVersion": "0.0.1",
+                  "isShowPrice": true,
+                  "elapsedShootingSeconds": {
+                      "take1": 7.06,
+                      "take2": 6.515
+                  },
+                  "waitingSecondsForResult": 30.021,
+                  "isErrorTimeout": false
+              },
+              "status": "processed",
+              "analysisId": "689c2ae48e134faf1e114514",
+              "storageFileName": "689c2ae48e134faf1e114514-tmp9cfa9d09.jpg",
+              "primary": {
+                  "roughness": 33.45752843382997,
+                  "redness": 37.04656420410259,
+                  "pores": 49.57177160784273,
+                  "darkSpots": 5.480905761670207,
+                  "unevenSkinTone": 74.83169936881359,
+                  "wrinklesRightEye": 75.31726568651791,
+                  "wrinklesLeftEye": 117.27443985608089,
+                  "wrinklesRightMouth": 27.022089691800673,
+                  "wrinklesLeftMouth": 87.35028492058252,
+                  "sagging": 79.17832090282994,
+                  "saggingLowerEyelid": 96.0604425256341,
+                  "saggingUpperCheek": 65.57873290360793,
+                  "saggingLowerCheek": 60.69520232967,
+                  "smileLine": 66.09634923466388
+              },
+              "processedAt": "2025-08-13T11:33:08.421Z",
+              "secondary": {
+                  "CPBdarkSpots": 71.62466683108138,
+                  "CPBfacialContour": null,
+                  "CPBpores": 52.6397306156865,
+                  "CPBredness": 59.73891468774357,
+                  "CPBroughness": 57.75260936139352,
+                  "CPBskinTexture": 59.945794050837286,
+                  "CPBskinTone": 69.10079647604479,
+                  "CPBtotalScore": null,
+                  "CPBwrinklesEye": null,
+                  "CPBwrinklesMouth": null
+              },
+              "secondaryRanges": {},
+              "id": "689c2ae48e134faf1e114514",
+              "recommender": {
+                  "age": 40,
+                  "skinConcern": "LossOfFirmness",
+                  "skinTone": 69.10079647604479,
+                  "skinTexture": 59.945794050837286,
+                  "facialContour": "90",
+                  "isBelowOrAboveAverage": "above",
+                  "recommendationSkinConcern": [
+                      "0000000006"
+                  ],
+                  "lowestFeature": "skinTexture",
+                  "lowestScore": "Pores",
+                  "recommendSpecialCarelowestScore": [
+                      "0000000008"
+                  ],
+                  "isAboveForCare": "above",
+                  "keyRadianceCare": {
+                      "step_1": {
+                          "AM": [
+                              "2000000000"
+                          ],
+                          "PM": [
+                              "2000000000"
+                          ]
+                      },
+                      "step_2": {
+                          "AM": [
+                              "2000000002"
+                          ],
+                          "PM": [
+                              "2000000002"
+                          ]
+                      },
+                      "step_3": {
+                          "AM": [
+                              "2000000005"
+                          ],
+                          "PM": [
+                              "2000000006"
+                          ]
+                      }
+                  }
+              }
+          }

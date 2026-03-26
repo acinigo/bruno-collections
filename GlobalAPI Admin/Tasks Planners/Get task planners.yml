@@ -1,0 +1,24 @@
+info:
+  name: Get task planners
+  type: http
+  seq: 4
+
+http:
+  method: GET
+  url: "{{url}}/api/planner/1c9491f6-fd46-44eb-a4da-b70f09eee8b5/taskplanners"
+  headers:
+    - name: tenants
+      value: f981c55e-d765-44d2-a1ed-417d96ecc960
+      disabled: true
+    - name: collections
+      value: ""
+      disabled: true
+  auth:
+    type: bearer
+    token: "{{acces_token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

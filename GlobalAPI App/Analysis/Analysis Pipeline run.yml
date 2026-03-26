@@ -1,0 +1,27 @@
+info:
+  name: Analysis Pipeline run
+  type: http
+  seq: 8
+
+http:
+  method: GET
+  url: "{{url}}/api/analysis/690df98af39d6638f86842f2/pipelines/default_pipeline2/run"
+  headers:
+    - name: user
+      value: Test2
+      disabled: true
+    - name: channel
+      value: Postman
+      disabled: true
+    - name: recalculate
+      value: "true"
+      disabled: true
+  auth:
+    type: bearer
+    token: "{{acces_token_app}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

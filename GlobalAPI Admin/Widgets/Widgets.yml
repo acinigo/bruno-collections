@@ -1,0 +1,17 @@
+info:
+  name: Widgets
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{url}}/api/tenants/37812d88-f7c4-409c-b3c6-b83d11e8ec73/widgets"
+  auth:
+    type: bearer
+    token: "{{acces_token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

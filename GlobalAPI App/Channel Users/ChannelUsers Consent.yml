@@ -1,0 +1,32 @@
+info:
+  name: ChannelUsers Consent
+  type: http
+  seq: 4
+
+http:
+  method: POST
+  url: "{{url}}/api/channelUsers/5431231543112/consent"
+  headers:
+    - name: tenantId
+      value: "{{tenantId}}"
+      disabled: true
+  body:
+    type: json
+    data: "{\r
+
+      \    \"consents\": {\r
+
+      \        \"privacy\": true\r
+
+      \    }\r
+
+      }"
+  auth:
+    type: bearer
+    token: "{{acces_token_app}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

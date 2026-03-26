@@ -1,0 +1,22 @@
+info:
+  name: Analysis send Recommendation
+  type: http
+  seq: 16
+
+http:
+  method: POST
+  url: "{{url}}/api/analysis/636237441182eacf3640dc6b/sendrecommendation"
+  headers:
+    - name: channel
+      value: Postman
+    - name: user
+      value: Test
+  auth:
+    type: bearer
+    token: "{{acces_token_app}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

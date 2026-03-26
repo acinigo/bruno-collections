@@ -1,0 +1,44 @@
+info:
+  name: Analysis_1
+  type: http
+  seq: 4
+
+http:
+  method: PUT
+  url: "{{url}}/api/analysis/68ff3722e51e629d8115064b"
+  headers:
+    - name: user
+      value: Test2
+    - name: channel
+      value: Postman
+  body:
+    type: multipart-form
+    data:
+      - name: user
+        type: text
+        value: Test
+        disabled: true
+      - name: channel
+        type: text
+        value: Postman
+        disabled: true
+      - name: file
+        type: file
+        value:
+          - /C:/Users/raul2/Documents/image.png
+      - name: storeImage
+        type: text
+        value: "true"
+      - name: imageInfo
+        type: text
+        value: '{"deviceOrientation":{"alpha":1,"beta":2,"gamma":3},"faceAngles":{"yaw":10,"pitch":20,"roll":30}}'
+        disabled: true
+  auth:
+    type: bearer
+    token: "{{acces_token_app}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

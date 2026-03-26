@@ -1,0 +1,32 @@
+info:
+  name: Schedule
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{url}}/api/schedules"
+  body:
+    type: json
+    data: "{\r
+
+      \  \"name\": \"Test3\",\r
+
+      \  \"startDate\": \"2025-07-31T15:08:00Z\",\r
+
+      \  \"endDate\": \"2025-07-31T16:00:00Z\",\r
+
+      \  \"maxPods\": 5,\r
+
+      \  \"minPods\": 1\r
+
+      }"
+  auth:
+    type: bearer
+    token: "{{acces_token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

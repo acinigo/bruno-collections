@@ -1,0 +1,7 @@
+info:
+  name: Tasks Planners
+  type: folder
+  seq: 15
+
+request:
+  auth: inherit

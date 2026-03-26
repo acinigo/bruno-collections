@@ -1,0 +1,32 @@
+info:
+  name: Storage management_2
+  type: http
+  seq: 3
+
+http:
+  method: PUT
+  url: "{{url}}/api/storages/63738a4aa8599ed1882304e0"
+  body:
+    type: json
+    data: "{\r
+
+      \  \"name\": \"AlicloudTestStorage\",\r
+
+      \    \"storageType\": \"Blob\",\r
+
+      \    \"region\": \"shanghai\",\r
+
+      \    \"storageAccessId\": \"cca-dto-fcalocal-uat-oss.oss-cn-shanghai-internal.aliyuncs.com\",\r
+
+      \    \"storageAccessKey\": \"\"\r
+
+      }"
+  auth:
+    type: bearer
+    token: "{{acces_token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

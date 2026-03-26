@@ -1,0 +1,87 @@
+info:
+  name: Pipeline
+  type: http
+  seq: 7
+
+http:
+  method: POST
+  url: "{{url}}/api/pipelines"
+  headers:
+    - name: tenantId
+      value: 4223b073-b67e-45d2-8d54-d7e3098f9d32
+  body:
+    type: json
+    data: "{\r
+
+      \    \"name\": \"Default Pipeline5\",\r
+
+      \    \"slug\": \"default_pipeline5\",\r
+
+      \    \"trigger\": \"image-supine\",\r
+
+      \    \"blocks\": [\r
+
+      \        {\r
+
+      \            \"id\": 1,\r
+
+      \            \"type\": \"trigger\",\r
+
+      \            \"trigger\": \"image\",\r
+
+      \            \"imageName\": \"supine\"\r
+
+      \        },\r
+
+      \        {\r
+
+      \            \"id\": 2,\r
+
+      \            \"parent\": 3,\r
+
+      \            \"type\": \"executor\",\r
+
+      \            \"executor\": \"primary\",\r
+
+      \            \"prefix\": \"supine_\",\r
+
+      \            \"primaryNames\": [\r
+
+      \                \"sagging\"\r
+
+      \            ]\r
+
+      \        },\r
+
+      \        {\r
+
+      \            \"id\": 3,\r
+
+      \            \"parent\": 2,\r
+
+      \            \"type\": \"executor\",\r
+
+      \            \"executor\": \"primary\",\r
+
+      \            \"prefix\": \"supine_\",\r
+
+      \            \"primaryNames\": [\r
+
+      \                \"sagging\"\r
+
+      \            ]\r
+
+      \        }\r
+
+      \    ]\r
+
+      \    }"
+  auth:
+    type: bearer
+    token: "{{acces_token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,189 @@
+opencollection: 1.0.0
+
+info:
+  name: GlobalAPI Admin
+config:
+  proxy:
+    inherit: true
+    config:
+      protocol: http
+      hostname: ""
+      port: ""
+      auth:
+        username: ""
+        password: ""
+      bypassProxy: ""
+
+request:
+  scripts:
+    - type: before-request
+      code: |-
+        const CryptoJS = require("crypto-js");
+
+        function base32ToHex(base32) {
+          const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ234567";
+          const clean = String(base32 || "")
+            .replace(/=+$/g, "")
+            .replace(/\s+/g, "")
+            .toUpperCase();
+
+          if (!clean) {
+            throw new Error("El secret TOTP está vacío");
+          }
+
+          let bits = "";
+          for (const char of clean) {
+            const val = alphabet.indexOf(char);
+            if (val === -1) {
+              throw new Error(`Secret TOTP no válido en Base32. Carácter inválido: ${char}`);
+            }
+            bits += val.toString(2).padStart(5, "0");
+          }
+
+          let hex = "";
+          for (let i = 0; i + 4 <= bits.length; i += 4) {
+            hex += parseInt(bits.slice(i, i + 4), 2).toString(16);
+          }
+
+          return hex;
+        }
+
+        function leftpad(str, len, pad) {
+          return String(str).padStart(len, pad);
+        }
+
+        function dec2hex(num) {
+          return Number(num).toString(16);
+        }
+
+        function hex2dec(hex) {
+          return parseInt(hex, 16);
+        }
+
+        function generateTotp(secretBase32, algorithm = "SHA512", digits = 6, period = 30) {
+          const secretHex = base32ToHex(secretBase32);
+          const epoch = Math.floor(Date.now() / 1000);
+          const counter = Math.floor(epoch / period);
+          const counterHex = leftpad(dec2hex(counter), 16, "0");
+
+          const key = CryptoJS.enc.Hex.parse(secretHex);
+          const msg = CryptoJS.enc.Hex.parse(counterHex);
+
+          let hmac;
+          switch (algorithm.toUpperCase()) {
+            case "SHA1":
+              hmac = CryptoJS.HmacSHA1(msg, key);
+              break;
+            case "SHA256":
+              hmac = CryptoJS.HmacSHA256(msg, key);
+              break;
+            case "SHA512":
+              hmac = CryptoJS.HmacSHA512(msg, key);
+              break;
+            default:
+              throw new Error(`Algoritmo no soportado: ${algorithm}`);
+          }
+
+          const hmacHex = CryptoJS.enc.Hex.stringify(hmac);
+          const offset = hex2dec(hmacHex.substring(hmacHex.length - 1));
+          const start = offset * 2;
+          const part = hmacHex.substring(start, start + 8);
+          const otp = (hex2dec(part) & hex2dec("7fffffff")) % (10 ** digits);
+
+          return otp.toString().padStart(digits, "0");
+        }
+
+        function tryParseJson(value) {
+          if (!value) return null;
+          if (typeof value === "object") return value;
+          if (typeof value === "string") {
+            try {
+              return JSON.parse(value);
+            } catch (e) {
+              return null;
+            }
+          }
+          return null;
+        }
+
+        function getAnyVar(key) {
+          return bru.getEnvVar(key) || bru.getGlobalEnvVar(key);
+        }
+
+        const useAdminOrSA = getAnyVar("useAdminOrSA");
+        const adminSecret = getAnyVar("adminSecret");
+        const saSecret = getAnyVar("saSecret");
+        const url = getAnyVar("url");
+        const adminEmail = getAnyVar("adminEmail");
+        const adminPassword = getAnyVar("adminPassword");
+        const saEmail = getAnyVar("saEmail");
+        const saPassword = getAnyVar("saPassword");
+
+        const isSA = useAdminOrSA === "sa";
+        const selectedSecret = isSA ? saSecret : adminSecret;
+        const email = isSA ? saEmail : adminEmail;
+        const password = isSA ? saPassword : adminPassword;
+
+        if (!useAdminOrSA) throw new Error("Falta var: useAdminOrSA");
+        if (!selectedSecret) throw new Error(`Falta var: ${isSA ? "saSecret" : "adminSecret"}`);
+        if (!url) throw new Error("Falta var: url");
+        if (!email) throw new Error(`Falta var: ${isSA ? "saEmail" : "adminEmail"}`);
+        if (!password) throw new Error(`Falta var: ${isSA ? "saPassword" : "adminPassword"}`);
+
+        const otp = generateTotp(selectedSecret, "SHA512", 6, 30);
+
+        await bru.sendRequest(
+          {
+            url: `${url}/api/auth/user/login`,
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json"
+            },
+            data: {
+              email,
+              password,
+              token: otp
+            }
+          },
+          function (err, response) {
+            if (err) {
+              throw new Error(`Login request error: ${err.message || err}`);
+            }
+
+            if (!response) {
+              throw new Error("Login request sin respuesta");
+            }
+
+            const candidate =
+              response.body ??
+              response.data ??
+              response.response ??
+              response.result ??
+              response;
+
+            const parsed = tryParseJson(candidate);
+
+            const token =
+              parsed?.accessToken ||
+              parsed?.data?.accessToken ||
+              response?.accessToken ||
+              response?.data?.accessToken ||
+              response?.body?.accessToken;
+
+            if (!token) {
+              throw new Error(
+                `No se encontró accessToken. Respuesta recibida: ${JSON.stringify(candidate)}`
+              );
+            }
+
+            bru.setEnvVar("access_token", token);
+            bru.setVar("access_token", token);
+            req.setHeader("Authorization", `Bearer ${token}`);
+          }
+        );
+bundled: false
+extensions:
+  bruno:
+    ignore:
+      - node_modules
+      - .git

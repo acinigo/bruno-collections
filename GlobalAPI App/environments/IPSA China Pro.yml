@@ -1,0 +1,32 @@
+name: IPSA China Pro
+variables:
+  - name: url
+    value: https://fca-prod.ipsa.com.cn
+  - name: appId
+    value: IPSA_WECHAT_MP
+  - secret: true
+    name: appSecret
+  - name: adminEmail
+    value: admin@mail.com
+  - secret: true
+    name: adminPassword
+  - secret: true
+    name: adminSecret
+  - name: issuer
+    value: DTO
+  - name: label
+    value: IpsaPro
+  - name: acces_token
+    value: ""
+  - name: useAdminOrSA
+    value: admin
+  - name: saEmail
+    value: sa@mail.com
+  - secret: true
+    name: saPassword
+  - secret: true
+    name: saSecret
+  - name: acces_token_app
+    value: ""
+  - name: tenantId
+    value: ""
