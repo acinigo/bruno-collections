@@ -106,25 +106,29 @@ request:
           return null;
         }
 
-        const useAdminOrSA = bru.getEnvVar("useAdminOrSA");
-        const adminSecret = bru.getEnvVar("adminSecret");
-        const saSecret = bru.getEnvVar("saSecret");
-        const url = bru.getEnvVar("url");
-        const adminEmail = bru.getEnvVar("adminEmail");
-        const adminPassword = bru.getEnvVar("adminPassword");
-        const saEmail = bru.getEnvVar("saEmail");
-        const saPassword = bru.getEnvVar("saPassword");
+        function getAnyVar(key) {
+          return bru.getEnvVar(key) || bru.getGlobalEnvVar(key);
+        }
+
+        const useAdminOrSA = getAnyVar("useAdminOrSA");
+        const adminSecret = getAnyVar("adminSecret");
+        const saSecret = getAnyVar("saSecret");
+        const url = getAnyVar("url");
+        const adminEmail = getAnyVar("adminEmail");
+        const adminPassword = getAnyVar("adminPassword");
+        const saEmail = getAnyVar("saEmail");
+        const saPassword = getAnyVar("saPassword");
 
         const isSA = useAdminOrSA === "sa";
         const selectedSecret = isSA ? saSecret : adminSecret;
         const email = isSA ? saEmail : adminEmail;
         const password = isSA ? saPassword : adminPassword;
 
-        if (!useAdminOrSA) throw new Error("Falta env var: useAdminOrSA");
-        if (!selectedSecret) throw new Error(`Falta env var: ${isSA ? "saSecret" : "adminSecret"}`);
-        if (!url) throw new Error("Falta env var: url");
-        if (!email) throw new Error(`Falta env var: ${isSA ? "saEmail" : "adminEmail"}`);
-        if (!password) throw new Error(`Falta env var: ${isSA ? "saPassword" : "adminPassword"}`);
+        if (!useAdminOrSA) throw new Error("Falta var: useAdminOrSA");
+        if (!selectedSecret) throw new Error(`Falta var: ${isSA ? "saSecret" : "adminSecret"}`);
+        if (!url) throw new Error("Falta var: url");
+        if (!email) throw new Error(`Falta var: ${isSA ? "saEmail" : "adminEmail"}`);
+        if (!password) throw new Error(`Falta var: ${isSA ? "saPassword" : "adminPassword"}`);
 
         const otp = generateTotp(selectedSecret, "SHA512", 6, 30);
 
@@ -172,11 +176,8 @@ request:
               );
             }
 
-            // Guardarlo para reutilizarlo en otras requests
             bru.setEnvVar("access_token", token);
             bru.setVar("access_token", token);
-
-            // Inyectarlo en la request actual
             req.setHeader("Authorization", `Bearer ${token}`);
           }
         );

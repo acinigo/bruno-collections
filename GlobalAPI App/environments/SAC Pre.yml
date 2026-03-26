@@ -1,4 +1,4 @@
-name: SAC PRE
+name: SAC Pre
 variables:
   - name: url
     value: https://fca-global-api-pre-eastus.azurefd.net
