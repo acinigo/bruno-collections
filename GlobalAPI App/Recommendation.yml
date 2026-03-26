@@ -1,0 +1,22 @@
+info:
+  name: Recommendation
+  type: http
+  seq: 13
+
+http:
+  method: GET
+  url: "{{url}}/api/analysis/6360db9f43bb5103f0bcdf76/recommendation"
+  headers:
+    - name: user
+      value: Test
+    - name: channel
+      value: Postman
+  auth:
+    type: bearer
+    token: "{{acces_token_app}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

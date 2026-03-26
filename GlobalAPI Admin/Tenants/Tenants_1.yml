@@ -1,0 +1,34 @@
+info:
+  name: Tenants_1
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{url}}/api/tenants"
+  body:
+    type: json
+    data: "{\r
+
+      \  \"name\": \"Visualizer 4.0 AU\",\r
+
+      \  \"brand\": \"BS\",\r
+
+      \  \"region\": \"JP\",\r
+
+      \  \"databaseId\": \"65f0269d7d1437702e1f4243\",\r
+
+      \    \"storageId\": \"65f027043d9db88080372884\",\r
+
+      \  \"storeImages\": \"false\"\r
+
+      }"
+  auth:
+    type: bearer
+    token: "{{acces_token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

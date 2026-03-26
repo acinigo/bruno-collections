@@ -1,0 +1,31 @@
+info:
+  name: Analysis Link User
+  type: http
+  seq: 11
+
+http:
+  method: POST
+  url: "{{url}}/api/analysis/66b49802fa0e3913929c0432/linkuser/test2@mail.com"
+  headers:
+    - name: channel
+      value: Postman
+    - name: user
+      value: Test2
+  body:
+    type: json
+    data: "{\r
+
+      \    \"firstName\": \"firstNameExample\",\r
+
+      \    \"lastName\": \"lastNameExample\"\r
+
+      }"
+  auth:
+    type: bearer
+    token: "{{acces_token_app}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,34 @@
+info:
+  name: Widgets_2
+  type: http
+  seq: 4
+
+http:
+  method: PATCH
+  url: "{{url}}/api/tenants/37812d88-f7c4-409c-b3c6-b83d11e8ec73/widgets/64afc3e5cee69a19f63349aa"
+  headers:
+    - name: x-forwarded-for
+      value: 127.0.0.1, 128.1.234.1
+      disabled: true
+  body:
+    type: json
+    data: "{\r
+
+      \    \"title\" : \"This is a title\",\r
+
+      \    \"column\" : 1,\r
+
+      \    \"row\" : 0,\r
+
+      \    \"type\" : \"this is a type\"\r
+
+      }\r\n"
+  auth:
+    type: bearer
+    token: "{{acces_token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

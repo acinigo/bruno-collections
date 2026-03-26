@@ -1,0 +1,31 @@
+info:
+  name: Ask Chatbot Copy
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{url}}/api/tenants/1c9491f6-fd46-44eb-a4da-b70f09eee8b5/chatbots/679c7b1d311cadbd7c424497/ask"
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+          "question": "Hi",
+          "conversationId": 121,
+          "data": {
+              "analysisId": "test",
+              "userId": "test"
+          }
+      }
+  auth:
+    type: bearer
+    token: "{{acces_token_app}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

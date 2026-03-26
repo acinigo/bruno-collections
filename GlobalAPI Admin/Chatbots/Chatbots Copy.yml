@@ -1,0 +1,1267 @@
+info:
+  name: Chatbots Copy
+  type: http
+  seq: 5
+
+http:
+  method: PATCH
+  url: "{{url}}/api/tenants/afe49d3a-f7a3-4783-9422-5b97676f2513/chatbots/674edf631d24c34c5e07e4d4"
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: "    {\r
+
+      \        \"name\": \"Test Chatbot2\",\r
+
+      \        \"modelUrl\": \"https://fcachat.openai.azure.com/\",\r
+
+      \        \"modelApiKey\": \"7d0a612f4d3f4a0cb617773d34f2b5a9\",\r
+
+      \        \"modelApiVersion\": \"2024-02-15-preview\",\r
+
+      \        \"modelName\": \"FCAChat-GPT35\",\r
+
+      \        \"knowledgebase\": [],\r
+
+      \        \"metadata\": {\r
+
+      \            \"Metric\": [\r
+
+      \                {\r
+
+      \                    \"metricId\": \"roughness\",\r
+
+      \                    \"name\": \"roughness\",\r
+
+      \                    \"metricJa\": \"肌の粗さ\",\r
+
+      \                    \"brand\": \"primary\",\r
+
+      \                    \"isTotalMetric\": false,\r
+
+      \                    \"concernIds\": \"dryness\"\r
+
+      \                },\r
+
+      \                {\r
+
+      \                    \"metricId\": \"pores\",\r
+
+      \                    \"name\": \"pores\",\r
+
+      \                    \"metricJa\": \"毛穴の目立ち\",\r
+
+      \                    \"brand\": \"primary\",\r
+
+      \                    \"isTotalMetric\": false,\r
+
+      \                    \"concernIds\": \"pores\"\r
+
+      \                },\r
+
+      \                {\r
+
+      \                    \"metricId\": \"spots\",\r
+
+      \                    \"name\": \"spots\",\r
+
+      \                    \"metricJa\": \"シミ\",\r
+
+      \                    \"brand\": \"primary\",\r
+
+      \                    \"isTotalMetric\": false,\r
+
+      \                    \"concernIds\": \"spots\"\r
+
+      \                },\r
+
+      \                {\r
+
+      \                    \"metricId\": \"uneven skin tone\",\r
+
+      \                    \"name\": \"uneven skin tone\",\r
+
+      \                    \"metricJa\": \"色むら\",\r
+
+      \                    \"brand\": \"primary\",\r
+
+      \                    \"isTotalMetric\": false,\r
+
+      \                    \"concernIds\": \"spots\"\r
+
+      \                },\r
+
+      \                {\r
+
+      \                    \"metricId\": \"wrinkles\",\r
+
+      \                    \"name\": \"wrinkles\",\r
+
+      \                    \"metricJa\": \"シワ\",\r
+
+      \                    \"brand\": \"primary\",\r
+
+      \                    \"isTotalMetric\": false,\r
+
+      \                    \"concernIds\": \"wrinkles\"\r
+
+      \                },\r
+
+      \                {\r
+
+      \                    \"metricId\": \"sagging\",\r
+
+      \                    \"name\": \"sagging\",\r
+
+      \                    \"metricJa\": \"たるみ\",\r
+
+      \                    \"brand\": \"primary\",\r
+
+      \                    \"isTotalMetric\": false,\r
+
+      \                    \"concernIds\": \"sagging\"\r
+
+      \                },\r
+
+      \                {\r
+
+      \                    \"metricId\": \"bSBeautyCirculation\",\r
+
+      \                    \"name\": \"vibrancy\",\r
+
+      \                    \"metricJa\": \"美のめぐり\",\r
+
+      \                    \"brand\": \"bSHISEIDO-US\",\r
+
+      \                    \"isTotalMetric\": false,\r
+
+      \                    \"description\": \"Healthy skin optically reflects light for a bright, luminous look, a sign of optimal nutrient circulation that helps defend against dryness and environmental aggressors.\",\r
+
+      \                    \"concernIds\": \"dryness\"\r
+
+      \                },\r
+
+      \                {\r
+
+      \                    \"metricId\": \"bSDarkSpots\",\r
+
+      \                    \"name\": \"dark spots\",\r
+
+      \                    \"metricJa\": \"シミ\",\r
+
+      \                    \"brand\": \"bSHISEIDO-US\",\r
+
+      \                    \"isTotalMetric\": false,\r
+
+      \                    \"description\": \"Sometimes known as sun spots or age spots, these small, dark areas of melanin hyperpigmentation tend to appear after repeated UV exposure.\",\r
+
+      \                    \"concernIds\": \"spots\"\r
+
+      \                },\r
+
+      \                {\r
+
+      \                    \"metricId\": \"bSDehydration\",\r
+
+      \                    \"name\": \"dryness\",\r
+
+      \                    \"metricJa\": \"うるおい\",\r
+
+      \                    \"brand\": \"bSHISEIDO-US\",\r
+
+      \                    \"isTotalMetric\": false,\r
+
+      \                    \"description\": \"A healthy skin barrier has an ideal oil/water balance. Dryness and flakiness are signs of a compromised barrier, which can prematurely age skin's appearance.\",\r
+
+      \                    \"concernIds\": \"dryness\"\r
+
+      \                },\r
+
+      \                {\r
+
+      \                    \"metricId\": \"bSPores\",\r
+
+      \                    \"name\": \"enlarged pores\",\r
+
+      \                    \"metricJa\": \"毛穴\",\r
+
+      \                    \"brand\": \"bSHISEIDO-US\",\r
+
+      \                    \"isTotalMetric\": false,\r
+
+      \                    \"description\": \"Over time, pores can stretch and lose their shape—much like a rubber band after multiple uses.\",\r
+
+      \                    \"concernIds\": \"pores\"\r
+
+      \                },\r
+
+      \                {\r
+
+      \                    \"metricId\": \"bSRadiance\",\r
+
+      \                    \"name\": \"radiance\",\r
+
+      \                    \"metricJa\": \"輝き\",\r
+
+      \                    \"brand\": \"bSHISEIDO-US\",\r
+
+      \                    \"isTotalMetric\": false,\r
+
+      \                    \"elements\": \"bSBeautyCirculation, bSDarkSpots, bSUnevenSkinTone\",\r
+
+      \                    \"description\": \"Radiant skin has an even-toned, natural glow that reflects light beautifully.\",\r
+
+      \                    \"concernIds\": \"dryness, spots\"\r
+
+      \                },\r
+
+      \                {\r
+
+      \                    \"metricId\": \"bSResilience\",\r
+
+      \                    \"name\": \"resilience\",\r
+
+      \                    \"metricJa\": \"ハリ\",\r
+
+      \                    \"brand\": \"bSHISEIDO-US\",\r
+
+      \                    \"isTotalMetric\": false,\r
+
+      \                    \"elements\": \"bSSagging, bSWrinkles, bSPores\",\r
+
+      \                    \"description\": \"Resilient skin is supple and firm, with healthy bounce and elasticity.\",\r
+
+      \                    \"concernIds\": \"sagging, wrinkles, pores\"\r
+
+      \                },\r
+
+      \                {\r
+
+      \                    \"metricId\": \"bSRoughness\",\r
+
+      \                    \"name\": \"roughness\",\r
+
+      \                    \"metricJa\": \"肌の粗さ\",\r
+
+      \                    \"brand\": \"bSHISEIDO-US\",\r
+
+      \                    \"isTotalMetric\": false,\r
+
+      \                    \"description\": \"Dehydration, decreased sebum production, and buildups of dead, dull skin cells can give skin a coarse texture that feels rough to the touch.\",\r
+
+      \                    \"concernIds\": \"dryness\"\r
+
+      \                },\r
+
+      \                {\r
+
+      \                    \"metricId\": \"bSSagging\",\r
+
+      \                    \"name\": \"sagging\",\r
+
+      \                    \"metricJa\": \"たるみ\",\r
+
+      \                    \"brand\": \"bSHISEIDO-US\",\r
+
+      \                    \"isTotalMetric\": false,\r
+
+      \                    \"description\": \"Time and UV exposure can cause skin to lose its natural firmness and elasticity, resulting in laxity and less-defined facial contours.\",\r
+
+      \                    \"concernIds\": \"sagging\"\r
+
+      \                },\r
+
+      \                {\r
+
+      \                    \"metricId\": \"bSSmoothness\",\r
+
+      \                    \"name\": \"smoothness\",\r
+
+      \                    \"metricJa\": \"なめらかさ\",\r
+
+      \                    \"brand\": \"bSHISEIDO-US\",\r
+
+      \                    \"isTotalMetric\": false,\r
+
+      \                    \"elements\": \"bSDehydration, bSRoughness, bSVisiblePores\",\r
+
+      \                    \"description\": \"Smooth skin has a refined texture and an allover soft, silky feel.\",\r
+
+      \                    \"concernIds\": \"dryness, pores\"\r
+
+      \                },\r
+
+      \                {\r
+
+      \                    \"metricId\": \"bSUnevenSkinTone\",\r
+
+      \                    \"name\": \"uneven skin tone\",\r
+
+      \                    \"metricJa\": \"色むら\",\r
+
+      \                    \"brand\": \"bSHISEIDO-US\",\r
+
+      \                    \"isTotalMetric\": false,\r
+
+      \                    \"description\": \"Dark patches, melasma, and even dead skin cells can cloud skin’s clarity and create a dull, uneven appearance.\",\r
+
+      \                    \"concernIds\": \"spots\"\r
+
+      \                },\r
+
+      \                {\r
+
+      \                    \"metricId\": \"bSVisiblePores\",\r
+
+      \                    \"name\": \"visible pores\",\r
+
+      \                    \"metricJa\": \"毛穴の目立ち\",\r
+
+      \                    \"brand\": \"bSHISEIDO-US\",\r
+
+      \                    \"isTotalMetric\": false,\r
+
+      \                    \"description\": \"Overactive oil glands can enlarge the look of pores, and the shiny sebum they produce makes their texture even more noticeable.\",\r
+
+      \                    \"concernIds\": \"pores\"\r
+
+      \                },\r
+
+      \                {\r
+
+      \                    \"metricId\": \"bSWrinkleEye\",\r
+
+      \                    \"name\": \"wrinkle eye\",\r
+
+      \                    \"metricJa\": \"目周りのシワ\",\r
+
+      \                    \"brand\": \"bSHISEIDO-US\",\r
+
+      \                    \"isTotalMetric\": false,\r
+
+      \                    \"description\": \"Repeated motion, UV damage, and even chronic dryness all contribute to the formation of lines and creases around eyes, which can deepen over time.\",\r
+
+      \                    \"concernIds\": \"wrinkles\"\r
+
+      \                },\r
+
+      \                {\r
+
+      \                    \"metricId\": \"bSWrinkles\",\r
+
+      \                    \"name\": \"wrinkles\",\r
+
+      \                    \"metricJa\": \"シワ\",\r
+
+      \                    \"brand\": \"bSHISEIDO-US\",\r
+
+      \                    \"isTotalMetric\": false,\r
+
+      \                    \"description\": \"Repeated motion, UV damage, and even chronic dryness all contribute to the formation of lines and creases, which can deepen over time.\",\r
+
+      \                    \"concernIds\": \"wrinkles\"\r
+
+      \                },\r
+
+      \                {\r
+
+      \                    \"metricId\": \"bSOverall_Score\",\r
+
+      \                    \"name\": \"overall\",\r
+
+      \                    \"metricJa\": \"総合\",\r
+
+      \                    \"brand\": \"bSHISEIDO-US\",\r
+
+      \                    \"isTotalMetric\": true\r
+
+      \                }\r
+
+      \            ],\r
+
+      \            \"Concern\": [\r
+
+      \                {\r
+
+      \                    \"concernId\": \"dryness\",\r
+
+      \                    \"concern\": \"Rough skin, roughness\",\r
+
+      \                    \"phenomenon\": \"There is no moisture on the surface, and it becomes bulky.\\r\\nThe skin is tight and lacks luster.\\r\\nWhen it gets worse, it looks like a powdered dust.\",\r
+
+      \                    \"lifestyle\": \"Decrease in temperature and humidity: Dryness due to a decrease in temperature and humidity.\\r\\nUltraviolet light: drying by ultraviolet rays.\\r\\nAging: Age-related dryness.\\r\\nNutrition: lack of vitamins.\",\r
+
+      \                    \"skincare:lotion/emulsion\": \"Moisturizes the skin, softens it and prevents it from drying out\",\r
+
+      \                    \"skincare:serum/cream\": \"Balances the skin's moisture and oil levels\",\r
+
+      \                    \"skincare:massage\": \"By stimulating blood circulation, nutrients are transported and metabolism is boosted\",\r
+
+      \                    \"skincare:partialSerum/cream\": \"By applying an anti-wrinkle serum or cream to areas where wrinkles are a concern, you can moisturize the skin and reduce the appearance of fine wrinkles caused by dryness\",\r
+
+      \                    \"skincare:sunscreen\": \"It protects the skin from ultraviolet rays and prevents dryness by maintaining its barrier function\",\r
+
+      \                    \"advice\": \"If your eyes get tired after looking at a screen of a PC, smartphone, or TV for a long time, press pressure points or rest your eyes.\\r\\nDirect contact with the air conditioning and heating wind can deprive the skin of moisture, so avoid direct contact with the skin.\\r\\nWater work in hot water can cause the moisture on the skin of the hands to evaporate. Pay attention to the temperature of the water, wear gloves, and moisturize with hand cream after work\"\r
+
+      \                },\r
+
+      \                {\r
+
+      \                    \"concernId\": \"wrinkles\",\r
+
+      \                    \"concern\": \"Wrinkles\",\r
+
+      \                    \"phenomenon\": \"Deep grooves can be seen as the facial expressions move.\\r\\nOn the forehead and neck, which are easily exposed to ultraviolet rays, hard wrinkles can be seen where the lines intersect and the graphic pattern is clear.\",\r
+
+      \                    \"lifestyle\": \"Aging: Age-related dryness\\r\\nDecrease in air temperature and humidity: Dryness due to a decrease in humidity or temperature\\r\\nUltraviolet rays: Loss of elasticity and dryness due to UV damage\\r\\nHormones: Age-related deterioration of female hormone balance\",\r
+
+      \                    \"skincare:lotion/emulsion\": \"It moisturizes the skin, softens it, prevents dryness and leads to wrinkle-resistant skin\",\r
+
+      \                    \"skincare:partialSerum/cream\": \"By applying an anti-wrinkle serum or cream to areas where wrinkles are a concern, you can moisturize the skin and reduce the appearance of fine wrinkles caused by dryness\",\r
+
+      \                    \"skincare:sunscreen\": \"It protects the skin from ultraviolet rays and prevents dryness by maintaining its barrier function\",\r
+
+      \                    \"advice\": \"Staying at the same head angle for a long time can easily lead to wrinkles in the neck, so be careful not to stretch your neck or stay in the same position for a long time\"\r
+
+      \                },\r
+
+      \                {\r
+
+      \                    \"concernId\": \"sagging\",\r
+
+      \                    \"concern\": \"Lack of firmness, sagging\",\r
+
+      \                    \"phenomenon\": \"There is no firmness around the eyes, mouth, and cheeks, and there is sagging appearance.\\r\\nThe upper eyelids, under the eyes, the corners of the eyes, and the thickened cheeks with subcutaneous fat are lowered.\\r\\nSagging is seen under the chin, the face line changes and becomes less articulate.\",\r
+
+      \                    \"lifestyle\": \"Aging: Age-related loss of elasticity\\r\\nUltraviolet rays: Loss of elasticity due to ultraviolet rays\\r\\nHormones: Deterioration of female hormone balance with aging.\\r\\nDecreased facial muscle function due to aging and lack of communication.\\r\\nNutrition: lack of protein.\",\r
+
+      \                    \"skincare:lotion/emulsion\": \"By moisturizing and softening the skin, it leads to skin that does not lose to the movement of facial expressions\",\r
+
+      \                    \"skincare:astringentLotion\": \"Tightens pores that are noticeable due to age-related sagging to make them less noticeable\",\r
+
+      \                    \"skincare:serum/cream\": \"You can expect a lift-up effect by massaging with a type that has an activating effect or a type that is suitable for massage\",\r
+
+      \                    \"skincare:sunscreen\": \"It can protect the skin from UV rays and prevent damage to the dermis\",\r
+
+      \                    \"advice\": \"By stretching the shoulders and neck area and stimulating the thick blood vessels, you can promote blood circulation in the skin of the face, making it easier to receive nutrition.\\r\\nBy getting a good night's sleep and not carrying over fatigue until the next day, you can feel positive and raise the corners of your mouth, which will help you exercise your cheek facial muscles.\"\r
+
+      \                },\r
+
+      \                {\r
+
+      \                    \"concernId\": \"pores\",\r
+
+      \                    \"concern\": \"pores\",\r
+
+      \                    \"phenomenon\": \"The skin loses its elasticity and flexibility, and the texture is coarse and the pores appear sagging and noticeable.\",\r
+
+      \                    \"lifestyle\": \"Hormones: Age-related decline in female hormones.\\r\\nNutrition: lack of protein.\",\r
+
+      \                    \"skincare:lotion/emulsion\": \"By moisturizing and softening the skin, it leads to skin that does not lose to the movement of facial expressions\",\r
+
+      \                    \"skincare:astringentLotion\": \"Tightens pores that are noticeable due to age-related sagging to make them less noticeable\",\r
+
+      \                    \"skincare:serum/cream\": \"You can expect a lift-up effect by massaging with a type that has an activating effect or a type that is suitable for massage\",\r
+
+      \                    \"skincare:sunscreen\": \"It can protect the skin from UV rays and prevent damage to the dermis\",\r
+
+      \                    \"advice\": \"By stretching the shoulders and neck area and stimulating the thick blood vessels, you can promote blood circulation in the skin of the face, making it easier to receive nutrition.\\r\\nBy getting a good night's sleep and not carrying over fatigue until the next day, you can feel positive and raise the corners of your mouth, which will help you exercise your cheek facial muscles.\"\r
+
+      \                },\r
+
+      \                {\r
+
+      \                    \"concernId\": \"spots\",\r
+
+      \                    \"concern\": \"Stains\",\r
+
+      \                    \"phenomenon\": \"Pigmentation seen symmetrically on the forehead, cheeks, etc.\\r\\nClearly contoured pigmentation seen in areas that are easily exposed to ultraviolet rays\",\r
+
+      \                    \"lifestyle\": \"ultraviolet\\r\\nHormones: imbalance of female hormones (factors such as puberty, pregnancy, menopause, illness, etc.). Secretion of hormones that stimulate melanin production due to mental stress.\\r\\nAging: Age-related decline in function.\\r\\nAcne and pimple scars (physical irritation such as fiddling).\\r\\nNutrition: lack of vitamins.\",\r
+
+      \                    \"skincare:lotion/emulsion\": \"While moisturizing the skin, it increases the flexibility of the skin and regulates turnover\",\r
+
+      \                    \"skincare:serum/cream\": \"By using serums and creams that contain effective drugs, the production of melanin is suppressed and blemishes and freckles are prevented\",\r
+
+      \                    \"skincare:massage\": \"It stimulates blood circulation and promotes melanin metabolism\",\r
+
+      \                    \"skincare:sunscreen\": \"Protects the skin from ultraviolet rays and prevents spots and freckles caused by sunburn\",\r
+
+      \                    \"advice\": \"Get enough sleep, adjust your life rhythm, and try to live a destressed life.\\r\\nDuring pregnancy, spots are more likely to form due to the influence of hormones, so use sunscreen cosmetics to protect your skin from ultraviolet rays, or prevent them with a parasol or hat.\"\r
+
+      \                },\r
+
+      \                {\r
+
+      \                    \"concernId\": \"freckle\",\r
+
+      \                    \"concern\": \"freckle\",\r
+
+      \                    \"phenomenon\": \"Fine brown pigment spots on the back of the hands, chest, back, and shoulders, mainly on the nose and cheeks.\",\r
+
+      \                    \"lifestyle\": \"ultraviolet\\r\\nHormones: imbalance of female hormones (factors such as puberty, pregnancy, menopause, illness, etc.). Secretion of hormones that stimulate melanin production due to mental stress.\\r\\nAging: Age-related decline in function.\\r\\nAcne and pimple scars (physical irritation such as fiddling).\\r\\nNutrition: lack of vitamins.\",\r
+
+      \                    \"skincare:lotion/emulsion\": \"While moisturizing the skin, it increases the flexibility of the skin and regulates turnover\",\r
+
+      \                    \"skincare:serum/cream\": \"By using serums and creams that contain effective drugs, the production of melanin is suppressed and blemishes and freckles are prevented\",\r
+
+      \                    \"skincare:massage\": \"It stimulates blood circulation and promotes melanin metabolism\",\r
+
+      \                    \"skincare:sunscreen\": \"Protects the skin from ultraviolet rays and prevents spots and freckles caused by sunburn\",\r
+
+      \                    \"advice\": \"Get enough sleep, adjust your life rhythm, and try to live a destressed life.\\r\\nDuring pregnancy, spots are more likely to form due to the influence of hormones, so use sunscreen cosmetics to protect your skin from ultraviolet rays, or prevent them with a parasol or hat.\"\r
+
+      \                },\r
+
+      \                {\r
+
+      \                    \"concernId\": \"acne\",\r
+
+      \                    \"concern\": \"acne\",\r
+
+      \                    \"phenomenon\": \"After the age of 20, it tends to occur spontaneously on the cheeks, around the mouth, and chin throughout the year. It is easy to get worse due to stress, poor health, or before your period.\",\r
+
+      \                    \"lifestyle\": \"Skin turnover is disturbed, and the peeled stratum corneum blocks the pores.\\r\\nThe influence of progestin-hormone before menstruation (attuned to the sexual cycle).\\r\\nHormonal imbalance due to poor health.\\r\\nMental and physical stress stimulates sebum secretion.\\r\\nLack of vitamins.\",\r
+
+      \                    \"skincare:lotion/emulsion\": \"Moisturizes the skin and keeps the barrier function normal\",\r
+
+      \                    \"skincare:astringentLotion\": \"It tightens pores that are noticeable due to age-related sagging to make them less noticeable. It controls the function of the sebaceous glands and sweat glands, skin temperature, and blood circulation.\",\r
+
+      \                    \"skincare:sunscreen\": \"Protects the skin from ultraviolet rays and protects the barrier function\",\r
+
+      \                    \"advice\": \"Get enough sleep and try to relax so you don't get stressed.\\r\\nLet's adjust the rhythm of life with a regular life.\\r\\nThere is also the influence of progestational hormone due to the menstrual cycle, so let's not accumulate stress by living a more relaxed life during the luteal phase.\"\r
+
+      \                }\r
+
+      \            ],\r
+
+      \            \"Quiz\": [\r
+
+      \                {\r
+
+      \                    \"brand\": \"bSHISEIDO-US\",\r
+
+      \                    \"questionId\": \"age\"\r
+
+      \                },\r
+
+      \                {\r
+
+      \                    \"brand\": \"bSHISEIDO-US\",\r
+
+      \                    \"questionId\": \"Q1\",\r
+
+      \                    \"question\": \"I usually have dry, fine facial lines\",\r
+
+      \                    \"value\": \"{\\\"0\\\": \\\"No\\\", \\\"1\\\": \\\"Yes\\\"}\"\r
+
+      \                },\r
+
+      \                {\r
+
+      \                    \"brand\": \"bSHISEIDO-US\",\r
+
+      \                    \"questionId\": \"Q3\",\r
+
+      \                    \"question\": \"I experience redness/sensitivity\",\r
+
+      \                    \"value\": \"{\\\"0\\\": \\\"No\\\", \\\"1\\\": \\\"Yes\\\"}\"\r
+
+      \                },\r
+
+      \                {\r
+
+      \                    \"brand\": \"bSHISEIDO-US\",\r
+
+      \                    \"questionId\": \"Q4\",\r
+
+      \                    \"question\": \"My fingers + toes feel cold when the temperature is low\",\r
+
+      \                    \"value\": \"{\\\"0\\\": \\\"No\\\", \\\"1\\\": \\\"Yes\\\"}\"\r
+
+      \                },\r
+
+      \                {\r
+
+      \                    \"brand\": \"bSHISEIDO-US\",\r
+
+      \                    \"questionId\": \"Q5\",\r
+
+      \                    \"question\": \"I tan within 1 week of sun exposure\",\r
+
+      \                    \"value\": \"{\\\"0\\\": \\\"No\\\", \\\"1\\\": \\\"Yes\\\"}\"\r
+
+      \                },\r
+
+      \                {\r
+
+      \                    \"brand\": \"bSHISEIDO-US\",\r
+
+      \                    \"questionId\": \"Q6\",\r
+
+      \                    \"question\": \"My 3 favorite products\",\r
+
+      \                    \"value\": \"{\\\"1\\\": \\\"Moisturizer\\\", \\\"2\\\": \\\"Serum\\\", \\\"3\\\": \\\"Eye Cream\\\", \\\"4\\\": \\\"Sun Protection\\\", \\\"5\\\": \\\"Softener\\\"}\"\r
+
+      \                },\r
+
+      \                {\r
+
+      \                    \"brand\": \"bSHISEIDO-US\",\r
+
+      \                    \"questionId\": \"Q7\",\r
+
+      \                    \"question\": \"I feel stressed every day\",\r
+
+      \                    \"value\": \"{\\\"0\\\": \\\"No\\\", \\\"1\\\": \\\"Yes\\\"}\"\r
+
+      \                }\r
+
+      \            ],\r
+
+      \            \"Product\": [\r
+
+      \                {\r
+
+      \                    \"brand\": \"bSHISEIDO-US\",\r
+
+      \                    \"productId\": \"0730852149533\",\r
+
+      \                    \"productCategory\": \"Moisturizers & Creams\",\r
+
+      \                    \"subBrand\": \"Benefiance\",\r
+
+      \                    \"productName\": \"Wrinkle Smoothing Cream\",\r
+
+      \                    \"productSummary\": \"An anti-aging cream that visibly corrects wrinkles in just 2 weeks. Skin is left feeling smooth, moisturized, and radiant.\",\r
+
+      \                    \"productDescription\": \"Get fast wrinkle-diminishing results with this daily moisturizer. KOMBU-Bounce Complex (Green, Brown, and Red Algae plus Chlorella Extract) helps correct existing wrinkles, as antioxidant-rich Turmeric Extract soothes and improves elasticity. Skin feels smooth and resilient with 24-hour moisture.\",\r
+
+      \                    \"productBenefit\": \"- Visibly improves the appearance of wrinkles in just 2 weeks\\r\\n- Deeply hydrates for 24 hours\\r\\n- Silky, smooth cream texture. Good for normal and combination skin types.\\r\\n- Dermatologist-tested. Non-comedogenic.\",\r
+
+      \                    \"productUsage\": \"- Apply in the morning and evening, as the last step of your skincare routine.\\r\\n- Use the spatula to scoop two pearl-sized amounts, then dot the cream on the 5 points of your face: forehead, nose, chin, and both cheeks.\\r\\n- Gently smooth the cream from the center outward over your face. Apply an additional pearl-sized amount to your neck, and sweep the cream upward to your jawline.\",\r
+
+      \                    \"productKeyIngredients\": \"- KOMBU-Bounce Complex: Green, Brown, and Red Algae plus Chlorella Extract fortifies skin's barrier to help prevent and minimize the appearance of wrinkles.\\r\\n- Turmeric Extract: Offers potent antioxidant and soothing properties to help minimize wrinkles and improve skin elasticity.\",\r
+
+      \                    \"concernIds\": \"dryness, wrinkles, sagging, pores, spots\",\r
+
+      \                    \"size\": \"50ML\",\r
+
+      \                    \"price\": \"75USD\"\r
+
+      \                },\r
+
+      \                {\r
+
+      \                    \"brand\": \"bSHISEIDO-US\",\r
+
+      \                    \"productId\": \"0729238182851\",\r
+
+      \                    \"productCategory\": \"Moisturizers & Creams\",\r
+
+      \                    \"subBrand\": \"Essential Energy\",\r
+
+      \                    \"productName\": \"Hydrating Cream\",\r
+
+      \                    \"productSummary\": \"A fast-absorbing moisturizing cream that supports skin’s natural production of Hyaluronic Acid for deep, intense moisture that lasts 24 hours.\",\r
+
+      \                    \"productDescription\": \"Awaken soft, supple skin with this moisturizing cream featuring Ginseng Root Extract and our proprietary Hyaluronic Acid that strengthens skin’s barrier. Sensitive skin-friendly, it visibly reduces the appearance of pores and fine lines after 4 weeks. Reduce waste by replenishing with refill pods.\",\r
+
+      \                    \"productBenefit\": \"- Deep, intense hydration that lasts 24-hours\\r\\n- Supports skin’s natural production of Hyaluronic Acid\\r\\n- Strengthens skin’s moisture barrier\\r\\n- Sensitive skin-friendly. Ideal for all skin types.\\r\\n- Refill helps reduce plastic waste by up to 81% compared with a regular product\\r\\n- Dermatologist-tested. Non-comedogenic.\\r\\n- Free of Mineral Oil\",\r
+
+      \                    \"productUsage\": \"- Use the spatula to scoop two pearl-sized amounts, then dot the cream on the 5 points of your face: forehead, nose, chin, and both cheeks.\\r\\n- Gently smooth the cream outward over your face. Apply an additional pearl-sized amount on your neck, and sweep the cream upward from throat to jawline.\\r\\n- Use twice daily—morning & night, as the last step in your skincare routine.\\r\\n- FOR REFILL: Hold the jar with one hand and place your fingers on the protrusions on the mouth of the cap and lift out the pod. Set the new refill in place and firmly push into the jar. Peel off the inner sticker and firmly close the cap.\",\r
+
+      \                    \"productKeyIngredients\": \"- PURIFIED & MICRONIZED HYALURONIC ACID: Delivers, attracts, and retains moisture.\\r\\n- GINSENG ROOT EXTRACT: Offers energizing and soothing properties to supports the natural production of Hyaluronic Acid and strengthens skin’s moisture barrier.\",\r
+
+      \                    \"concernIds\": \"dryness, wrinkles, sagging, pores, spots\",\r
+
+      \                    \"size\": \"50ML\",\r
+
+      \                    \"price\": \"50USD\"\r
+
+      \                },\r
+
+      \                {\r
+
+      \                    \"brand\": \"bSHISEIDO-US\",\r
+
+      \                    \"productId\": \"0730852182875\",\r
+
+      \                    \"productCategory\": \"Moisturizers & Creams\",\r
+
+      \                    \"subBrand\": \"Essential Energy\",\r
+
+      \                    \"productName\": \"Hydrating Day Cream Broad Spectrum SPF 20\",\r
+
+      \                    \"productSummary\": \"A lightweight moisturizing cream with broad-spectrum SPF 20 that supports skin’s natural production of Hyaluronic Acid for moisture that lasts 24 hours.\",\r
+
+      \                    \"productDescription\": \"Awaken soft, supple skin with this SPF gel-cream featuring Ginseng Root Extract and our proprietary Hyaluronic Acid to deliver deep, intense hydration so skin is protected and ready for makeup. Sensitive skin-friendly, it also minimizes the appearance of pores and fine lines.\",\r
+
+      \                    \"productBenefit\": \"- Deep, intense hydration that lasts 24-hours\\r\\n- Broad-spectrum SPF 20 protection\\r\\n- Encourages skin’s natural production of Hyaluronic Acid\\r\\n- Sensitive skin-friendly. Ideal for all skin types.\\r\\n- Dermatologist-tested. Non-comedogenic.\\r\\n- Free of Mineral Oil\",\r
+
+      \                    \"productUsage\": \"- Use the spatula to scoop two pearl-sized amounts, then dot the cream on the 5 points of the face: forehead, nose, chin, and both cheeks.\\r\\n- Gently smooth the cream outward over your face. Apply an additional pearl-sized amount to your neck, and sweep the cream upward from throat to jawline.\\r\\n- Apply daily as the last step in your morning skincare routine.\",\r
+
+      \                    \"productKeyIngredients\": \"- PURIFIED & MICRONIZED HYALURONIC ACID: Delivers, attracts, and retains moisture.\\r\\n- GINSENG ROOT EXTRACT: Offers energizing and soothing properties to supports the natural production of Hyaluronic Acid and strengthens skin’s moisture barrier.\",\r
+
+      \                    \"concernIds\": \"dryness, wrinkles, sagging, pores, spots\",\r
+
+      \                    \"size\": \"50ML\",\r
+
+      \                    \"price\": \"50USD\"\r
+
+      \                },\r
+
+      \                {\r
+
+      \                    \"brand\": \"bSHISEIDO-US\",\r
+
+      \                    \"productId\": \"0730852160460\",\r
+
+      \                    \"productCategory\": \"Moisturizers & Creams\",\r
+
+      \                    \"subBrand\": \"Benefiance\",\r
+
+      \                    \"productName\": \"Wrinkle Smoothing Cream Enriched\",\r
+
+      \                    \"productSummary\": \"Our best-selling, daily anti-aging cream for dry skin offers intense hydration and visible wrinkle correction.\",\r
+
+      \                    \"productDescription\": \"Get fast wrinkle-diminishing results for dry to very dry skin with this daily moisturizer. KOMBU-Bounce Complex (Green, Brown, and Red Algae plus Chlorella Extract) helps correct existing wrinkles, as antioxidant-rich Turmeric Extract soothes and improves elasticity. Niacinamide fortifies skin’s barrier, helping to minimize lines and wrinkles. Skin feels smooth and resilient with 24-hour moisture.\",\r
+
+      \                    \"productBenefit\": \"- Visibly improves the appearance of wrinkles\\r\\n- Delivers 24 hours of intense hydration\\r\\n- Rich, velvety cream texture. Good for dry and very dry skin types.\\r\\n- Dermatologist-tested. Non-comedogenic.\",\r
+
+      \                    \"productUsage\": \"- Use daily, in the morning and evening, as the last step of your skincare routine.\\r\\n- Use the spatula to scoop two pearl-sized amounts, then dot the cream on the five points of your face: forehead, nose, chin, and both cheeks.\\r\\n- Gently smooth the cream from the center outward over your face. Apply an additional pearl-sized amount to your neck, and sweep the cream upward to your jawline.\",\r
+
+      \                    \"productKeyIngredients\": \"- KOMBU-Bounce Complex (Green, Brown, and Red Algae plus Chlorella Extract): Fortifies skin's barrier to help prevent and minimize the appearance of wrinkles.\\r\\n- Turmeric Extract: Offers potent antioxidant and soothing properties to help minimize the look of wrinkles and improve elasticity.\\r\\n- Niacinimide: Fortifies skin's barrier and smoothes skin's texture.\\r\\n- Yuzu Seed Extract: Supports collagen production for visibly resilient, vibrant skin.\",\r
+
+      \                    \"concernIds\": \"dryness, wrinkles, sagging, pores, spots\",\r
+
+      \                    \"size\": \"75ML\",\r
+
+      \                    \"price\": \"100USD\"\r
+
+      \                },\r
+
+      \                {\r
+
+      \                    \"brand\": \"bSHISEIDO-US\",\r
+
+      \                    \"productId\": \"0730852149397\",\r
+
+      \                    \"productCategory\": \"Moisturizers & Creams\",\r
+
+      \                    \"subBrand\": \"Vital Perfection\",\r
+
+      \                    \"productName\": \"Uplifting and Firming Cream\",\r
+
+      \                    \"productSummary\": \"Visibly lift skin in just 1 week, and reveal a dramatically firmer, revitalized complexion with this sculpting cream.\",\r
+
+      \                    \"productDescription\": \"Experience visibly lifted skin in just 1 week. This scientifically advanced, silky moisturizer helps visibly offset the effects of aging in record time. Skin feels firm and sculpted with renewed fullness and bounce.\\r\\nOur exclusive KURENAI-TruLift Complex and ReNeura Technology++™ strengthens skin’s natural support and improves the appearances of facial contours and definition. VP8, a blend of 5 antioxidant ingredients, provides added protection for skin. Powerful renewal for youthful-looking skin.\",\r
+
+      \                    \"productUsage\": \"Smooth evenly over face each morning and evening, after cleansing and softening.\",\r
+
+      \                    \"productKeyIngredients\": \"- KURENAI-TruLift Complex with Benibana flower strengthens skin and delivers a visibly lifted appearance.\\r\\n- ReNeura Technology++ features Phytoconnect, helps prolong the efficacy of the treatment.\\r\\n- VP8 Technology helps defend skin with 5 targeted ingredients, including olive root, tea, and angelica root extracts, helps visibly correct and prevent further signs of aging.\",\r
+
+      \                    \"concernIds\": \"dryness, wrinkles, sagging, pores, spots\",\r
+
+      \                    \"size\": \"75ML\",\r
+
+      \                    \"price\": \"140USD\"\r
+
+      \                },\r
+
+      \                {\r
+
+      \                    \"brand\": \"bSHISEIDO-US\",\r
+
+      \                    \"productId\": \"0730852149403\",\r
+
+      \                    \"productCategory\": \"Moisturizers & Creams\",\r
+
+      \                    \"subBrand\": \"Vital Perfection\",\r
+
+      \                    \"productName\": \"Uplifting and Firming Cream Enriched\",\r
+
+      \                    \"productSummary\": \"Visibly lift skin in just 1 week, and reveal a dramatically firmer, revitalized complexion with this rich sculpting anti aging cream for dry skin.\",\r
+
+      \                    \"productDescription\": \"Experience visibly lifted skin in just 1 week. This scientifically advanced, silky moisturizer helps visibly offset the effects of aging in record time. Skin feels firm and sculpted with renewed fullness and bounce.\\r\\nOur exclusive KURENAI-TruLift Complex and ReNeura Technology++™ strengthens skin’s natural support and improves the appearances of facial contours and definition. VP8, a blend of 5 antioxidant ingredients, provides added protection for skin. Powerful renewal for youthful-looking skin.\",\r
+
+      \                    \"productUsage\": \"Smooth evenly over face each morning and evening, after cleansing and softening.\",\r
+
+      \                    \"productKeyIngredients\": \"- KURENAI-TruLift Complex with Benibana flower strengthens skin and delivers a visibly lifted appearance.\\r\\n- ReNeura Technology++ features Phytoconnect, helps prolong the efficacy of the treatment.\\r\\n- VP8 Technology helps defend skin with 5 targeted ingredients, including olive root, tea, and angelica root extracts, helps visibly correct and prevent further signs of aging.\",\r
+
+      \                    \"concernIds\": \"dryness, wrinkles, sagging, pores, spots\",\r
+
+      \                    \"size\": \"75ML\",\r
+
+      \                    \"price\": \"140USD\"\r
+
+      \                },\r
+
+      \                {\r
+
+      \                    \"brand\": \"bSHISEIDO-US\",\r
+
+      \                    \"productId\": \"0730852182097\",\r
+
+      \                    \"productCategory\": \"Face Sunscreen\",\r
+
+      \                    \"productName\": \"Urban Environment Oil-Free Sunscreen SPF 42\",\r
+
+      \                    \"productSummary\": \"Lightweight, daily oil-free sunscreen protects against harmful UV rays, hydrates skin, and doubles as a face primer. \",\r
+
+      \                    \"productDescription\": \"More than a sunscreen, the new Urban Environment Oil-Free Sunscreen SPF 42 is sun-powered skincare. Our Sun Dual Care™ Technology infused with Hyaluronic Acid, protects against harmful UV rays and pollution, and amplifies the power of sunlight to boost hydration, for soft, matte skin — 365 days a year.\",\r
+
+      \                    \"productUsage\": \"- Apply daily, as the last step in your morning skincare routine—before makeup application.\\r\\n- Shake the bottle before using, then dispense and smooth evenly and generously over face and neck, at least 15 minutes before sun exposure.\\r\\n- Wear alone or under makeup.\",\r
+
+      \                    \"productKeyIngredients\": \"- HYALURONIC ACID: Delivers, attracts, and retains moisture.\\r\\nSPIRULINA ENERGY ESSENCE: Converts sunlight to target factors that lead to dryness.\\r\\n- Protects against harmful UVA/UVB rays and pollution\\r\\n- Deeply hydrates\\r\\n- Controls oil and mattifies skin\\r\\n- Water-resistant for 40 minutes\\r\\n- Doubles as a face primer\\r\\n- Free of oxybenzone & octinoxate\\r\\n- Paraben-free\\r\\n- Non-comedogenic\\r\\n- Dermatologist-tested. Ophthalmologist-tested.\\r\\n- 90% plant-derived bottle\",\r
+
+      \                    \"concernIds\": \"dryness, wrinkles, sagging, pores, spots\",\r
+
+      \                    \"size\": \"35ML\",\r
+
+      \                    \"price\": \"35USD\"\r
+
+      \                },\r
+
+      \                {\r
+
+      \                    \"brand\": \"bSHISEIDO-US\",\r
+
+      \                    \"productId\": \"0730852182127\",\r
+
+      \                    \"productCategory\": \"Face Sunscreen\",\r
+
+      \                    \"productName\": \"Urban Environment Oil-Free Sunscreen SPF 42\",\r
+
+      \                    \"productSummary\": \"Lightweight, daily oil-free sunscreen protects against harmful UV rays, hydrates skin, and doubles as a face primer.\",\r
+
+      \                    \"productDescription\": \"More than a sunscreen, the new Urban Environment Oil-Free Sunscreen SPF 42 is sun-powered skincare. Our Sun Dual Care™ Technology infused with Hyaluronic Acid, protects against harmful UV rays and pollution, and amplifies the power of sunlight to boost hydration, for soft, matte skin — 365 days a year.\",\r
+
+      \                    \"productUsage\": \"- Apply daily, as the last step in your morning skincare routine—before makeup application.\\r\\n- Shake the bottle before using, then dispense and smooth evenly and generously over face and neck, at least 15 minutes before sun exposure.\\r\\n- Wear alone or under makeup.\",\r
+
+      \                    \"productKeyIngredients\": \"- HYALURONIC ACID: Delivers, attracts, and retains moisture.\\r\\nSPIRULINA ENERGY ESSENCE: Converts sunlight to target factors that lead to dryness.\\r\\n- Protects against harmful UVA/UVB rays and pollution\\r\\n- Deeply hydrates\\r\\n- Controls oil and mattifies skin\\r\\n- Water-resistant for 40 minutes\\r\\n- Doubles as a face primer\\r\\n- Free of oxybenzone & octinoxate\\r\\n- Paraben-free\\r\\n- Non-comedogenic\\r\\n- Dermatologist-tested. Ophthalmologist-tested.\\r\\n- 90% plant-derived bottle\",\r
+
+      \                    \"concernIds\": \"dryness, wrinkles, sagging, pores, spots\",\r
+
+      \                    \"size\": \"50ML\",\r
+
+      \                    \"price\": \"50USD\"\r
+
+      \                },\r
+
+      \                {\r
+
+      \                    \"brand\": \"bSHISEIDO-US\",\r
+
+      \                    \"productId\": \"0730852172890\",\r
+
+      \                    \"productCategory\": \"Serums & Treatments\",\r
+
+      \                    \"subBrand\": \"Ultimune Eye\",\r
+
+      \                    \"productName\": \"Power Infusing Eye Concentrate\",\r
+
+      \                    \"productSummary\": \"A potent, antioxidant eye serum that visibly diminishes dark circles in one week.\",\r
+
+      \                    \"productDescription\": \"Reveal your inner strength with radiant eyes. This eye serum makes the eye area brighter, smoother, and hydrates for 24 hours. Newly infused with 10x concentrated extracts of ImuGenerationRED Technology™, Ultimune Eye strengthens skin’s defenses and supports the delivery of vital nutrients to the skin. Gentle on the delicate eye area, this non-sticky, refreshing formula supports the natural production of collagen for a more rested and youthful appearance.\",\r
+
+      \                    \"productBenefit\": \"- Boosts radiance in 3 days\\r\\n- Visibly diminishes dark circles in 1 week\\r\\n- Provides 24-hour hydration\\r\\n- Supports the natural production of collagen and visibly reduces signs of aging\\r\\n- Prevents and reduces damage caused by friction from rubbing the eye area\\r\\n- Helps promote healthy eyelashes\",\r
+
+      \                    \"productUsage\": \"- Apply morning and evening after cleansing, softening, and applying Ultimune Power Infusing Serum.\\r\\n- Pump once to dispense onto fingertips and smooth over eye area.\",\r
+
+      \                    \"productKeyIngredients\": \"- Fermented Roselle Extract: Increases skin’s capacity to hold water and is known to prevent elastin degradation for plumper, smoother, and more radiant skin.\\r\\n- Heart Leaf Extract: An Eastern ancient herb that soothes skin and strengthens its protective barrier. It is known to detoxify skin and optimize oxygenation.\\r\\n- Reishi Mushroom: Rich in antioxidants and polysaccharides, it hydrates and protects to visibly reduce signs of aging.\\r\\n- Iris Root Extract: Known to survive in extreme temperatures, this hardy plant is recognized for its vitality and moisturizing abilities.\\r\\n- Jujuba Fruit Extract & Amino Acid Derivative: Conditions eyelashes to promote their health and support their natural growth.\",\r
+
+      \                    \"concernIds\": \"wrinkles\",\r
+
+      \                    \"region\": \"eye\",\r
+
+      \                    \"size\": \"15ML\",\r
+
+      \                    \"price\": \"70USD\"\r
+
+      \                },\r
+
+      \                {\r
+
+      \                    \"brand\": \"bSHISEIDO-US\",\r
+
+      \                    \"productId\": \"0768614208570\",\r
+
+      \                    \"productCategory\": \"Eye & Lip Care\",\r
+
+      \                    \"subBrand\": \"Benefiance\",\r
+
+      \                    \"productName\": \"Wrinkle Smoothing Eye Cream\",\r
+
+      \                    \"productSummary\": \"Our best-selling anti-aging eye cream now visibly reduces wrinkles and diminishes the appearance of dark circles.\",\r
+
+      \                    \"productDescription\": \"Smooth and brighten eyes with our best-selling anti-aging eye cream. After just 7 days, 96% saw reduced wrinkles and diminished dark circles. Powerful Peptides and Squalane smooth the appearance of fine lines and reduce 6 types of eye area concerns—including crow's feet, lid creases, puffiness, and stress wrinkles between the brows. Ginseng Extract, Caffeine and a blend of Japanese botanicals help to brighten eyes and reduce dark circles.\",\r
+
+      \                    \"productBenefit\": \"- Visibly reduces wrinkles and diminishes the appearance of dark circles\\r\\n- Targets 5 types of eye area wrinkles—inner corner, under eye, crow's feet, around eye, frown lines—plus priority concerns, dark circles and eye bag puffiness\\r\\n- Provides deep hydration around the eyes\\r\\n- Velvety, rich cream texture\\r\\n- Good for all skin types\\r\\n- Dermatologist-tested. Ophthalmologist-tested.\",\r
+
+      \                    \"productUsage\": \"- Use in the morning before applying moisturizer with SPF. At night, make it the last step in your skincare routine.\\r\\n- Dot a rice grain-sized amount around the eye area, from the orbital bone to the brow bone.\\r\\n- Use your ring finger to gently massage the cream in a circle, starting under the eye and around the lid and brow bone.\",\r
+
+      \                    \"productKeyIngredients\": \"- Peptides: Boosts collagen to reduce wrinkles around the eyes.\\r\\n- Squalane: Hydrates & protects skin’s moisture barrier while smoothing fine lines.\\r\\n- NEW Ginseng Extract: Brightens eyes and reduces dark circles.\\r\\n- Vitamin E: Helps maintain skin barrier and defend against pollutants and environmental stressors.\",\r
+
+      \                    \"concernIds\": \"wrinkles\",\r
+
+      \                    \"region\": \"eye\",\r
+
+      \                    \"size\": \"15ML\",\r
+
+      \                    \"price\": \"65USD\"\r
+
+      \                },\r
+
+      \                {\r
+
+      \                    \"brand\": \"bSHISEIDO-US\",\r
+
+      \                    \"productId\": \"0730852163799\",\r
+
+      \                    \"productCategory\": \"Eye & Lip Care\",\r
+
+      \                    \"subBrand\": \"Vital Perfection\",\r
+
+      \                    \"productName\": \"Uplifting and Firming Eye Cream\",\r
+
+      \                    \"productSummary\": \"Visibly improve firmness around the eyes in 1 week with this lifting eye cream.\",\r
+
+      \                    \"productDescription\": \"Visibly improve firmness around the eyes in 1 week with this silky rich, lifting eye cream. Fight the signs of fatigue for a firmer, brighter, and revitalized eye area.\\r\\nOur exclusive MATSU-ProSculpt Complex helps to target the look of age-related puffiness in the eye area. KURENAI-TruLift Complex and ReNeura Technology++™ strengthens skin’s natural support, while visibly lifting and firming.\",\r
+
+      \                    \"productUsage\": \"5 Steps to Lift & Refresh Eyes movie: https://www.youtube.com/watch?v=HH4EnrjdoLA\",\r
+
+      \                    \"productKeyIngredients\": \"- MATSU-ProSculpt Complex with Matsu Extract helps to encourage microcirculation** to target the appearance of undereye bags and signs of fatigue.\\r\\n- KURENAI-TruLift Complex with Benibana flower strengthens and energizes the skin for a visibly lifted appearance.\\r\\n- ReNeura Technology++ features Phytoconnect, helps prolong the efficacy of the treatment.\\r\\n- VP8 Technology helps defend skin with targeted ingredients, including olive root, tea, and angelica root extracts, to visibly correct signs of aging.\",\r
+
+      \                    \"concernIds\": \"wrinkles\",\r
+
+      \                    \"region\": \"eye\",\r
+
+      \                    \"size\": \"15ML\",\r
+
+      \                    \"price\": \"85USD\"\r
+
+      \                },\r
+
+      \                {\r
+
+      \                    \"brand\": \"bSHISEIDO-US\",\r
+
+      \                    \"productId\": \"0729238179905\",\r
+
+      \                    \"productCategory\": \"Serums & Treatments\",\r
+
+      \                    \"subBrand\": \"Ultimune\",\r
+
+      \                    \"productName\": \"Power Infusing Serum\",\r
+
+      \                    \"productSummary\": \"A potent antioxidant face serum with a lightweight formula that visibly reduces signs of aging, amplifies hydration and boosts radiance in 3 days.\",\r
+
+      \                    \"productDescription\": \"The culmination of over 150 years of Japanese skincare innovation. Discover 3 visible changes in 3 days: radiance, resilience, and smoothness. Ultimune face serum is powered by collagen-supporting peptides as well as nourishing and smoothing antioxidants to strengthen skin’s protective barrier, leaving it smoother and plumper. Smooth fine lines in just 4 weeks with Ultimune Power Infusing Serum. Now available in a refill size.\",\r
+
+      \                    \"productBenefit\": \"- Boosts radiance, resilience, and smoothness\\r\\n- Reduces signs of aging\\r\\n- Improves hydration\\r\\n- Enhances the efficacy of other skincare products\\r\\n- Winner of 238 global beauty awards\\r\\n- Refill helps reduce plastic waste by up to 95% compared to a regular product\\r\\n- Dermatologist-tested. Non-comedogenic.\",\r
+
+      \                    \"productUsage\": \"- Use Ultimune after cleansing and softening skin, but before applying other serums or moisturizers.\\r\\n- Pump twice onto fingertips and smooth evenly over face and neck.\\r\\n- Use Ultimune twice daily, morning and evening.\\r\\n- FOR REFILL: Save the pump and cap from your original bottle. Insert the pump into the refill, then close cap.\",\r
+
+      \                    \"productKeyIngredients\": \"- FERMENTED ROSELLE EXTRACT: Increases skin’s capacity to hold water and is known to support elastin for plumper, smoother, and more radiant skin.\\r\\n- HEARTLEAF EXTRACT: An Eastern ancient herb that helps to soothe skin and helps strengthen its protective barrier. It is known to optimize oxygenation for skin resilience.\\r\\n- REISHI MUSHROOM: Rich in antioxidants and polysaccharides, it hydrates skin to visibly reduce signs of aging.\\r\\n- IRIS ROOT EXTRACT: Known to survive in extreme temperatures, this hardy plant is recognized for its vitality and moisturizing abilities.\\r\\n- HYDROXYPROLINE: A collagen-supporting peptide known to reduce visible lines and wrinkles.\",\r
+
+      \                    \"concernIds\": \"dryness, wrinkles, sagging, pores, spots\",\r
+
+      \                    \"size\": \"120ML\",\r
+
+      \                    \"price\": \"200USD\"\r
+
+      \                },\r
+
+      \                {\r
+
+      \                    \"brand\": \"bSHISEIDO-US\",\r
+
+      \                    \"productId\": \"0729238196476\",\r
+
+      \                    \"productCategory\": \"Softeners\",\r
+
+      \                    \"productName\": \"Eudermine Activating Essence\",\r
+
+      \                    \"productSummary\": \"Shiseido’s first skincare innovation, Eudermine Activating Essence infuses skin with two types of Hyaluronic Acid for 24 hours of deep hydration, while targeting dark spots with Vitamin C. In just 4 weeks, pores, blemishes, and dullness become less visible.\",\r
+
+      \                    \"productDescription\": \"Created in 1897 and rooted in Japanese Beauty rituals, Eudermine was a favorite of geishas who used it to protect skin under heavy makeup. With a double dose of Hyaluronic Acid, the ultra-hydrating formula drenches skin in moisture, and Vitamin C brightens and evens complexion. The lightweight texture revitalizes, nourishes, and softens skin—an essential step in any Japanese Beauty skincare routine.\",\r
+
+      \                    \"productBenefit\": \"- Infuses skin with two types of Hyaluronic Acid to stay moisturized for 24 hours.\\r\\n- Targets dark spots and brightens skin with Vitamin C.\\r\\n- Promotes skin's turnover cycle while strengthening the barrier function with exclusive prebiotic Fermented Kefir Extract.\\r\\n- Recharges moisture with Yuzu Extract.\\r\\n- Revolutionary packaging combines the bottle forming and filling process into one step, helping reduce CO2 and refill system helps reduce plastic by 92%.\",\r
+
+      \                    \"productUsage\": \"- Apply daily, in the morning and evening after cleansing.\\r\\n- Apply with Shiseido’s 100% natural Japanese Facial Cotton for additional exfoliation and absorption allowing for maximum benefits.\\r\\n- Saturate Shiseido Facial Cotton with a quarter-sized amount of essence.\\r\\n- Smooth gently over skin. For an even more effective application, tap gently into skin with your fingers to increase activation.\\r\\n- For Refill: To refill, remove cap. Remove ring part from reusable outer bottle. Then pull up the ring from the used inner bottle. Keeping ring level, push it down onto new refill bottle until it clicks in place. Insert refill into the outer container. Remove the refill cap and replace with outer bottle cap.\",\r
+
+      \                    \"productKeyIngredients\": \"- Two types of Hyaluronic Acid: Infuses skin with moisture for 24 hours, while supporting moisture retention and protecting skin.\\r\\n- Vitamin C: A potent and stable form of the vitamin, Ethyl Ascorbic Acid, boosts radiance for a bright, even-toned complexion.\\r\\n- Fermented Kefir Extract: This exclusive prebiotic promotes skin's turnover cycle while strengthening the barrier function.\\r\\n- Yuzu Extract: Recharges skin’s moisture.\",\r
+
+      \                    \"concernIds\": \"dryness, wrinkles, sagging, pores, spots\",\r
+
+      \                    \"size\": \"145ML\",\r
+
+      \                    \"price\": \"90USD\"\r
+
+      \                },\r
+
+      \                {\r
+
+      \                    \"brand\": \"bSHISEIDO-US\",\r
+
+      \                    \"productId\": \"0730852139206\",\r
+
+      \                    \"productCategory\": \"Moisturizers & Creams\",\r
+
+      \                    \"subBrand\": \"Future Solution LX\",\r
+
+      \                    \"productName\": \"Total Protective Cream SPF 20\",\r
+
+      \                    \"productSummary\": \"Experience advanced hydration and sun protection. Features Enmei Herb Extract, our exclusive youth-prolonging ingredient to address all signs of aging.\",\r
+
+      \                    \"size\": \"50ML\",\r
+
+      \                    \"price\": \"270USD\"\r
+
+      \                },\r
+
+      \                {\r
+
+      \                    \"brand\": \"bSHISEIDO-US\",\r
+
+      \                    \"productId\": \"0729238139213\",\r
+
+      \                    \"productCategory\": \"Moisturizers & Creams\",\r
+
+      \                    \"subBrand\": \"Future Solution LX\",\r
+
+      \                    \"productName\": \"Total Regenerating Cream\",\r
+
+      \                    \"productSummary\": \"Wake up to more supple, firm skin with this luxurious anti-aging night face cream. Features Enmei Herb Extract, our exclusive youth-prolonging ingredient.\",\r
+
+      \                    \"size\": \"50ML\",\r
+
+      \                    \"price\": \"290USD\"\r
+
+      \                },\r
+
+      \                {\r
+
+      \                    \"brand\": \"bSHISEIDO-US\",\r
+
+      \                    \"productId\": \"0729238164994\",\r
+
+      \                    \"productCategory\": \"Moisturizers & Creams\",\r
+
+      \                    \"subBrand\": \"Future Solution LX\",\r
+
+      \                    \"productName\": \"Legendary Enmei Ultimate Renewing Cream\",\r
+
+      \                    \"productSummary\": \"A luxurious face cream that reveals supple and rejuvenated skin in just 1 week.\",\r
+
+      \                    \"size\": \"50ML\",\r
+
+      \                    \"price\": \"545USD\"\r
+
+      \                },\r
+
+      \                {\r
+
+      \                    \"brand\": \"bSHISEIDO-US\",\r
+
+      \                    \"productId\": \"0730852139169\",\r
+
+      \                    \"productCategory\": \"Softeners\",\r
+
+      \                    \"subBrand\": \"Future Solution LX\",\r
+
+      \                    \"productName\": \"Concentrated Balancing Softener\",\r
+
+      \                    \"productSummary\": \"A daily softener for instant moisture and skin-brightening benefits. Features Enmei Herb Extract, our exclusive youth-prolonging ingredient.\",\r
+
+      \                    \"size\": \"170ML\",\r
+
+      \                    \"price\": \"110USD\"\r
+
+      \                },\r
+
+      \                {\r
+
+      \                    \"brand\": \"bSHISEIDO-US\",\r
+
+      \                    \"productId\": \"0729238139237\",\r
+
+      \                    \"productCategory\": \"Serums & Treatments\",\r
+
+      \                    \"subBrand\": \"Future Solution LX\",\r
+
+      \                    \"productName\": \"Intensive Firming Contour Serum\",\r
+
+      \                    \"productSummary\": \"A luxurious anti-aging serum with instant firming benefits for face and neck. Features Enmei Herb Extract, our exclusive youth-prolonging ingredient.\",\r
+
+      \                    \"size\": \"50ML\",\r
+
+      \                    \"price\": \"310USD\"\r
+
+      \                },\r
+
+      \                {\r
+
+      \                    \"brand\": \"bSHISEIDO-US\",\r
+
+      \                    \"productId\": \"0730852181205\",\r
+
+      \                    \"productCategory\": \"Makeup\",\r
+
+      \                    \"subBrand\": \"Future Solution LX\",\r
+
+      \                    \"productName\": \"Infinite Treatment Primer SPF 30\",\r
+
+      \                    \"productSummary\": \"A dual-purpose primer with skincare and makeup benefits that hydrates for 8 hours and corrects uneven skin tone to help achieve a radiant even complexion.\",\r
+
+      \                    \"size\": \"40ML\",\r
+
+      \                    \"price\": \"65USD\"\r
+
+      \                },\r
+
+      \                {\r
+
+      \                    \"brand\": \"bSHISEIDO-US\",\r
+
+      \                    \"productId\": \"0729238159501\",\r
+
+      \                    \"productCategory\": \"Serums & Treatments\",\r
+
+      \                    \"subBrand\": \"Future Solution LX\",\r
+
+      \                    \"productName\": \"Legendary Enmei Ultimate Luminance Serum\",\r
+
+      \                    \"productSummary\": \"A luxurious face serum that visibly improves skin.\",\r
+
+      \                    \"size\": \"30ML\",\r
+
+      \                    \"price\": \"430USD\"\r
+
+      \                },\r
+
+      \                {\r
+
+      \                    \"brand\": \"bSHISEIDO-US\",\r
+
+      \                    \"productId\": \"0730852139220\",\r
+
+      \                    \"productCategory\": \"Eye & Lip Care\",\r
+
+      \                    \"subBrand\": \"Future Solution LX\",\r
+
+      \                    \"productName\": \"Eye and Lip Contour Regenerating Cream\",\r
+
+      \                    \"productSummary\": \"A complete solution to address all signs of aging around the eyes and lips. Features Enmei Herb Extract, our exclusive youth-prolonging ingredient.\",\r
+
+      \                    \"size\": \"17ML\",\r
+
+      \                    \"price\": \"155USD\"\r
+
+      \                },\r
+
+      \                {\r
+
+      \                    \"brand\": \"bSHISEIDO-US\",\r
+
+      \                    \"productId\": \"0729238208490\",\r
+
+      \                    \"productCategory\": \"Eye & Lip Care\",\r
+
+      \                    \"subBrand\": \"Future Solution LX\",\r
+
+      \                    \"productName\": \"Legendary Enmei Ultimate Brilliance Eye Cream\",\r
+
+      \                    \"productSummary\": \"Luxurious eye cream targets dullness, dark circles, sagging, wrinkles, and muscle tension.\",\r
+
+      \                    \"size\": \"15ML\",\r
+
+      \                    \"price\": \"330USD\"\r
+
+      \                }\r
+
+      \            ],\r
+
+      \            \"Lifestyle\": [\r
+
+      \                \"sunburn\",\r
+
+      \                \"hormons\",\r
+
+      \                \"sleep\",\r
+
+      \                \"nutrition\"\r
+
+      \            ]\r
+
+      \        },\r
+
+      \        \"functions\": {\r
+
+      \            \"stringify\": {\r
+
+      \                \"arguments\": \"d\",\r
+
+      \                \"body\": \"return JSON.stringify(d);\"\r
+
+      \            }\r
+
+      \        },\r
+
+      \        \"prompts\": [\r
+
+      \            {\r
+
+      \                \"scenario\": \"init\",\r
+
+      \                \"prompt\": \"{{stringify(analysis)}}\",\r
+
+      \                \"outputVar\": {\r
+
+      \                    \"name\": \"result\",\r
+
+      \                    \"type\": \"string\"\r
+
+      \                },\r
+
+      \                \"nMessages\": 1,\r
+
+      \                \"order\": 2,\r
+
+      \                \"intent\": \"\",\r
+
+      \                \"event\": \"onWelcome\",\r
+
+      \                \"skipLLM\": true,\r
+
+      \                \"nextScenario\": \"\"\r
+
+      \            }\r
+
+      \        ],\r
+
+      \        \"intents\": [],\r
+
+      \        \"msbf\": {\r
+
+      \            \"appId\": \"admin@mail.com\"\r
+
+      \        },\r
+
+      \        \"limitMessages\": 4,\r
+
+      \        \"id\": \"674edf631d24c34c5e07e4d4\"\r
+
+      \    }"
+  auth:
+    type: bearer
+    token: "{{acces_token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

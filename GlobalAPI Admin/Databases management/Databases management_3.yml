@@ -1,0 +1,28 @@
+info:
+  name: Databases management_3
+  type: http
+  seq: 4
+
+http:
+  method: POST
+  url: "{{url}}/api/databases"
+  body:
+    type: json
+    data: "{\r
+
+      \        \"name\": \"Shiseido_JP_BD\",\r
+
+      \        \"dbtype\": \"Mongodb\",\r
+
+      \        \"connection\": \"mongodb://userAdmin:secret@mongodb:27017/?authSource=admin&retrywrites=false&maxIdleTimeMS=120000/Shiseido_JP_BD\"\r
+
+      }"
+  auth:
+    type: bearer
+    token: "{{acces_token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

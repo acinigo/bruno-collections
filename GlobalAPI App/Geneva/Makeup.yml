@@ -1,0 +1,38 @@
+info:
+  name: Makeup
+  type: http
+  seq: 4
+
+http:
+  method: POST
+  url: "{{url}}/api/geneva/makeup"
+  headers:
+    - name: forceCalculation
+      value: "true"
+      disabled: true
+  body:
+    type: multipart-form
+    data:
+      - name: img1
+        type: file
+        value:
+          - /C:/Users/Milucho/Desktop/FOTOS/GENEVA test/photo (42).png
+      - name: img2
+        type: file
+        value:
+          - /C:/Users/Milucho/Desktop/FOTOS/GENEVA test/MicrosoftTeams-image.png
+      - name: model
+        type: text
+        value: test_model
+      - name: alpha
+        type: text
+        value: "0.9"
+  auth:
+    type: bearer
+    token: "{{acces_token_app}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

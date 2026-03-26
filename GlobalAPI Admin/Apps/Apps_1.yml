@@ -1,0 +1,28 @@
+info:
+  name: Apps_1
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{url}}/api/apps"
+  body:
+    type: json
+    data: "{\r
+
+      \  \"appId\": \"testbelenjulyscopes\",\r
+
+      \  \"name\": \"testbelenjulyscopes\",\r
+
+      \  \"tenantId\": \"37812d88-f7c4-409c-b3c6-b83d11e8ec73\"\r
+
+      }"
+  auth:
+    type: bearer
+    token: "{{acces_token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

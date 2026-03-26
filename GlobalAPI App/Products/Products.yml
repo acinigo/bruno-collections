@@ -1,0 +1,26 @@
+info:
+  name: Products
+  type: http
+  seq: 3
+
+http:
+  method: GET
+  url: "{{url}}/api/products"
+  headers:
+    - name: filter
+      value: code='4514254959978'
+      disabled: true
+    - name: tenantId
+      value: "{{tenantId}}"
+  body:
+    type: json
+    data: ""
+  auth:
+    type: bearer
+    token: "{{acces_token_app}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

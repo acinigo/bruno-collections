@@ -1,0 +1,60 @@
+info:
+  name: Tenants_2
+  type: http
+  seq: 3
+
+http:
+  method: PATCH
+  url: "{{url}}/api/tenants/ebba5261-bca7-484f-a21d-380d74184381"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"customAnalytics\": {\r
+
+      \        \"groups\": [\r
+
+      \            \"params.storeCode\"\r
+
+      \        ],\r
+
+      \        \"accumulators\": [\r
+
+      \            {\r
+
+      \                \"field\": \"status\",\r
+
+      \                \"type\": \"object\"\r
+
+      \            },\r
+
+      \            {\r
+
+      \                \"field\": \"analysis\",\r
+
+      \                \"type\": \"count\"\r
+
+      \            },\r
+
+      \            {\r
+
+      \                \"field\": \"channelName\",\r
+
+      \                \"type\": \"object\"\r
+
+      \            }\r
+
+      \        ]\r
+
+      \    }\r
+
+      }"
+  auth:
+    type: bearer
+    token: "{{acces_token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,46 @@
+info:
+  name: Analysis
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{url}}/api/analysis"
+  headers:
+    - name: forceCalculation
+      value: "true"
+      disabled: true
+  body:
+    type: multipart-form
+    data:
+      - name: user
+        type: text
+        value: Test2
+      - name: channel
+        type: text
+        value: Postman
+      - name: file
+        type: file
+        value:
+          - /C:/Users/raul2/Documents/image.png
+        disabled: true
+      - name: forceCalculation
+        type: text
+        value: "true"
+        disabled: true
+      - name: storeImage
+        type: text
+        value: "false"
+      - name: imageInfo
+        type: text
+        value: '{"deviceOrientation":{"alpha":1,"beta":2,"gamma":3},"faceAngles":{"yaw":10,"pitch":20,"roll":30}}'
+        disabled: true
+  auth:
+    type: bearer
+    token: "{{acces_token_app}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,30 @@
+info:
+  name: Databases management_1
+  type: http
+  seq: 2
+
+http:
+  method: PUT
+  url: "{{url}}/api/databases/63e3dfc8bff5cfe9ab3a411c"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"name\": \"BS_VISUALIZER_DB\",\r
+
+      \    \"dbtype\": \"Mongodb\",\r
+
+      \    \"connection\": \"mongodb://useradmin:losMiercolesTocantortitas@mongodb-service:27017/?authSource=admin&&retrywrites=false&maxIdleTimeMS=120000/BS_JP\",\r
+
+      \    \"id\": \"63e3dfc8bff5cfe9ab3a411c\"\r
+
+      }"
+  auth:
+    type: bearer
+    token: "{{acces_token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

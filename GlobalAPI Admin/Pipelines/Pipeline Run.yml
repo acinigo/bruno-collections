@@ -1,0 +1,20 @@
+info:
+  name: Pipeline Run
+  type: http
+  seq: 4
+
+http:
+  method: GET
+  url: "{{url}}/api/pipelines-runs/6903da70b2765bc5908d7426"
+  headers:
+    - name: tenantId
+      value: 1c9491f6-fd46-44eb-a4da-b70f09eee8b5
+  auth:
+    type: bearer
+    token: "{{acces_token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

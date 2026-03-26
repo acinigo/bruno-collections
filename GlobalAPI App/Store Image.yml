@@ -1,0 +1,17 @@
+info:
+  name: Store Image
+  type: http
+  seq: 10
+
+http:
+  method: GET
+  url: "{{url}}/api/storage/image/test_face/test.jpg"
+  auth:
+    type: bearer
+    token: "{{acces_token_app}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

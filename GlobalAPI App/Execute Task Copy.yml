@@ -1,0 +1,24 @@
+info:
+  name: Execute Task Copy
+  type: http
+  seq: 9
+
+http:
+  method: POST
+  url: http://localhost:6000/api/planner/1c9491f6-fd46-44eb-a4da-b70f09eee8b5/executetask
+  headers:
+    - name: tenants
+      value: f981c55e-d765-44d2-a1ed-417d96ecc960
+      disabled: true
+    - name: collections
+      value: ""
+      disabled: true
+  auth:
+    type: bearer
+    token: "{{acces_token_app}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

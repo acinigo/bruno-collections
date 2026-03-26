@@ -1,0 +1,840 @@
+info:
+  name: Question_2
+  type: http
+  seq: 5
+
+http:
+  method: DELETE
+  url: "{{url}}/api/questions/6603dd9f050d963fcd9539a1"
+  headers:
+    - name: tenantId
+      value: 6c10c3ff-1ad2-4904-bc0b-a8edd54f6470
+      disabled: true
+  body:
+    type: json
+    data: "    {\r
+
+      \        \"datatype\": \"string\",\r
+
+      \        \"maxChoices\": 3,\r
+
+      \        \"minChoices\": 1,\r
+
+      \        \"icon\": \"\",\r
+
+      \        \"type\": \"options\",\r
+
+      \        \"choices\": [\r
+
+      \            {\r
+
+      \                \"checked\": false,\r
+
+      \                \"icon\": \"DarkSpots\",\r
+
+      \                \"text\": {\r
+
+      \                    \"en\": \"Dark spots\",\r
+
+      \                    \"en_us\": \"Dark spots\",\r
+
+      \                    \"en_gb\": \"Dark spots\",\r
+
+      \                    \"en_ca\": \"Dark spots\",\r
+
+      \                    \"en_au\": \"Dark spots\",\r
+
+      \                    \"en_ph\": \"Dark spots\",\r
+
+      \                    \"en_my\": \"Dark spots\",\r
+
+      \                    \"en_sg\": \"Dark spots\",\r
+
+      \                    \"ja_jp\": \"シミ\",\r
+
+      \                    \"zh_cn\": \"色斑\",\r
+
+      \                    \"zh_hk\": \"色斑\",\r
+
+      \                    \"zh_tw\": \"黑斑\",\r
+
+      \                    \"ko_kr\": \"기미\",\r
+
+      \                    \"es_es\": \"Manchas\",\r
+
+      \                    \"vi_vn\": \"Tàn nhang\",\r
+
+      \                    \"fr_fr\": \"Taches\",\r
+
+      \                    \"fr_ca\": \"Taches\",\r
+
+      \                    \"it_it\": \"Macchie scure\",\r
+
+      \                    \"pt_pt\": \"Dark spots\",\r
+
+      \                    \"pt_br\": \"Manchas\",\r
+
+      \                    \"de_de\": \"Pigmentflecken\",\r
+
+      \                    \"nl_nl\": \"Dark spots\",\r
+
+      \                    \"ru_ru\": \"Пигментные пятна\",\r
+
+      \                    \"el_gr\": \"Dark spots\",\r
+
+      \                    \"th_th\": \" รอยด่างดำ\",\r
+
+      \                    \"ms_my\": \"Noda\",\r
+
+      \                    \"ar_sa\": \" البقع\",\r
+
+      \                    \"ar_ae\": \" البقع\",\r
+
+      \                    \"mn_mn\": \"Хар толбо\",\r
+
+      \                    \"si_lk\": \"අඳුරු පැල්ලම්\",\r
+
+      \                    \"id_id\": \"Titik gelap\",\r
+
+      \                    \"my_mm\": \"အမဲစက်များ\"\r
+
+      \                },\r
+
+      \                \"value\": \"DarkSpots\"\r
+
+      \            },\r
+
+      \            {\r
+
+      \                \"checked\": false,\r
+
+      \                \"icon\": \"UnevenSkinTone\",\r
+
+      \                \"text\": {\r
+
+      \                    \"en\": \"Uneven skin tone\",\r
+
+      \                    \"en_us\": \"Uneven skin tone\",\r
+
+      \                    \"en_gb\": \"Uneven skin tone\",\r
+
+      \                    \"en_ca\": \"Uneven skin tone\",\r
+
+      \                    \"en_au\": \"Uneven skin tone\",\r
+
+      \                    \"en_ph\": \"Uneven skin tone\",\r
+
+      \                    \"en_my\": \"Uneven skin tone\",\r
+
+      \                    \"en_sg\": \"Uneven skin tone\",\r
+
+      \                    \"ja_jp\": \"肌の色むら\",\r
+
+      \                    \"zh_cn\": \"肤色不均\",\r
+
+      \                    \"zh_hk\": \"膚色不均\",\r
+
+      \                    \"zh_tw\": \"膚色不均\",\r
+
+      \                    \"ko_kr\": \"고르지 않은 피부 톤\",\r
+
+      \                    \"es_es\": \"Tono desigual de la piel\",\r
+
+      \                    \"vi_vn\": \"Da không đều màu\",\r
+
+      \                    \"fr_fr\": \"Teint irrégulier\",\r
+
+      \                    \"fr_ca\": \"Teint inégal\",\r
+
+      \                    \"it_it\": \"Colorito non uniforme della pelle\",\r
+
+      \                    \"pt_pt\": \"Uneven skin tone\",\r
+
+      \                    \"pt_br\": \"Tons irregulares da pele\",\r
+
+      \                    \"de_de\": \"Ungleichmäßiger Hautton\",\r
+
+      \                    \"nl_nl\": \"Uneven skin tone\",\r
+
+      \                    \"ru_ru\": \"Неровный тон кожи\",\r
+
+      \                    \"el_gr\": \"Uneven skin tone\",\r
+
+      \                    \"th_th\": \"สีผิวไม่สม่ำเสมอ\",\r
+
+      \                    \"ms_my\": \"Tona kulit tidak sekata\",\r
+
+      \                    \"ar_sa\": \" تفاوت لون البشرة\",\r
+
+      \                    \"ar_ae\": \" تفاوت لون البشرة\",\r
+
+      \                    \"mn_mn\": \"Арьсны жигд бус өнгө\",\r
+
+      \                    \"si_lk\": \"අසමාන සමේ වර්ණය\",\r
+
+      \                    \"id_id\": \"Warna kulit tidak merata\",\r
+
+      \                    \"my_mm\": \"အသားအရောင် မညီညာခြင်း။\"\r
+
+      \                },\r
+
+      \                \"value\": \"UnevenSkinTone\"\r
+
+      \            },\r
+
+      \            {\r
+
+      \                \"checked\": false,\r
+
+      \                \"icon\": \"Sagging\",\r
+
+      \                \"text\": {\r
+
+      \                    \"en\": \"Sagging\",\r
+
+      \                    \"en_us\": \"Sagging\",\r
+
+      \                    \"en_gb\": \"Slackness/sagging\",\r
+
+      \                    \"en_ca\": \"Sagging\",\r
+
+      \                    \"en_au\": \"Sagging\",\r
+
+      \                    \"en_ph\": \"Sagging\",\r
+
+      \                    \"en_my\": \"Sagging\",\r
+
+      \                    \"en_sg\": \"Sagging\",\r
+
+      \                    \"ja_jp\": \"たるみ\",\r
+
+      \                    \"zh_cn\": \"松弛\",\r
+
+      \                    \"zh_hk\": \"鬆弛\",\r
+
+      \                    \"zh_tw\": \"鬆弛\",\r
+
+      \                    \"ko_kr\": \"탄력 저하\",\r
+
+      \                    \"es_es\": \"Flacidez\",\r
+
+      \                    \"vi_vn\": \"Chảy xệ\",\r
+
+      \                    \"fr_fr\": \"Relâchement\",\r
+
+      \                    \"fr_ca\": \"Affaissement\",\r
+
+      \                    \"it_it\": \"Rilassamento cutaneo\",\r
+
+      \                    \"pt_pt\": \"Sagging\",\r
+
+      \                    \"pt_br\": \"Flacidez\",\r
+
+      \                    \"de_de\": \"Schlaffe Haut\",\r
+
+      \                    \"nl_nl\": \"Sagging\",\r
+
+      \                    \"ru_ru\": \"Дряблость\",\r
+
+      \                    \"el_gr\": \"Sagging\",\r
+
+      \                    \"th_th\": \"หย่อนคล้อย\",\r
+
+      \                    \"ms_my\": \"Kekenduran\",\r
+
+      \                    \"ar_sa\": \" الترهل\",\r
+
+      \                    \"ar_ae\": \" الترهل\",\r
+
+      \                    \"mn_mn\": \"Унжсан\",\r
+
+      \                    \"si_lk\": \"එල්ලා වැටීම\",\r
+
+      \                    \"id_id\": \"Menurun\",\r
+
+      \                    \"my_mm\": \"လျော့ရဲခြင်း။\"\r
+
+      \                },\r
+
+      \                \"value\": \"Sagging\"\r
+
+      \            },\r
+
+      \            {\r
+
+      \                \"checked\": false,\r
+
+      \                \"icon\": \"Wrinkles\",\r
+
+      \                \"text\": {\r
+
+      \                    \"en\": \"Wrinkles\",\r
+
+      \                    \"en_us\": \"Wrinkles\",\r
+
+      \                    \"en_gb\": \"Wrinkles\",\r
+
+      \                    \"en_ca\": \"Wrinkles\",\r
+
+      \                    \"en_au\": \"Wrinkles\",\r
+
+      \                    \"en_ph\": \"Wrinkles\",\r
+
+      \                    \"en_my\": \"Wrinkles\",\r
+
+      \                    \"en_sg\": \"Wrinkles\",\r
+
+      \                    \"ja_jp\": \"シワ\",\r
+
+      \                    \"zh_cn\": \"皱纹\",\r
+
+      \                    \"zh_hk\": \"皺紋\",\r
+
+      \                    \"zh_tw\": \"皺紋\",\r
+
+      \                    \"ko_kr\": \"주름\",\r
+
+      \                    \"es_es\": \"Arrugas\",\r
+
+      \                    \"vi_vn\": \"Nếp nhăn\",\r
+
+      \                    \"fr_fr\": \"Rides\",\r
+
+      \                    \"fr_ca\": \"Rides\",\r
+
+      \                    \"it_it\": \"Rughe\",\r
+
+      \                    \"pt_pt\": \"Wrinkles\",\r
+
+      \                    \"pt_br\": \"Rugas\",\r
+
+      \                    \"de_de\": \"Falten und feine Linien\",\r
+
+      \                    \"nl_nl\": \"Wrinkles\",\r
+
+      \                    \"ru_ru\": \"Морщины\",\r
+
+      \                    \"el_gr\": \"Wrinkles\",\r
+
+      \                    \"th_th\": \"ริ้วรอย\",\r
+
+      \                    \"ms_my\": \"Kedutan\",\r
+
+      \                    \"ar_sa\": \" التجاعيد\",\r
+
+      \                    \"ar_ae\": \" التجاعيد\",\r
+
+      \                    \"mn_mn\": \"Үрчлээ\",\r
+
+      \                    \"si_lk\": \"රැලි\",\r
+
+      \                    \"id_id\": \"Kerutan\",\r
+
+      \                    \"my_mm\": \"အရေးအကြောင်းများ\"\r
+
+      \                },\r
+
+      \                \"value\": \"Wrinkles\"\r
+
+      \            },\r
+
+      \            {\r
+
+      \                \"checked\": false,\r
+
+      \                \"icon\": \"PoreDilation\",\r
+
+      \                \"text\": {\r
+
+      \                    \"en\": \"Enlarged Pores\",\r
+
+      \                    \"en_us\": \"Enlarged Pores\",\r
+
+      \                    \"en_gb\": \"Enlarged Pores\",\r
+
+      \                    \"en_ca\": \"Enlarged Pores\",\r
+
+      \                    \"en_au\": \"Enlarged Pores\",\r
+
+      \                    \"en_ph\": \"Enlarged Pores\",\r
+
+      \                    \"en_my\": \"Enlarged Pores\",\r
+
+      \                    \"en_sg\": \"Enlarged Pores\",\r
+
+      \                    \"ja_jp\": \"毛穴\",\r
+
+      \                    \"zh_cn\": \"毛孔\",\r
+
+      \                    \"zh_hk\": \"毛孔\",\r
+
+      \                    \"zh_tw\": \"毛孔\",\r
+
+      \                    \"ko_kr\": \"모공\",\r
+
+      \                    \"es_es\": \"Poros\",\r
+
+      \                    \"vi_vn\": \"Lỗ chân lông\",\r
+
+      \                    \"fr_fr\": \"Pores\",\r
+
+      \                    \"fr_ca\": \"Pores\",\r
+
+      \                    \"it_it\": \"Pori visibili\",\r
+
+      \                    \"pt_pt\": \"Pores\",\r
+
+      \                    \"pt_br\": \"Poros\",\r
+
+      \                    \"de_de\": \"Poren\",\r
+
+      \                    \"nl_nl\": \"Pores\",\r
+
+      \                    \"ru_ru\": \"Поры\",\r
+
+      \                    \"el_gr\": \"Pores\",\r
+
+      \                    \"th_th\": \"รูขุมขน\",\r
+
+      \                    \"ms_my\": \"Liang pori\",\r
+
+      \                    \"ar_sa\": \" المسامات\",\r
+
+      \                    \"ar_ae\": \" المسامات\",\r
+
+      \                    \"mn_mn\": \"Томорсон нүх сүв\",\r
+
+      \                    \"si_lk\": \"විශාල කරන ලද සිදුරු\",\r
+
+      \                    \"id_id\": \"Pori-pori Membesar\",\r
+
+      \                    \"my_mm\": \"ချွေးပေါက်ကျယ်ခြင်း။\"\r
+
+      \                },\r
+
+      \                \"value\": \"PoreDilation\"\r
+
+      \            },\r
+
+      \            {\r
+
+      \                \"checked\": false,\r
+
+      \                \"icon\": \"Rough\",\r
+
+      \                \"text\": {\r
+
+      \                    \"en\": \"Roughness\",\r
+
+      \                    \"en_us\": \"Roughness\",\r
+
+      \                    \"en_gb\": \"Roughness\",\r
+
+      \                    \"en_ca\": \"Roughness\",\r
+
+      \                    \"en_au\": \"Roughness\",\r
+
+      \                    \"en_ph\": \"Roughness\",\r
+
+      \                    \"en_my\": \"Roughness\",\r
+
+      \                    \"en_sg\": \"Roughness\",\r
+
+      \                    \"ja_jp\": \"肌荒れ\",\r
+
+      \                    \"zh_cn\": \"肌肤粗糙\",\r
+
+      \                    \"zh_hk\": \"肌膚粗糙\",\r
+
+      \                    \"zh_tw\": \"肌膚粗糙\",\r
+
+      \                    \"ko_kr\": \"거친 피부 결\",\r
+
+      \                    \"es_es\": \"Piel áspera\",\r
+
+      \                    \"vi_vn\": \"Da sần sùi và yếu\",\r
+
+      \                    \"fr_fr\": \"Peau rugueuse et irritée\",\r
+
+      \                    \"fr_ca\": \"Peau rugueuse\",\r
+
+      \                    \"it_it\": \"Pelle ruvida\",\r
+
+      \                    \"pt_pt\": \"Rough skin\",\r
+
+      \                    \"pt_br\": \"Pele áspera\",\r
+
+      \                    \"de_de\": \"Raue Haut\",\r
+
+      \                    \"nl_nl\": \"Rough skin\",\r
+
+      \                    \"ru_ru\": \"Акне, воспаления и т. д.\",\r
+
+      \                    \"el_gr\": \"Rough skin\",\r
+
+      \                    \"th_th\": \"ผิวหยาบกร้าน\",\r
+
+      \                    \"ms_my\": \"Kulit kasar\",\r
+
+      \                    \"ar_sa\": \" خشونة البشرة\",\r
+
+      \                    \"ar_ae\": \" خشونة البشرة\",\r
+
+      \                    \"mn_mn\": \"Барзгар байдал\",\r
+
+      \                    \"si_lk\": \"රළුබව\",\r
+
+      \                    \"id_id\": \"Kekasaran\",\r
+
+      \                    \"my_mm\": \"ကြမ်းတမ်းခြင်း။\"\r
+
+      \                },\r
+
+      \                \"value\": \"Rough\"\r
+
+      \            },\r
+
+      \            {\r
+
+      \                \"checked\": false,\r
+
+      \                \"icon\": \"Dehydration\",\r
+
+      \                \"text\": {\r
+
+      \                    \"en\": \"Dryness\",\r
+
+      \                    \"en_us\": \"Dryness\",\r
+
+      \                    \"en_gb\": \"Dryness\",\r
+
+      \                    \"en_ca\": \"Dryness\",\r
+
+      \                    \"en_au\": \"Dryness\",\r
+
+      \                    \"en_ph\": \"Dryness\",\r
+
+      \                    \"en_my\": \"Dryness\",\r
+
+      \                    \"en_sg\": \"Dryness\",\r
+
+      \                    \"ja_jp\": \"乾燥\",\r
+
+      \                    \"zh_cn\": \"干燥\",\r
+
+      \                    \"zh_hk\": \"乾燥\",\r
+
+      \                    \"zh_tw\": \"乾燥\",\r
+
+      \                    \"ko_kr\": \"건조함\",\r
+
+      \                    \"es_es\": \"Sequedad\",\r
+
+      \                    \"vi_vn\": \"Da khô\",\r
+
+      \                    \"fr_fr\": \"Sécheresse\",\r
+
+      \                    \"fr_ca\": \"Peau sèche\",\r
+
+      \                    \"it_it\": \"Pelle secca\",\r
+
+      \                    \"pt_pt\": \"Dryness\",\r
+
+      \                    \"pt_br\": \"Pele seca\",\r
+
+      \                    \"de_de\": \"Trockene Haut\",\r
+
+      \                    \"nl_nl\": \"Dryness\",\r
+
+      \                    \"ru_ru\": \"Сухость\",\r
+
+      \                    \"el_gr\": \"Dryness\",\r
+
+      \                    \"th_th\": \"ผิวแห้ง\",\r
+
+      \                    \"ms_my\": \"Kekeringan\",\r
+
+      \                    \"ar_sa\": \" الجفاف\",\r
+
+      \                    \"ar_ae\": \" الجفاف\",\r
+
+      \                    \"mn_mn\": \"Хуурайшилт\",\r
+
+      \                    \"si_lk\": \"වියළි බව\",\r
+
+      \                    \"id_id\": \"Kekeringan\",\r
+
+      \                    \"my_mm\": \"ခြောက်သွေ့ခြင်း။\"\r
+
+      \                },\r
+
+      \                \"value\": \"Dehydration\"\r
+
+      \            },\r
+
+      \            {\r
+
+      \                \"checked\": false,\r
+
+      \                \"icon\": \"VisiblePores\",\r
+
+      \                \"text\": {\r
+
+      \                    \"en\": \"Visible Pores\",\r
+
+      \                    \"en_us\": \"Visible Pores\",\r
+
+      \                    \"en_gb\": \"Visible Pores\",\r
+
+      \                    \"en_ca\": \"Visible Pores\",\r
+
+      \                    \"en_au\": \"Visible Pores\",\r
+
+      \                    \"en_ph\": \"Visible Pores\",\r
+
+      \                    \"en_my\": \"Visible Pores\",\r
+
+      \                    \"en_sg\": \"Visible Pores\",\r
+
+      \                    \"ja_jp\": \"毛穴の目立ち\",\r
+
+      \                    \"zh_cn\": \"毛孔粗大\",\r
+
+      \                    \"zh_hk\": \"毛孔粗大\",\r
+
+      \                    \"zh_tw\": \"毛孔粗大\",\r
+
+      \                    \"ko_kr\": \"눈에 띄는 모공\",\r
+
+      \                    \"es_es\": \"Poros visibles\",\r
+
+      \                    \"vi_vn\": \"Lỗ chân lông to\",\r
+
+      \                    \"fr_fr\": \"Pores apparents\",\r
+
+      \                    \"fr_ca\": \"Pores apparents\",\r
+
+      \                    \"it_it\": \"Pori molto evidenti\",\r
+
+      \                    \"pt_pt\": \"Conspicuous pores\",\r
+
+      \                    \"pt_br\": \"Poros visíveis\",\r
+
+      \                    \"de_de\": \"Sichtbare Poren\",\r
+
+      \                    \"nl_nl\": \"Conspicuous pores\",\r
+
+      \                    \"ru_ru\": \"Заметность пор\",\r
+
+      \                    \"el_gr\": \"Conspicuous pores\",\r
+
+      \                    \"th_th\": \"เห็นรูขุมขนชัดเจน\",\r
+
+      \                    \"ms_my\": \"Liang pori menonjol\",\r
+
+      \                    \"ar_sa\": \" وضوح المسامات\",\r
+
+      \                    \"ar_ae\": \" وضوح المسامات\",\r
+
+      \                    \"mn_mn\": \"Харагдах нүх сүв\",\r
+
+      \                    \"si_lk\": \"පෙනෙන සිදුරු\",\r
+
+      \                    \"id_id\": \"Pori-pori Terlihat\",\r
+
+      \                    \"my_mm\": \"ချွေးပေါက်များကို မြင်နိုင်သည်။\"\r
+
+      \                },\r
+
+      \                \"value\": \"VisiblePores\"\r
+
+      \            },\r
+
+      \            {\r
+
+      \                \"checked\": false,\r
+
+      \                \"icon\": \"None\",\r
+
+      \                \"text\": {\r
+
+      \                    \"en\": \"None\",\r
+
+      \                    \"en_us\": \"None\",\r
+
+      \                    \"en_gb\": \"None\",\r
+
+      \                    \"en_ca\": \"None\",\r
+
+      \                    \"en_au\": \"None\",\r
+
+      \                    \"en_ph\": \"None\",\r
+
+      \                    \"en_my\": \"None\",\r
+
+      \                    \"en_sg\": \"None\",\r
+
+      \                    \"ja_jp\": \"どちらでもない\",\r
+
+      \                    \"zh_cn\": \"没有任何\",\r
+
+      \                    \"zh_hk\": \"沒有以上關注\",\r
+
+      \                    \"zh_tw\": \"沒有任何\",\r
+
+      \                    \"ko_kr\": \"없음\",\r
+
+      \                    \"es_es\": \"Ninguna/o\",\r
+
+      \                    \"vi_vn\": \"Không có\",\r
+
+      \                    \"fr_fr\": \"Pas concerné\",\r
+
+      \                    \"fr_ca\": \"Pas concerné\",\r
+
+      \                    \"it_it\": \"Nessuno\",\r
+
+      \                    \"pt_pt\": \"None\",\r
+
+      \                    \"pt_br\": \"Nenhuma\",\r
+
+      \                    \"de_de\": \"Keiner\",\r
+
+      \                    \"nl_nl\": \"None\",\r
+
+      \                    \"ru_ru\": \"Никто\",\r
+
+      \                    \"el_gr\": \"None\",\r
+
+      \                    \"th_th\": \"ไม่มี\",\r
+
+      \                    \"ms_my\": \"tiada\",\r
+
+      \                    \"ar_sa\": \"لا أحد\",\r
+
+      \                    \"ar_ae\": \" لا أح\",\r
+
+      \                    \"mn_mn\": \"Байхгүй\",\r
+
+      \                    \"si_lk\": \"කිසිවක් නැත\",\r
+
+      \                    \"id_id\": \"Tidak ada\",\r
+
+      \                    \"my_mm\": \"တစ်ခုမှ\"\r
+
+      \                },\r
+
+      \                \"value\": \"Dehydration\"\r
+
+      \            }\r
+
+      \        ],\r
+
+      \        \"condition\": \"\",\r
+
+      \        \"priority\": 225,\r
+
+      \        \"text\": {\r
+
+      \            \"en\": \"What concerns do you have for your skin?\",\r
+
+      \            \"en_us\": \"What concerns do you have for your skin?\",\r
+
+      \            \"en_gb\": \"What are your skin concerns?\",\r
+
+      \            \"en_ca\": \"What concerns do you have for your skin?\",\r
+
+      \            \"en_au\": \"What concerns do you have for your skin?\",\r
+
+      \            \"en_ph\": \"What concerns do you have for your skin?\",\r
+
+      \            \"en_my\": \"What concerns do you have for your skin?\",\r
+
+      \            \"en_sg\": \"What concerns do you have for your skin?\",\r
+
+      \            \"ja_jp\": \"気になる肌悩みは何ですか？\",\r
+
+      \            \"zh_cn\": \"您有什么在意的肌肤烦恼？\",\r
+
+      \            \"zh_hk\": \"您有甚麼在意的肌膚煩惱？\",\r
+
+      \            \"zh_tw\": \"您有什麼在意的肌膚煩惱？\",\r
+
+      \            \"ko_kr\": \"신경 쓰이는 피부 고민이 있나요?\",\r
+
+      \            \"es_es\": \"¿Qué problemas de piel te preocupan?\",\r
+
+      \            \"vi_vn\": \"Nỗi trăn trở về da của quý khách là gì?\",\r
+
+      \            \"fr_fr\": \"Quels sont les problèmes de peau qui vous préoccupent ?\",\r
+
+      \            \"fr_ca\": \"Quels sont vos soucis à propos de votre peau ?\",\r
+
+      \            \"it_it\": \"Quali problematiche presenta la tua pelle?\",\r
+
+      \            \"pt_pt\": \"What concerns do you have for your skin?\",\r
+
+      \            \"pt_br\": \"Quais são as suas preocupações com a pele?\",\r
+
+      \            \"de_de\": \"Mit welchen Hautproblemen haben Sie zu kämpfen?\",\r
+
+      \            \"nl_nl\": \"What concerns do you have for your skin?\",\r
+
+      \            \"ru_ru\": \"Какие проблемы с кожей Вас беспокоят?\",\r
+
+      \            \"el_gr\": \"What concerns do you have for your skin?\",\r
+
+      \            \"th_th\": \"ปัญหาด้านผิวที่คุณกังวลคือเรื่องใด\",\r
+
+      \            \"ms_my\": \"Apakah kerisauan tentang kulit yang anda punyai?\",\r
+
+      \            \"ar_sa\": \"ما هي المخاوف التي تعانين منها بشأن بشرتك؟\",\r
+
+      \            \"ar_ae\": \"ما هي المخاوف التي تعانين منها بشأن بشرتك؟\",\r
+
+      \            \"mn_mn\": \"Таны арьсанд ямар санаа зовдог вэ?\",\r
+
+      \            \"si_lk\": \"ඔබේ සම ගැන ඔබ සැලකිලිමත් වන කරුණු මොනවාද?\",\r
+
+      \            \"id_id\": \"Kekhawatiran apa yang Anda miliki terhadap kulit Anda?\",\r
+
+      \            \"my_mm\": \"သင့်အသားအရေအတွက် ဘယ်လိုစိုးရိမ်စရာတွေရှိလဲ။\"\r
+
+      \        },\r
+
+      \        \"variable\": \"struggling\",\r
+
+      \        \"profile\": \"no\",\r
+
+      \        \"subtype\": \"multiple\",\r
+
+      \        \"tenantId\": \"6c10c3ff-1ad2-4904-bc0b-a8edd54f6470\",\r
+
+      \        \"linkedNext\": false,\r
+
+      \        \"minLength\": 1,\r
+
+      \        \"maxLength\": 1,\r
+
+      \        \"ageVariable\": \"\",\r
+
+      \        \"minAge\": 1,\r
+
+      \        \"maxAge\": 1,\r
+
+      \        \"minValue\": 1,\r
+
+      \        \"maxValue\": 1,\r
+
+      \        \"id\": \"6603db8627461379476eb93a\"\r
+
+      \    }"
+  auth:
+    type: bearer
+    token: "{{acces_token_app}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

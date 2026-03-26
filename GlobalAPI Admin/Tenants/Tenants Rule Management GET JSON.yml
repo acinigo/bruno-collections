@@ -1,0 +1,2044 @@
+info:
+  name: Tenants Rule Management GET JSON
+  type: http
+  seq: 6
+
+http:
+  method: GET
+  url: "{{url}}/api/tenants/e50ff774-f6de-4402-8c1f-42f8e77f01ee/rulesmanagement/recommended_care"
+  body:
+    type: multipart-form
+    data:
+      - name: name
+        type: text
+        value: explanations
+      - name: priority
+        type: text
+        value: "100"
+      - name: file
+        type: file
+        value:
+          - /Users/acinigo/Downloads/bShiseido_Explanations_v1.3.xlsx
+  auth:
+    type: bearer
+    token: "{{acces_token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Tenants Rule Management
+    request:
+      url: "{{url}}/api/tenants/e50ff774-f6de-4402-8c1f-42f8e77f01ee/rulesmanagement/recommender"
+      method: GET
+      body:
+        type: multipart-form
+        data:
+          - name: name
+            type: text
+            value: explanations
+          - name: priority
+            type: text
+            value: "100"
+          - name: file
+            type: file
+            value:
+              - /Users/acinigo/Downloads/bShiseido_Explanations_v1.3.xlsx
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Thu, 05 Jun 2025 09:05:26 GMT
+        - name: Content-Type
+          value: application/json; charset=utf-8
+        - name: Transfer-Encoding
+          value: chunked
+        - name: Connection
+          value: keep-alive
+        - name: X-Powered-By
+          value: Express
+        - name: ETag
+          value: W/"51e5-EveLpzQUeH5YGwx2ulyRxtpXrPg"
+        - name: Vary
+          value: Accept-Encoding
+        - name: Content-Encoding
+          value: gzip
+        - name: x-azure-ref
+          value: 20250605T090526Z-17df7cbbbc5nqn92hC1MADy7vn00000004ng000000004ra7
+        - name: X-Cache
+          value: CONFIG_NOCACHE
+      body:
+        type: json
+        data: |-
+          [
+              {
+                  "className": "SpreadsheetTable",
+                  "name": "Calculate",
+                  "params": [
+                      {
+                          "name": "person",
+                          "type": "Person"
+                      }
+                  ],
+                  "lines": [
+                      {
+                          "name": "sGreaterThanG",
+                          "script": "$sGreaterThanG = person.sValue > person.gValue ? \"Yes\" : \"No\""
+                      },
+                      {
+                          "name": "group1me",
+                          "script": "$group1me = splitString(GetRecommendationGroup1ME(person.oxygen, person.sebum))"
+                      },
+                      {
+                          "name": "group1meultimate",
+                          "script": "$group1meultimate = splitString(GetRecommendationGroup1MEUltimate(person.sebum))"
+                      },
+                      {
+                          "name": "group1sensitive",
+                          "script": "$group1sensitive = splitString(GetRecommendationGroup1MESensitive(person.sebum))"
+                      },
+                      {
+                          "name": "group2makeoff",
+                          "script": "$group2makeoff = splitString(GetRecommendationGroup2MakeOffCleanser(person.sebum))"
+                      },
+                      {
+                          "name": "group2cleansingsensitive",
+                          "script": "$group2cleansingsensitive = splitString(GetRecommendationGroup2CleansingSensitive(person.sebum))"
+                      },
+                      {
+                          "name": "group2cleansingnonsensitive",
+                          "script": "$group2cleansingnonsensitive = splitString(GetRecommendationGroup2CleansingNonSensitive(person.sebum))"
+                      },
+                      {
+                          "name": "group2marinecake",
+                          "script": "$group2marinecake = splitString(GetRecommendationGroup2MarineCake(person.sebum))"
+                      },
+                      {
+                          "name": "group2joined",
+                          "script": "$group2joined = joinArrays($group2makeoff, $group2marinecake)"
+                      },
+                      {
+                          "name": "group1",
+                          "script": "$group1 = person.isSensitiveSkin == \"Yes\" ? $group1sensitive : joinArrays($group1me, $group1meultimate)"
+                      },
+                      {
+                          "name": "group2",
+                          "script": "$group2 = person.isSensitiveSkin == \"Yes\" ? joinArrays($group2makeoff, $group2cleansingsensitive) : joinArrays($group2joined, $group2cleansingnonsensitive)"
+                      },
+                      {
+                          "name": "group4",
+                          "script": "$group4 = GetRecommendationGroup4(person.moisture)"
+                      },
+                      {
+                          "name": "group5",
+                          "script": "$group5 = GetRecommendationGroup5(person.sebum)"
+                      },
+                      {
+                          "name": "group6",
+                          "script": "$group6 = GetRecommendationGroup6(person.isSensitiveSkin, person.translucence)"
+                      },
+                      {
+                          "name": "group7",
+                          "script": "$group7 = GetRecommendationGroup7($sGreaterThanG, person.age, person.elasticity)"
+                      },
+                      {
+                          "name": "group8",
+                          "script": "$group8 = GetRecommendationGroup8(person.stratumCorneum, person.sebum)"
+                      },
+                      {
+                          "name": "group9",
+                          "script": "$group9 = GetRecommendationGroup9(person.accumulationLevel)"
+                      },
+                      {
+                          "name": "group10",
+                          "script": "$group10 = GetRecommendationGroup10(person.resistance)"
+                      }
+                  ]
+              },
+              {
+                  "className": "DatatypeTable",
+                  "name": "Person",
+                  "params": {
+                      "title": {
+                          "name": "title",
+                          "type": "String",
+                          "defValue": null
+                      },
+                      "name": {
+                          "name": "name",
+                          "type": "String",
+                          "defValue": null
+                      },
+                      "age": {
+                          "name": "age",
+                          "type": "Integer",
+                          "defValue": null
+                      },
+                      "sebum": {
+                          "name": "sebum",
+                          "type": "Double",
+                          "defValue": null
+                      },
+                      "isSensitiveSkin": {
+                          "name": "isSensitiveSkin",
+                          "type": "String",
+                          "defValue": null
+                      },
+                      "sValue": {
+                          "name": "sValue",
+                          "type": "Double",
+                          "defValue": null
+                      },
+                      "gValue": {
+                          "name": "gValue",
+                          "type": "Double",
+                          "defValue": null
+                      },
+                      "elasticity": {
+                          "name": "elasticity",
+                          "type": "Double",
+                          "defValue": null
+                      },
+                      "stratumCorneum": {
+                          "name": "stratumCorneum",
+                          "type": "Double",
+                          "defValue": null
+                      },
+                      "translucence": {
+                          "name": "translucence",
+                          "type": "Double",
+                          "defValue": null
+                      },
+                      "accumulationLevel": {
+                          "name": "accumulationLevel",
+                          "type": "Integer",
+                          "defValue": null
+                      },
+                      "oxygen": {
+                          "name": "oxygen",
+                          "type": "String",
+                          "defValue": null
+                      }
+                  }
+              },
+              {
+                  "className": "RulesTable",
+                  "isMulti": false,
+                  "name": "GetRecommendationGroup1ME",
+                  "type": "String",
+                  "resultType": null,
+                  "params": [
+                      {
+                          "name": "oxygen",
+                          "type": "String",
+                          "index": 0,
+                          "position": {
+                              "type": "column",
+                              "index": 1
+                          },
+                          "positionType": "String",
+                          "headers": [
+                              {
+                                  "type": "equal",
+                                  "value": "High"
+                              },
+                              {
+                                  "type": "equal",
+                                  "value": "Low"
+                              }
+                          ]
+                      },
+                      {
+                          "name": "sebum",
+                          "type": "Double",
+                          "index": 1,
+                          "position": {
+                              "type": "row",
+                              "index": 1
+                          },
+                          "positionType": "DoubleRange",
+                          "headers": [
+                              {
+                                  "type": "lessThan",
+                                  "value": 25
+                              },
+                              {
+                                  "type": "range",
+                                  "typeLeft": "greaterEqual",
+                                  "typeRight": "lessThan",
+                                  "valueLeft": 25,
+                                  "valueRight": 50
+                              },
+                              {
+                                  "type": "range",
+                                  "typeLeft": "greaterEqual",
+                                  "typeRight": "lessThan",
+                                  "valueLeft": 50,
+                                  "valueRight": 75
+                              },
+                              {
+                                  "type": "greaterEqual",
+                                  "value": 75
+                              }
+                          ]
+                      }
+                  ],
+                  "columnParams": [
+                      {
+                          "name": "oxygen",
+                          "type": "String",
+                          "index": 0,
+                          "position": {
+                              "type": "column",
+                              "index": 1
+                          },
+                          "positionType": "String",
+                          "headers": [
+                              {
+                                  "type": "equal",
+                                  "value": "High"
+                              },
+                              {
+                                  "type": "equal",
+                                  "value": "Low"
+                              }
+                          ]
+                      }
+                  ],
+                  "rowParams": [
+                      {
+                          "name": "sebum",
+                          "type": "Double",
+                          "index": 1,
+                          "position": {
+                              "type": "row",
+                              "index": 1
+                          },
+                          "positionType": "DoubleRange",
+                          "headers": [
+                              {
+                                  "type": "lessThan",
+                                  "value": 25
+                              },
+                              {
+                                  "type": "range",
+                                  "typeLeft": "greaterEqual",
+                                  "typeRight": "lessThan",
+                                  "valueLeft": 25,
+                                  "valueRight": 50
+                              },
+                              {
+                                  "type": "range",
+                                  "typeLeft": "greaterEqual",
+                                  "typeRight": "lessThan",
+                                  "valueLeft": 50,
+                                  "valueRight": 75
+                              },
+                              {
+                                  "type": "greaterEqual",
+                                  "value": 75
+                              }
+                          ]
+                      }
+                  ],
+                  "matrix": [
+                      [
+                          "43277",
+                          "43276",
+                          "43275",
+                          "43274"
+                      ],
+                      [
+                          "43281",
+                          "43280",
+                          "43279",
+                          "43278"
+                      ]
+                  ],
+                  "returnParam": {
+                      "name": "RET",
+                      "type": "String",
+                      "script": null
+                  }
+              },
+              {
+                  "className": "RulesTable",
+                  "isMulti": false,
+                  "name": "GetRecommendationGroup1MEUltimate",
+                  "type": "String",
+                  "resultType": null,
+                  "params": [
+                      {
+                          "name": "sebum",
+                          "type": "Double",
+                          "index": 0,
+                          "position": {
+                              "type": "row",
+                              "index": 1
+                          },
+                          "positionType": "DoubleRange",
+                          "headers": [
+                              {
+                                  "type": "lessThan",
+                                  "value": 25
+                              },
+                              {
+                                  "type": "range",
+                                  "typeLeft": "greaterEqual",
+                                  "typeRight": "lessThan",
+                                  "valueLeft": 25,
+                                  "valueRight": 50
+                              },
+                              {
+                                  "type": "range",
+                                  "typeLeft": "greaterEqual",
+                                  "typeRight": "lessThan",
+                                  "valueLeft": 50,
+                                  "valueRight": 75
+                              },
+                              {
+                                  "type": "greaterEqual",
+                                  "value": 75
+                              }
+                          ]
+                      }
+                  ],
+                  "columnParams": [],
+                  "rowParams": [
+                      {
+                          "name": "sebum",
+                          "type": "Double",
+                          "index": 0,
+                          "position": {
+                              "type": "row",
+                              "index": 1
+                          },
+                          "positionType": "DoubleRange",
+                          "headers": [
+                              {
+                                  "type": "lessThan",
+                                  "value": 25
+                              },
+                              {
+                                  "type": "range",
+                                  "typeLeft": "greaterEqual",
+                                  "typeRight": "lessThan",
+                                  "valueLeft": 25,
+                                  "valueRight": 50
+                              },
+                              {
+                                  "type": "range",
+                                  "typeLeft": "greaterEqual",
+                                  "typeRight": "lessThan",
+                                  "valueLeft": 50,
+                                  "valueRight": 75
+                              },
+                              {
+                                  "type": "greaterEqual",
+                                  "value": 75
+                              }
+                          ]
+                      }
+                  ],
+                  "matrix": [
+                      [
+                          "43375",
+                          "43374",
+                          "43373",
+                          "43372"
+                      ]
+                  ],
+                  "returnParam": {
+                      "name": "RET",
+                      "type": "String",
+                      "script": null
+                  }
+              },
+              {
+                  "className": "RulesTable",
+                  "isMulti": false,
+                  "name": "GetRecommendationGroup1MESensitive",
+                  "type": "String",
+                  "resultType": null,
+                  "params": [
+                      {
+                          "name": "sebum",
+                          "type": "Double",
+                          "index": 0,
+                          "position": {
+                              "type": "row",
+                              "index": 1
+                          },
+                          "positionType": "DoubleRange",
+                          "headers": [
+                              {
+                                  "type": "lessThan",
+                                  "value": 17
+                              },
+                              {
+                                  "type": "range",
+                                  "typeLeft": "greaterEqual",
+                                  "typeRight": "lessThan",
+                                  "valueLeft": 17,
+                                  "valueRight": 34
+                              },
+                              {
+                                  "type": "range",
+                                  "typeLeft": "greaterEqual",
+                                  "typeRight": "lessThan",
+                                  "valueLeft": 34,
+                                  "valueRight": 50
+                              },
+                              {
+                                  "type": "greaterEqual",
+                                  "value": 50
+                              }
+                          ]
+                      }
+                  ],
+                  "columnParams": [],
+                  "rowParams": [
+                      {
+                          "name": "sebum",
+                          "type": "Double",
+                          "index": 0,
+                          "position": {
+                              "type": "row",
+                              "index": 1
+                          },
+                          "positionType": "DoubleRange",
+                          "headers": [
+                              {
+                                  "type": "lessThan",
+                                  "value": 17
+                              },
+                              {
+                                  "type": "range",
+                                  "typeLeft": "greaterEqual",
+                                  "typeRight": "lessThan",
+                                  "valueLeft": 17,
+                                  "valueRight": 34
+                              },
+                              {
+                                  "type": "range",
+                                  "typeLeft": "greaterEqual",
+                                  "typeRight": "lessThan",
+                                  "valueLeft": 34,
+                                  "valueRight": 50
+                              },
+                              {
+                                  "type": "greaterEqual",
+                                  "value": 50
+                              }
+                          ]
+                      }
+                  ],
+                  "matrix": [
+                      [
+                          "43317",
+                          "43316",
+                          "43315",
+                          "43314"
+                      ]
+                  ],
+                  "returnParam": {
+                      "name": "RET",
+                      "type": "String",
+                      "script": null
+                  }
+              },
+              {
+                  "className": "RulesTable",
+                  "isMulti": false,
+                  "name": "GetRecommendationGroup2MakeOffCleanser",
+                  "type": "String",
+                  "resultType": null,
+                  "params": [
+                      {
+                          "name": "sebum",
+                          "type": "Double",
+                          "index": 0,
+                          "position": {
+                              "type": "row",
+                              "index": 1
+                          },
+                          "positionType": "DoubleRange",
+                          "headers": [
+                              {
+                                  "type": "lessThan",
+                                  "value": 32
+                              },
+                              {
+                                  "type": "range",
+                                  "typeLeft": "greaterEqual",
+                                  "typeRight": "lessThan",
+                                  "valueLeft": 32,
+                                  "valueRight": 50
+                              },
+                              {
+                                  "type": "range",
+                                  "typeLeft": "greaterEqual",
+                                  "typeRight": "lessEqual",
+                                  "valueLeft": 50,
+                                  "valueRight": 66
+                              },
+                              {
+                                  "type": "greaterThan",
+                                  "value": 66
+                              }
+                          ]
+                      }
+                  ],
+                  "columnParams": [],
+                  "rowParams": [
+                      {
+                          "name": "sebum",
+                          "type": "Double",
+                          "index": 0,
+                          "position": {
+                              "type": "row",
+                              "index": 1
+                          },
+                          "positionType": "DoubleRange",
+                          "headers": [
+                              {
+                                  "type": "lessThan",
+                                  "value": 32
+                              },
+                              {
+                                  "type": "range",
+                                  "typeLeft": "greaterEqual",
+                                  "typeRight": "lessThan",
+                                  "valueLeft": 32,
+                                  "valueRight": 50
+                              },
+                              {
+                                  "type": "range",
+                                  "typeLeft": "greaterEqual",
+                                  "typeRight": "lessEqual",
+                                  "valueLeft": 50,
+                                  "valueRight": 66
+                              },
+                              {
+                                  "type": "greaterThan",
+                                  "value": 66
+                              }
+                          ]
+                      }
+                  ],
+                  "matrix": [
+                      [
+                          "43242",
+                          "43241\n43242",
+                          "43241\n43240",
+                          "43240"
+                      ]
+                  ],
+                  "returnParam": {
+                      "name": "RET",
+                      "type": "String",
+                      "script": null
+                  }
+              },
+              {
+                  "className": "RulesTable",
+                  "isMulti": false,
+                  "name": "GetRecommendationGroup2CleansingSensitive",
+                  "type": "String",
+                  "resultType": null,
+                  "params": [
+                      {
+                          "name": "sebum",
+                          "type": "Double",
+                          "index": 0,
+                          "position": {
+                              "type": "row",
+                              "index": 1
+                          },
+                          "positionType": "DoubleRange",
+                          "headers": [
+                              {
+                                  "type": "lessThan",
+                                  "value": 50
+                              },
+                              {
+                                  "type": "greaterEqual",
+                                  "value": 50
+                              }
+                          ]
+                      }
+                  ],
+                  "columnParams": [],
+                  "rowParams": [
+                      {
+                          "name": "sebum",
+                          "type": "Double",
+                          "index": 0,
+                          "position": {
+                              "type": "row",
+                              "index": 1
+                          },
+                          "positionType": "DoubleRange",
+                          "headers": [
+                              {
+                                  "type": "lessThan",
+                                  "value": 50
+                              },
+                              {
+                                  "type": "greaterEqual",
+                                  "value": 50
+                              }
+                          ]
+                      }
+                  ],
+                  "matrix": [
+                      [
+                          "42416",
+                          "42416"
+                      ]
+                  ],
+                  "returnParam": {
+                      "name": "RET",
+                      "type": "String",
+                      "script": null
+                  }
+              },
+              {
+                  "className": "RulesTable",
+                  "isMulti": false,
+                  "name": "GetRecommendationGroup2CleansingNonSensitive",
+                  "type": "String",
+                  "resultType": null,
+                  "params": [
+                      {
+                          "name": "sebum",
+                          "type": "Double",
+                          "index": 0,
+                          "position": {
+                              "type": "row",
+                              "index": 1
+                          },
+                          "positionType": "DoubleRange",
+                          "headers": [
+                              {
+                                  "type": "lessThan",
+                                  "value": 51
+                              },
+                              {
+                                  "type": "greaterEqual",
+                                  "value": 51
+                              }
+                          ]
+                      }
+                  ],
+                  "columnParams": [],
+                  "rowParams": [
+                      {
+                          "name": "sebum",
+                          "type": "Double",
+                          "index": 0,
+                          "position": {
+                              "type": "row",
+                              "index": 1
+                          },
+                          "positionType": "DoubleRange",
+                          "headers": [
+                              {
+                                  "type": "lessThan",
+                                  "value": 51
+                              },
+                              {
+                                  "type": "greaterEqual",
+                                  "value": 51
+                              }
+                          ]
+                      }
+                  ],
+                  "matrix": [
+                      [
+                          "43775",
+                          "43244"
+                      ]
+                  ],
+                  "returnParam": {
+                      "name": "RET",
+                      "type": "String",
+                      "script": null
+                  }
+              },
+              {
+                  "className": "RulesTable",
+                  "isMulti": false,
+                  "name": "GetRecommendationGroup2MarineCake",
+                  "type": "String",
+                  "resultType": null,
+                  "params": [
+                      {
+                          "name": "sebum",
+                          "type": "Double",
+                          "index": 0,
+                          "position": {
+                              "type": "row",
+                              "index": 1
+                          },
+                          "positionType": "DoubleRange",
+                          "headers": [
+                              {
+                                  "type": "lessThan",
+                                  "value": 50
+                              },
+                              {
+                                  "type": "greaterEqual",
+                                  "value": 50
+                              }
+                          ]
+                      }
+                  ],
+                  "columnParams": [],
+                  "rowParams": [
+                      {
+                          "name": "sebum",
+                          "type": "Double",
+                          "index": 0,
+                          "position": {
+                              "type": "row",
+                              "index": 1
+                          },
+                          "positionType": "DoubleRange",
+                          "headers": [
+                              {
+                                  "type": "lessThan",
+                                  "value": 50
+                              },
+                              {
+                                  "type": "greaterEqual",
+                                  "value": 50
+                              }
+                          ]
+                      }
+                  ],
+                  "matrix": [
+                      [
+                          "43646",
+                          "43646"
+                      ],
+                      [
+                          "43646",
+                          "43646"
+                      ]
+                  ],
+                  "returnParam": {
+                      "name": "RET",
+                      "type": "String",
+                      "script": null
+                  }
+              },
+              {
+                  "className": "RulesTable",
+                  "isMulti": false,
+                  "name": "GetRecommendationGroup4",
+                  "type": "String",
+                  "resultType": null,
+                  "params": [
+                      {
+                          "name": "moisture",
+                          "type": "Double",
+                          "index": 0,
+                          "position": {
+                              "type": "row",
+                              "index": 1
+                          },
+                          "positionType": "DoubleRange",
+                          "headers": [
+                              {
+                                  "type": "lessEqual",
+                                  "value": 50
+                              },
+                              {
+                                  "type": "greaterThan",
+                                  "value": 50
+                              }
+                          ]
+                      }
+                  ],
+                  "columnParams": [],
+                  "rowParams": [
+                      {
+                          "name": "moisture",
+                          "type": "Double",
+                          "index": 0,
+                          "position": {
+                              "type": "row",
+                              "index": 1
+                          },
+                          "positionType": "DoubleRange",
+                          "headers": [
+                              {
+                                  "type": "lessEqual",
+                                  "value": 50
+                              },
+                              {
+                                  "type": "greaterThan",
+                                  "value": 50
+                              }
+                          ]
+                      }
+                  ],
+                  "matrix": [
+                      [
+                          "43252\n43106\n43732\n43686",
+                          "43252"
+                      ]
+                  ],
+                  "returnParam": {
+                      "name": "RET",
+                      "type": "codes",
+                      "script": null
+                  }
+              },
+              {
+                  "className": "RulesTable",
+                  "isMulti": false,
+                  "name": "GetRecommendationGroup5",
+                  "type": "String",
+                  "resultType": null,
+                  "params": [
+                      {
+                          "name": "sebum",
+                          "type": "Double",
+                          "index": 0,
+                          "position": {
+                              "type": "row",
+                              "index": 1
+                          },
+                          "positionType": "DoubleRange",
+                          "headers": [
+                              {
+                                  "type": "lessEqual",
+                                  "value": 60
+                              },
+                              {
+                                  "type": "greaterThan",
+                                  "value": 60
+                              }
+                          ]
+                      }
+                  ],
+                  "columnParams": [],
+                  "rowParams": [
+                      {
+                          "name": "sebum",
+                          "type": "Double",
+                          "index": 0,
+                          "position": {
+                              "type": "row",
+                              "index": 1
+                          },
+                          "positionType": "DoubleRange",
+                          "headers": [
+                              {
+                                  "type": "lessEqual",
+                                  "value": 60
+                              },
+                              {
+                                  "type": "greaterThan",
+                                  "value": 60
+                              }
+                          ]
+                      }
+                  ],
+                  "matrix": [
+                      [
+                          "43106\n43686",
+                          "41653"
+                      ]
+                  ],
+                  "returnParam": {
+                      "name": "RET",
+                      "type": "codes",
+                      "script": null
+                  }
+              },
+              {
+                  "className": "RulesTable",
+                  "isMulti": false,
+                  "name": "GetRecommendationGroup6",
+                  "type": "String",
+                  "resultType": null,
+                  "params": [
+                      {
+                          "name": "isSensitiveSkin",
+                          "type": "String",
+                          "index": 0,
+                          "position": {
+                              "type": "column",
+                              "index": 1
+                          },
+                          "positionType": "String",
+                          "headers": [
+                              {
+                                  "type": "equal",
+                                  "value": "No"
+                              },
+                              {
+                                  "type": "equal",
+                                  "value": "Yes"
+                              }
+                          ]
+                      },
+                      {
+                          "name": "translucence",
+                          "type": "Double",
+                          "index": 1,
+                          "position": {
+                              "type": "row",
+                              "index": 1
+                          },
+                          "positionType": "DoubleRange",
+                          "headers": [
+                              {
+                                  "type": "lessEqual",
+                                  "value": 60
+                              },
+                              {
+                                  "type": "greaterThan",
+                                  "value": 60
+                              }
+                          ]
+                      }
+                  ],
+                  "columnParams": [
+                      {
+                          "name": "isSensitiveSkin",
+                          "type": "String",
+                          "index": 0,
+                          "position": {
+                              "type": "column",
+                              "index": 1
+                          },
+                          "positionType": "String",
+                          "headers": [
+                              {
+                                  "type": "equal",
+                                  "value": "No"
+                              },
+                              {
+                                  "type": "equal",
+                                  "value": "Yes"
+                              }
+                          ]
+                      }
+                  ],
+                  "rowParams": [
+                      {
+                          "name": "translucence",
+                          "type": "Double",
+                          "index": 1,
+                          "position": {
+                              "type": "row",
+                              "index": 1
+                          },
+                          "positionType": "DoubleRange",
+                          "headers": [
+                              {
+                                  "type": "lessEqual",
+                                  "value": 60
+                              },
+                              {
+                                  "type": "greaterThan",
+                                  "value": 60
+                              }
+                          ]
+                      }
+                  ],
+                  "matrix": [
+                      [
+                          "43670\n43674\n43666\n43781",
+                          "43666\n43781"
+                      ],
+                      [
+                          "43780",
+                          "43780"
+                      ]
+                  ],
+                  "returnParam": {
+                      "name": "RET",
+                      "type": "codes",
+                      "script": null
+                  }
+              },
+              {
+                  "className": "RulesTable",
+                  "isMulti": false,
+                  "name": "GetRecommendationGroup7",
+                  "type": "String",
+                  "resultType": null,
+                  "params": [
+                      {
+                          "name": "sGreaterThanG",
+                          "type": "String",
+                          "index": 0,
+                          "position": {
+                              "type": "column",
+                              "index": 1
+                          },
+                          "positionType": "String",
+                          "headers": [
+                              {
+                                  "type": "equal",
+                                  "value": "Yes"
+                              },
+                              {
+                                  "type": "equal",
+                                  "value": "Yes"
+                              },
+                              {
+                                  "type": "equal",
+                                  "value": "Yes"
+                              },
+                              {
+                                  "type": "equal",
+                                  "value": "No"
+                              },
+                              {
+                                  "type": "equal",
+                                  "value": "No"
+                              },
+                              {
+                                  "type": "equal",
+                                  "value": "No"
+                              }
+                          ]
+                      },
+                      {
+                          "name": "age",
+                          "type": "Integer",
+                          "index": 1,
+                          "position": {
+                              "type": "column",
+                              "index": 2
+                          },
+                          "positionType": "IntRange",
+                          "headers": [
+                              {
+                                  "type": "lessThan",
+                                  "value": 20
+                              },
+                              {
+                                  "type": "range",
+                                  "typeLeft": "greaterEqual",
+                                  "typeRight": "lessEqual",
+                                  "valueLeft": 20,
+                                  "valueRight": 34
+                              },
+                              {
+                                  "type": "greaterEqual",
+                                  "value": 35
+                              },
+                              {
+                                  "type": "lessThan",
+                                  "value": 20
+                              },
+                              {
+                                  "type": "range",
+                                  "typeLeft": "greaterEqual",
+                                  "typeRight": "lessEqual",
+                                  "valueLeft": 20,
+                                  "valueRight": 34
+                              },
+                              {
+                                  "type": "greaterEqual",
+                                  "value": 35
+                              }
+                          ]
+                      },
+                      {
+                          "name": "elasticity",
+                          "type": "Double",
+                          "index": 2,
+                          "position": {
+                              "type": "row",
+                              "index": 1
+                          },
+                          "positionType": "DoubleRange",
+                          "headers": [
+                              {
+                                  "type": "lessEqual",
+                                  "value": 50
+                              },
+                              {
+                                  "type": "range",
+                                  "typeLeft": "greaterThan",
+                                  "typeRight": "lessEqual",
+                                  "valueLeft": 50,
+                                  "valueRight": 65
+                              },
+                              {
+                                  "type": "greaterThan",
+                                  "value": 65
+                              }
+                          ]
+                      }
+                  ],
+                  "columnParams": [
+                      {
+                          "name": "sGreaterThanG",
+                          "type": "String",
+                          "index": 0,
+                          "position": {
+                              "type": "column",
+                              "index": 1
+                          },
+                          "positionType": "String",
+                          "headers": [
+                              {
+                                  "type": "equal",
+                                  "value": "Yes"
+                              },
+                              {
+                                  "type": "equal",
+                                  "value": "Yes"
+                              },
+                              {
+                                  "type": "equal",
+                                  "value": "Yes"
+                              },
+                              {
+                                  "type": "equal",
+                                  "value": "No"
+                              },
+                              {
+                                  "type": "equal",
+                                  "value": "No"
+                              },
+                              {
+                                  "type": "equal",
+                                  "value": "No"
+                              }
+                          ]
+                      },
+                      {
+                          "name": "age",
+                          "type": "Integer",
+                          "index": 1,
+                          "position": {
+                              "type": "column",
+                              "index": 2
+                          },
+                          "positionType": "IntRange",
+                          "headers": [
+                              {
+                                  "type": "lessThan",
+                                  "value": 20
+                              },
+                              {
+                                  "type": "range",
+                                  "typeLeft": "greaterEqual",
+                                  "typeRight": "lessEqual",
+                                  "valueLeft": 20,
+                                  "valueRight": 34
+                              },
+                              {
+                                  "type": "greaterEqual",
+                                  "value": 35
+                              },
+                              {
+                                  "type": "lessThan",
+                                  "value": 20
+                              },
+                              {
+                                  "type": "range",
+                                  "typeLeft": "greaterEqual",
+                                  "typeRight": "lessEqual",
+                                  "valueLeft": 20,
+                                  "valueRight": 34
+                              },
+                              {
+                                  "type": "greaterEqual",
+                                  "value": 35
+                              }
+                          ]
+                      }
+                  ],
+                  "rowParams": [
+                      {
+                          "name": "elasticity",
+                          "type": "Double",
+                          "index": 2,
+                          "position": {
+                              "type": "row",
+                              "index": 1
+                          },
+                          "positionType": "DoubleRange",
+                          "headers": [
+                              {
+                                  "type": "lessEqual",
+                                  "value": 50
+                              },
+                              {
+                                  "type": "range",
+                                  "typeLeft": "greaterThan",
+                                  "typeRight": "lessEqual",
+                                  "valueLeft": 50,
+                                  "valueRight": 65
+                              },
+                              {
+                                  "type": "greaterThan",
+                                  "value": 65
+                              }
+                          ]
+                      }
+                  ],
+                  "matrix": [
+                      [
+                          "43787\n43736\n43777",
+                          "43787\n43736\n43777",
+                          "43736\n43777"
+                      ],
+                      [
+                          "43787\n43736\n43706\n43777",
+                          "43787\n43736\n43706\n43777",
+                          "43736\n43777"
+                      ],
+                      [
+                          "43787\n43736\n43157\n43158\n43777",
+                          "43787\n43736\n43777",
+                          "43736\n43777"
+                      ],
+                      [
+                          "43787\n43736\n43777",
+                          "43787\n43736\n43777",
+                          "43736\n43777"
+                      ],
+                      [
+                          "43787\n43736\n43706\n43777",
+                          "43787\n43736\n43706\n43777",
+                          "43736\n43777"
+                      ],
+                      [
+                          "43787\n43736\n43157\n43158\n43777",
+                          "43787\n43736\n43777",
+                          "43736\n43777"
+                      ]
+                  ],
+                  "returnParam": {
+                      "name": "RET",
+                      "type": "codes",
+                      "script": null
+                  }
+              },
+              {
+                  "className": "RulesTable",
+                  "isMulti": false,
+                  "name": "GetRecommendationGroup8",
+                  "type": "String",
+                  "resultType": null,
+                  "params": [
+                      {
+                          "name": "stratum",
+                          "type": "Double",
+                          "index": 0,
+                          "position": {
+                              "type": "column",
+                              "index": 1
+                          },
+                          "positionType": "DoubleRange",
+                          "headers": [
+                              {
+                                  "type": "lessEqual",
+                                  "value": 75
+                              },
+                              {
+                                  "type": "greaterThan",
+                                  "value": 75
+                              }
+                          ]
+                      },
+                      {
+                          "name": "sebum",
+                          "type": "Double",
+                          "index": 1,
+                          "position": {
+                              "type": "row",
+                              "index": 1
+                          },
+                          "positionType": "DoubleRange",
+                          "headers": [
+                              {
+                                  "type": "lessEqual",
+                                  "value": 50
+                              },
+                              {
+                                  "type": "greaterThan",
+                                  "value": 50
+                              }
+                          ]
+                      }
+                  ],
+                  "columnParams": [
+                      {
+                          "name": "stratum",
+                          "type": "Double",
+                          "index": 0,
+                          "position": {
+                              "type": "column",
+                              "index": 1
+                          },
+                          "positionType": "DoubleRange",
+                          "headers": [
+                              {
+                                  "type": "lessEqual",
+                                  "value": 75
+                              },
+                              {
+                                  "type": "greaterThan",
+                                  "value": 75
+                              }
+                          ]
+                      }
+                  ],
+                  "rowParams": [
+                      {
+                          "name": "sebum",
+                          "type": "Double",
+                          "index": 1,
+                          "position": {
+                              "type": "row",
+                              "index": 1
+                          },
+                          "positionType": "DoubleRange",
+                          "headers": [
+                              {
+                                  "type": "lessEqual",
+                                  "value": 50
+                              },
+                              {
+                                  "type": "greaterThan",
+                                  "value": 50
+                              }
+                          ]
+                      }
+                  ],
+                  "matrix": [
+                      [
+                          "43779\n43687\n43733",
+                          "43779\n41653\n43733"
+                      ],
+                      [
+                          "43779",
+                          "43779"
+                      ]
+                  ],
+                  "returnParam": {
+                      "name": "RET",
+                      "type": "codes",
+                      "script": null
+                  }
+              },
+              {
+                  "className": "RulesTable",
+                  "isMulti": false,
+                  "name": "GetRecommendationGroup9",
+                  "type": "String",
+                  "resultType": null,
+                  "params": [
+                      {
+                          "name": "accumulationLevel",
+                          "type": "Integer",
+                          "index": 0,
+                          "position": {
+                              "type": "row",
+                              "index": 1
+                          },
+                          "positionType": "IntRange",
+                          "headers": [
+                              {
+                                  "type": "range",
+                                  "typeLeft": "greaterEqual",
+                                  "typeRight": "lessEqual",
+                                  "valueLeft": 1,
+                                  "valueRight": 5
+                              },
+                              {
+                                  "type": "true"
+                              }
+                          ]
+                      }
+                  ],
+                  "columnParams": [],
+                  "rowParams": [
+                      {
+                          "name": "accumulationLevel",
+                          "type": "Integer",
+                          "index": 0,
+                          "position": {
+                              "type": "row",
+                              "index": 1
+                          },
+                          "positionType": "IntRange",
+                          "headers": [
+                              {
+                                  "type": "range",
+                                  "typeLeft": "greaterEqual",
+                                  "typeRight": "lessEqual",
+                                  "valueLeft": 1,
+                                  "valueRight": 5
+                              },
+                              {
+                                  "type": "true"
+                              }
+                          ]
+                      }
+                  ],
+                  "matrix": [
+                      [
+                          "43651\n43348",
+                          null
+                      ]
+                  ],
+                  "returnParam": {
+                      "name": "RET",
+                      "type": "codes",
+                      "script": null
+                  }
+              },
+              {
+                  "className": "MethodTable",
+                  "name": "splitString",
+                  "params": [
+                      "products"
+                  ],
+                  "script": "function splitString(products) {\nreturn products.split(/\\r?\\n/);\n}"
+              },
+              {
+                  "className": "MethodTable",
+                  "name": "joinArrays",
+                  "params": [
+                      "a",
+                      "b"
+                  ],
+                  "script": "function joinArrays(a,b) {\na = !a ? [] : a;\nb = !b ? [] : b;\nreturn a.concat(b);\n}"
+              },
+              {
+                  "className": "MethodTable",
+                  "name": "parseInt",
+                  "params": [
+                      "int"
+                  ],
+                  "script": "function parseInt(int) {\nreturn Math.trunc(int);\n}"
+              },
+              {
+                  "className": "TestTable",
+                  "refTableName": "GetRecommendationGroup1ME",
+                  "name": "TestGetRecommendationGroup1ME",
+                  "paramNames": [
+                      "oxygen",
+                      "sebum",
+                      "RET"
+                  ],
+                  "data": [
+                      [
+                          "High",
+                          24,
+                          "43277"
+                      ],
+                      [
+                          "High",
+                          25,
+                          "43276"
+                      ],
+                      [
+                          "High",
+                          50,
+                          "43275"
+                      ],
+                      [
+                          "High",
+                          75,
+                          "43274"
+                      ],
+                      [
+                          "Low",
+                          24,
+                          "43281"
+                      ],
+                      [
+                          "Low",
+                          25,
+                          "43280"
+                      ],
+                      [
+                          "Low",
+                          50,
+                          "43279"
+                      ],
+                      [
+                          "Low",
+                          75,
+                          "43278"
+                      ]
+                  ]
+              },
+              [],
+              {
+                  "className": "TestTable",
+                  "refTableName": "GetRecommendationGroup1MEUltimate",
+                  "name": "TestGetRecommendationGroup1MEUltimate",
+                  "paramNames": [
+                      "sebum",
+                      "RET"
+                  ],
+                  "data": [
+                      [
+                          24,
+                          "43375"
+                      ],
+                      [
+                          25,
+                          "43374"
+                      ],
+                      [
+                          50,
+                          "43373"
+                      ],
+                      [
+                          75,
+                          "43372"
+                      ]
+                  ]
+              },
+              [],
+              {
+                  "className": "TestTable",
+                  "refTableName": "GetRecommendationGroup1MESensitive",
+                  "name": "TestGetRecommendationGroup1MESensitive",
+                  "paramNames": [
+                      "sebum",
+                      "RET"
+                  ],
+                  "data": [
+                      [
+                          16,
+                          "43317"
+                      ],
+                      [
+                          17,
+                          "43316"
+                      ],
+                      [
+                          34,
+                          "43315"
+                      ],
+                      [
+                          50,
+                          "43314"
+                      ]
+                  ]
+              },
+              [],
+              {
+                  "className": "TestTable",
+                  "refTableName": "GetRecommendationGroup2MakeOffCleanser",
+                  "name": "TestGetRecommendationGroup2MakeOffCleanser",
+                  "paramNames": [
+                      "sebum",
+                      "RET"
+                  ],
+                  "data": [
+                      [
+                          31,
+                          "43242"
+                      ],
+                      [
+                          32,
+                          "43241\n43242"
+                      ],
+                      [
+                          50,
+                          "43241\n43240"
+                      ],
+                      [
+                          67,
+                          "43240"
+                      ]
+                  ]
+              },
+              [],
+              {
+                  "className": "TestTable",
+                  "refTableName": "GetRecommendationGroup2CleansingSensitive",
+                  "name": "TestGetRecommendationGroup2CleansingSensitive",
+                  "paramNames": [
+                      "sebum",
+                      "RET"
+                  ],
+                  "data": [
+                      [
+                          49,
+                          "42416"
+                      ],
+                      [
+                          50,
+                          "42416"
+                      ]
+                  ]
+              },
+              [],
+              {
+                  "className": "TestTable",
+                  "refTableName": "GetRecommendationGroup2CleansingNonSensitive",
+                  "name": "TestGetRecommendationGroup2CleansingNonSensitive",
+                  "paramNames": [
+                      "sebum",
+                      "RET"
+                  ],
+                  "data": [
+                      [
+                          50,
+                          "43775"
+                      ],
+                      [
+                          51,
+                          "43244"
+                      ]
+                  ]
+              },
+              [],
+              {
+                  "className": "TestTable",
+                  "refTableName": "GetRecommendationGroup2MarineCake",
+                  "name": "TestGetRecommendationGroup2MarineCake",
+                  "paramNames": [
+                      "sebum",
+                      "RET"
+                  ],
+                  "data": [
+                      [
+                          49,
+                          "43646"
+                      ],
+                      [
+                          50,
+                          "43646"
+                      ]
+                  ]
+              },
+              [],
+              {
+                  "className": "TestTable",
+                  "refTableName": "GetRecommendationGroup4",
+                  "name": "TestGetRecommendationGroup4",
+                  "paramNames": [
+                      "moisture",
+                      "RET"
+                  ],
+                  "data": [
+                      [
+                          50,
+                          "43252,43106,43732,43686"
+                      ],
+                      [
+                          51,
+                          "43252"
+                      ]
+                  ]
+              },
+              [],
+              {
+                  "className": "TestTable",
+                  "refTableName": "GetRecommendationGroup5",
+                  "name": "TestGetRecommendationGroup5",
+                  "paramNames": [
+                      "sebum",
+                      "RET"
+                  ],
+                  "data": [
+                      [
+                          60,
+                          "43106,43686"
+                      ],
+                      [
+                          61,
+                          "41653"
+                      ]
+                  ]
+              },
+              [],
+              {
+                  "className": "TestTable",
+                  "refTableName": "GetRecommendationGroup6",
+                  "name": "TestGetRecommendationGroup6",
+                  "paramNames": [
+                      "isSensitiveSkin",
+                      "translucence",
+                      "RET"
+                  ],
+                  "data": [
+                      [
+                          "No",
+                          60,
+                          "43670,43674,43666,43781"
+                      ],
+                      [
+                          "No",
+                          61,
+                          "43666,43781"
+                      ],
+                      [
+                          "Yes",
+                          60,
+                          "43780"
+                      ],
+                      [
+                          "Yes",
+                          61,
+                          "43780"
+                      ]
+                  ]
+              },
+              [],
+              {
+                  "className": "TestTable",
+                  "refTableName": "GetRecommendationGroup7",
+                  "name": "TestGetRecommendationGroup7",
+                  "paramNames": [
+                      "sGreaterThanG",
+                      "age",
+                      "elasticity",
+                      "RET"
+                  ],
+                  "data": [
+                      [
+                          "Yes",
+                          19,
+                          50,
+                          "43787,43736,43777"
+                      ],
+                      [
+                          "Yes",
+                          19,
+                          51,
+                          "43787,43736,43777"
+                      ],
+                      [
+                          "Yes",
+                          19,
+                          66,
+                          "43736,43777"
+                      ],
+                      [
+                          "Yes",
+                          20,
+                          50,
+                          "43787,43736,43706,43777"
+                      ],
+                      [
+                          "Yes",
+                          20,
+                          51,
+                          "43787,43736,43706,43777"
+                      ],
+                      [
+                          "Yes",
+                          20,
+                          66,
+                          "43736,43777"
+                      ],
+                      [
+                          "Yes",
+                          35,
+                          50,
+                          "43787,43736,43157,43158,43777"
+                      ],
+                      [
+                          "Yes",
+                          35,
+                          51,
+                          "43787,43736,43777"
+                      ],
+                      [
+                          "Yes",
+                          35,
+                          66,
+                          "43736,43777"
+                      ],
+                      [
+                          "No",
+                          19,
+                          50,
+                          "43787,43736,43777"
+                      ],
+                      [
+                          "No",
+                          19,
+                          51,
+                          "43787,43736,43777"
+                      ],
+                      [
+                          "No",
+                          19,
+                          66,
+                          "43736,43777"
+                      ],
+                      [
+                          "No",
+                          20,
+                          50,
+                          "43787,43736,43706,43777"
+                      ],
+                      [
+                          "No",
+                          20,
+                          51,
+                          "43787,43736,43706,43777"
+                      ],
+                      [
+                          "No",
+                          20,
+                          66,
+                          "43736,43777"
+                      ],
+                      [
+                          "No",
+                          35,
+                          50,
+                          "43787,43736,43157,43158,43777"
+                      ],
+                      [
+                          "No",
+                          35,
+                          51,
+                          "43787,43736,43777"
+                      ],
+                      [
+                          "No",
+                          35,
+                          66,
+                          "43736,43777"
+                      ]
+                  ]
+              },
+              {
+                  "className": "TestTable",
+                  "refTableName": "GetRecommendationGroup8",
+                  "name": "TestGetRecommendationGroup8",
+                  "paramNames": [
+                      "stratum",
+                      "sebum",
+                      "RET"
+                  ],
+                  "data": [
+                      [
+                          75,
+                          50,
+                          "43779,43687,43733"
+                      ],
+                      [
+                          75,
+                          51,
+                          "43779,41653,43733"
+                      ],
+                      [
+                          76,
+                          50,
+                          "43779"
+                      ],
+                      [
+                          76,
+                          51,
+                          "43779"
+                      ]
+                  ]
+              },
+              {
+                  "className": "TestTable",
+                  "refTableName": "GetRecommendationGroup9",
+                  "name": "TestGetRecommendationGroup9",
+                  "paramNames": [
+                      "accumulationLevel",
+                      "RET"
+                  ],
+                  "data": [
+                      [
+                          1,
+                          "43651,43348"
+                      ]
+                  ]
+              },
+              [],
+              [],
+              {
+                  "className": "RulesTable",
+                  "isMulti": false,
+                  "name": "GetRecommendationGroup10",
+                  "type": "String",
+                  "resultType": null,
+                  "params": [
+                      {
+                          "name": "resistance",
+                          "type": "Integer",
+                          "index": 0,
+                          "position": {
+                              "type": "row",
+                              "index": 1
+                          },
+                          "positionType": "IntRange",
+                          "headers": [
+                              {
+                                  "type": "range",
+                                  "typeLeft": "greaterEqual",
+                                  "typeRight": "lessEqual",
+                                  "valueLeft": 4,
+                                  "valueRight": 49
+                              },
+                              {
+                                  "type": "range",
+                                  "typeLeft": "greaterThan",
+                                  "typeRight": "lessEqual",
+                                  "valueLeft": 49,
+                                  "valueRight": 97
+                              }
+                          ]
+                      }
+                  ],
+                  "columnParams": [],
+                  "rowParams": [
+                      {
+                          "name": "resistance",
+                          "type": "Integer",
+                          "index": 0,
+                          "position": {
+                              "type": "row",
+                              "index": 1
+                          },
+                          "positionType": "IntRange",
+                          "headers": [
+                              {
+                                  "type": "range",
+                                  "typeLeft": "greaterEqual",
+                                  "typeRight": "lessEqual",
+                                  "valueLeft": 4,
+                                  "valueRight": 49
+                              },
+                              {
+                                  "type": "range",
+                                  "typeLeft": "greaterThan",
+                                  "typeRight": "lessEqual",
+                                  "valueLeft": 49,
+                                  "valueRight": 97
+                              }
+                          ]
+                      }
+                  ],
+                  "matrix": [],
+                  "returnParam": {
+                      "name": "RET",
+                      "type": "codes",
+                      "script": null
+                  }
+              }
+          ]

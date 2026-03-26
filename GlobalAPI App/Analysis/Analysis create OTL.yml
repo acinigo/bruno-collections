@@ -1,0 +1,30 @@
+info:
+  name: Analysis create OTL
+  type: http
+  seq: 15
+
+http:
+  method: POST
+  url: "{{url}}/api/analysis/link/629f501827ca402174dd4a77"
+  body:
+    type: multipart-form
+    data:
+      - name: user
+        type: text
+        value: raul
+      - name: channel
+        type: text
+        value: test
+      - name: file
+        type: file
+        value:
+          - /C:/Users/raul2/Pictures/fca_0002.jpg
+  auth:
+    type: bearer
+    token: "{{acces_token_app}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

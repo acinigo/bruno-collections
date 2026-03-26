@@ -1,0 +1,123 @@
+info:
+  name: Palette
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{url}}/api/geneva/palette"
+  headers:
+    - name: forceCalculation
+      value: "true"
+      disabled: true
+  body:
+    type: multipart-form
+    data:
+      - name: classes
+        type: text
+        value: 1,2,4
+      - name: num_colors
+        type: text
+        value: "3"
+      - name: file
+        type: file
+        value:
+          - /C:/Users/Milucho/Desktop/FOTOS/photo (30).png
+  auth:
+    type: bearer
+    token: "{{acces_token_app}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Palette
+    request:
+      url: "{{url}}/api/geneva/palette"
+      method: POST
+      headers:
+        - name: forceCalculation
+          value: "true"
+          disabled: true
+      body:
+        type: multipart-form
+        data:
+          - name: classes
+            type: text
+            value: 1,2,4
+          - name: num_colors
+            type: text
+            value: "3"
+          - name: file
+            type: file
+            value:
+              - /Users/acinigo/Downloads/Capture Module.jpeg
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Tue, 08 Jul 2025 15:02:23 GMT
+        - name: Content-Type
+          value: application/json; charset=utf-8
+        - name: Transfer-Encoding
+          value: chunked
+        - name: Connection
+          value: keep-alive
+        - name: X-Powered-By
+          value: Express
+        - name: ETag
+          value: W/"1a0-FsJV9L4+dP9mrSCdB6IMTPg6Svw"
+        - name: Vary
+          value: Accept-Encoding
+        - name: Content-Encoding
+          value: gzip
+        - name: x-azure-ref
+          value: 20250708T150221Z-r1fb6bd9654xk6vxhC1MAD2kf80000001450000000003me1
+        - name: X-Cache
+          value: CONFIG_NOCACHE
+      body:
+        type: json
+        data: |-
+          {
+              "average": [
+                  169.12351661698818,
+                  124.7611714620347,
+                  101.95101350304577
+              ],
+              "dominant": [
+                  120.48854064941406,
+                  80.26416015625,
+                  60.474124908447266
+              ],
+              "palette": [
+                  [
+                      120.48854064941406,
+                      80.26416015625,
+                      60.474124908447266
+                  ],
+                  [
+                      170.94654846191406,
+                      121.75606536865234,
+                      98.43537139892578
+                  ],
+                  [
+                      237.6887969970703,
+                      193.31207275390625,
+                      166.73895263671875
+                  ]
+              ],
+              "counts": [
+                  63492,
+                  54286,
+                  43593
+              ],
+              "percentages": [
+                  39.34535945120251,
+                  33.6404930253887,
+                  27.01414752340879
+              ]
+          }

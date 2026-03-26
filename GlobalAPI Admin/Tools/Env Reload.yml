@@ -1,0 +1,17 @@
+info:
+  name: Env Reload
+  type: http
+  seq: 5
+
+http:
+  method: POST
+  url: "{{url}}/api/heartbeat/reloadenv"
+  auth:
+    type: bearer
+    token: "{{acces_token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

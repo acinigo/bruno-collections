@@ -1,0 +1,30 @@
+info:
+  name: modify email
+  type: http
+  seq: 1
+
+http:
+  method: PATCH
+  url: "{{url}}/api/users/modifyemail"
+  body:
+    type: json
+    data: "{\r
+
+      \  \"email\": \"test22@mail.com\",\r
+
+      \  \"name\": \"brand admin\",\r
+
+      \  \"role\": \"user\",\r
+
+      \  \"tenants\": [\"e50ff774-f6de-4402-8c1f-42f8e77f01ee\"]\r
+
+      }"
+  auth:
+    type: bearer
+    token: "{{acces_token_app}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

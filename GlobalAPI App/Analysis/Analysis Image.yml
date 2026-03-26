@@ -1,0 +1,29 @@
+info:
+  name: Analysis Image
+  type: http
+  seq: 18
+
+http:
+  method: PUT
+  url: "{{url}}/api/analysis/693a868180fc0345eca5a7c6/images/supine"
+  headers:
+    - name: user
+      value: eMaiL2538@email.com
+    - name: channel
+      value: Postman
+  body:
+    type: multipart-form
+    data:
+      - name: file
+        type: file
+        value:
+          - /C:/FOTOS test/EIQA20006.jpg
+  auth:
+    type: bearer
+    token: "{{acces_token_app}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

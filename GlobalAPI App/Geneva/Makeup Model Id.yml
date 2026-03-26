@@ -1,0 +1,23 @@
+info:
+  name: Makeup Model Id
+  type: http
+  seq: 7
+
+http:
+  method: GET
+  url: "{{url}}/api/geneva/makeupmodels/650974ab5ff716b6060d3217"
+  headers:
+    - name: forceCalculation
+      value: "true"
+      disabled: true
+  body:
+    type: multipart-form
+  auth:
+    type: bearer
+    token: "{{acces_token_app}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

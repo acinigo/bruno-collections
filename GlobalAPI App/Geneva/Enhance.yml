@@ -1,0 +1,28 @@
+info:
+  name: Enhance
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{url}}/api/geneva/enhance"
+  headers:
+    - name: forceCalculation
+      value: "true"
+      disabled: true
+  body:
+    type: multipart-form
+    data:
+      - name: file
+        type: file
+        value:
+          - /C:/Users/Milucho/Desktop/FOTOS/photo (30).png
+  auth:
+    type: bearer
+    token: "{{acces_token_app}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

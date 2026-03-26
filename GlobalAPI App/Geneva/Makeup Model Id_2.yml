@@ -1,0 +1,23 @@
+info:
+  name: Makeup Model Id_2
+  type: http
+  seq: 9
+
+http:
+  method: DELETE
+  url: "{{url}}/api/geneva/makeupmodels/6509778a5ff716b6060d3219"
+  headers:
+    - name: forceCalculation
+      value: "true"
+      disabled: true
+  body:
+    type: multipart-form
+  auth:
+    type: bearer
+    token: "{{acces_token_app}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

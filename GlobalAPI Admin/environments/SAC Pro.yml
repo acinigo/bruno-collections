@@ -1,0 +1,34 @@
+name: SAC Pro
+variables:
+  - name: url
+    value: https://fca-global-api-prod-eastus.azurefd.net
+  - name: appId
+    value: GLB_TEMPLATE
+  - secret: true
+    name: appSecret
+  - name: adminEmail
+    value: admin@mail.com
+  - secret: true
+    name: adminPassword
+  - secret: true
+    name: adminSecret
+  - name: issuer
+    value: DTO
+  - name: label
+    value: sacPro
+  - name: acces_token
+    value: ""
+  - name: saEmail
+    value: sa@mail.com
+  - secret: true
+    name: saPassword
+  - secret: true
+    name: saSecret
+  - name: useAdminOrSA
+    value: admin
+  - name: acces_token_app
+    value: ""
+  - name: tenantId
+    value: ""
+  - name: proxyUrl
+    value: https://fca-global-api-prod-eastus.azurefd.net

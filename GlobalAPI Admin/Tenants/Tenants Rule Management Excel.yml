@@ -1,0 +1,30 @@
+info:
+  name: Tenants Rule Management Excel
+  type: http
+  seq: 7
+
+http:
+  method: GET
+  url: "{{url}}/api/tenants/e50ff774-f6de-4402-8c1f-42f8e77f01ee/rules/recommender"
+  body:
+    type: multipart-form
+    data:
+      - name: name
+        type: text
+        value: explanations
+      - name: priority
+        type: text
+        value: "100"
+      - name: file
+        type: file
+        value:
+          - /Users/acinigo/Downloads/bShiseido_Explanations_v1.3.xlsx
+  auth:
+    type: bearer
+    token: "{{acces_token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
