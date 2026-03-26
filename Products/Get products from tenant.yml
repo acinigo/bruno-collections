@@ -1,0 +1,17 @@
+info:
+  name: Get products from tenant
+  type: http
+  seq: 8
+
+http:
+  method: GET
+  url: "{{url}}/api/tenants/91d9635b-6270-4caa-bb71-eca5f70770ea/products/"
+  auth:
+    type: bearer
+    token: "{{acces_token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

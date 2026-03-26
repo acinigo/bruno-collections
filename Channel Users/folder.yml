@@ -1,0 +1,7 @@
+info:
+  name: Channel Users
+  type: folder
+  seq: 19
+
+request:
+  auth: inherit

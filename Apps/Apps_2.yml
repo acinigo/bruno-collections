@@ -1,0 +1,30 @@
+info:
+  name: Apps_2
+  type: http
+  seq: 3
+
+http:
+  method: PUT
+  url: "{{url}}/api/apps"
+  body:
+    type: json
+    data: "{\r
+
+      \  \"appId\": \"test\",\r
+
+      \  \"name\": \"test\",\r
+
+      \  \"appSecret\": \"secret\",\r
+
+      \  \"tenantId\": \"f8931416-81a6-4136-9132-f397284d018c\"\r
+
+      }"
+  auth:
+    type: bearer
+    token: "{{acces_token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

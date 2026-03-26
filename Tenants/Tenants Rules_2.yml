@@ -1,0 +1,30 @@
+info:
+  name: Tenants Rules_2
+  type: http
+  seq: 10
+
+http:
+  method: DELETE
+  url: "{{url}}/api/tenants/a25c20b5-95dc-4852-a449-f6546707e982/rules/skin_care"
+  body:
+    type: multipart-form
+    data:
+      - name: name
+        type: text
+        value: recommender
+      - name: priority
+        type: text
+        value: "100"
+      - name: file
+        type: file
+        value:
+          - bshiseido-js.xlsx
+  auth:
+    type: bearer
+    token: "{{acces_token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

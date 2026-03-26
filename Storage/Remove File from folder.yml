@@ -1,0 +1,17 @@
+info:
+  name: Remove File from folder
+  type: http
+  seq: 3
+
+http:
+  method: DELETE
+  url: "{{url}}/api/storage/volume/test/../test.log"
+  auth:
+    type: bearer
+    token: "{{acces_token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

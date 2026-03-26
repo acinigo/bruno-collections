@@ -1,0 +1,17 @@
+info:
+  name: Databases management_2
+  type: http
+  seq: 3
+
+http:
+  method: DELETE
+  url: "{{url}}/api/databases/62038f147963b1926520d22d"
+  auth:
+    type: bearer
+    token: "{{acces_token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

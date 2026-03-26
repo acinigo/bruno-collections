@@ -1,0 +1,24 @@
+info:
+  name: Users_1
+  type: http
+  seq: 3
+
+http:
+  method: PATCH
+  url: "{{url}}/api/users/642bcae09f6567b121d65e69"
+  body:
+    type: json
+    data: "{\r
+
+      \  \"password\": \"9240b8c6e4b12d17e039Xx$·%J9%$l&1#n16\"\r
+
+      }"
+  auth:
+    type: bearer
+    token: "{{acces_token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,32 @@
+info:
+  name: Apps_3
+  type: http
+  seq: 4
+
+http:
+  method: PATCH
+  url: "{{url}}/api/apps/testbelenjulyscopes"
+  body:
+    type: json
+    data: "{\r
+
+      \  \"appId\": \"testbelenjulyscopes\",\r
+
+      \  \"name\": \"testbelenjulyscopeschange\",\r
+
+      \  \"appSecret\": \"appsecretmodified1\",\r
+
+      \  \"tenantId\": \"37812d88-f7c4-409c-b3c6-b83d11e8ec73\",\r
+
+      \  \"sendRecommendationAfterValidation\": false\r
+
+      }"
+  auth:
+    type: bearer
+    token: "{{acces_token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

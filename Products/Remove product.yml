@@ -1,0 +1,82 @@
+info:
+  name: Remove product
+  type: http
+  seq: 3
+
+http:
+  method: DELETE
+  url: "{{url}}/api/tenants/91d9635b-6270-4caa-bb71-eca5f70770ea/products/"
+  body:
+    type: json
+    data: "{\r
+
+      \        \"code\": \"41321543\",\r
+
+      \"name\": [\r
+
+      \            {\r
+
+      \                \"locale\": \"en_US\",\r
+
+      \                \"value\": \"Luxurious Contouring Collection for Eyes and Lips (A $256 Value)\"\r
+
+      \            },\r
+
+      \            {\r
+
+      \                \"locale\": \"en\",\r
+
+      \                \"value\": \"Luxurious Contouring Collection for Eyes and Lips\"\r
+
+      \            }\r
+
+      \        ],\r
+
+      \        \"custom.bvAverageRating\": \"0.0\",\r
+
+      \        \"isOrderable\": false,\r
+
+      \        \"images\": [\r
+
+      \            {\r
+
+      \                \"locale\": \"en_US\",\r
+
+      \                \"value\": \"https://dev25-emea-shiseido.demandware.net/on/demandware.static/-/Sites-itemmaster_shiseido/en_US/v1659602026835/images/hi-res/0726508953937.jpg\"\r
+
+      \            },\r
+
+      \            {\r
+
+      \                \"locale\": \"en\",\r
+
+      \                \"value\": \"https://dev25-emea-shiseido.demandware.net/on/demandware.static/-/Sites-itemmaster_shiseido/en/v1659602026835/images/hi-res/0726508953937.jpg\"\r
+
+      \            }\r
+
+      \        ],\r
+
+      \        \"price\": {\r
+
+      \            \"listPrice\": 130,\r
+
+      \            \"salePrice\": \"N/A\",\r
+
+      \            \"currency\": \"US Dollar\"\r
+
+      \        },\r
+
+      \        \"prodUrl\": \"https://dev25-emea-shiseido.demandware.net/s/shiseido_us/luxurious-contouring-collection-for-eyes-and-lips-0726508953937.html\",\r
+
+      \        \"addToBagUrl\": \"https://dev25-emea-shiseido.demandware.net/on/demandware.store/Sites-shiseido_us-Site/en/Cart-AddProduct?pid=0726508953937\"\r
+
+      \    }"
+  auth:
+    type: bearer
+    token: "{{acces_token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

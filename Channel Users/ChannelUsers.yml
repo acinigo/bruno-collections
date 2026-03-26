@@ -1,0 +1,29 @@
+info:
+  name: ChannelUsers
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{url}}/api/channelUsers/"
+  headers:
+    - name: tenantId
+      value: e50ff774-f6de-4402-8c1f-42f8e77f01ee
+  body:
+    type: json
+    data: "{\r
+
+      \  \"channel\": \"test\",\r
+
+      \  \"channelUserId\": \"1234\"\r
+
+      }"
+  auth:
+    type: bearer
+    token: "{{acces_token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

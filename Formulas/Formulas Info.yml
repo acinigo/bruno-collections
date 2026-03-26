@@ -1,0 +1,52 @@
+info:
+  name: Formulas Info
+  type: http
+  seq: 6
+
+http:
+  method: PUT
+  url: "{{url}}/api/tenants/b1f3c62e-20b4-4a1e-b32f-f2e033f10e93/formulasinfo/bSOveral_Score"
+  body:
+    type: json
+    data: |-
+      {
+          "bSOveral_Score": {
+              "hidden": false,
+              "parents": [],
+              "ranges": {
+                  "Desc1": {
+                      "name": "Desc1",
+                      "intervals": [
+                          [
+                              0,
+                              50
+                          ]
+                      ],
+                      "locales": {
+                          "en": {
+                              "name": "Great!!"
+                          }
+                      }
+                  }
+              },
+              "locales": {
+                  "en": {
+                      "name": "Overall Score",
+                      "description": "Overall Score"
+                  },
+                  "ja": {
+                      "name": "総合評点",
+                      "description": "総合評点"
+                  }
+              }
+          }
+      }
+  auth:
+    type: bearer
+    token: "{{acces_token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

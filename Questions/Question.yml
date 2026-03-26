@@ -1,0 +1,20 @@
+info:
+  name: Question
+  type: http
+  seq: 4
+
+http:
+  method: DELETE
+  url: "{{url}}/api/tenants/1bae6897-91fc-49b6-993a-212f0eee225c/questions/6282f3363216d4402d0d6fb4"
+  body:
+    type: json
+    data: ""
+  auth:
+    type: bearer
+    token: "{{acces_token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

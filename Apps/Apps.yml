@@ -1,0 +1,17 @@
+info:
+  name: Apps
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{url}}/api/apps"
+  auth:
+    type: bearer
+    token: "{{acces_token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

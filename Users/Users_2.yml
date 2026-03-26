@@ -1,0 +1,32 @@
+info:
+  name: Users_2
+  type: http
+  seq: 6
+
+http:
+  method: POST
+  url: "{{url}}/api/users/"
+  body:
+    type: json
+    data: "    {\r
+
+      \        \"email\": \"christopher.stephensisonishi@shiseido.com\",\r
+
+      \        \"role\": \"admin\",\r
+
+      \        \"tenants\": [\r
+
+      \            \"*\"\r
+
+      \        ]\r
+
+      \    }"
+  auth:
+    type: bearer
+    token: "{{acces_token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

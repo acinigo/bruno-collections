@@ -1,0 +1,36 @@
+info:
+  name: Add question
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{url}}/api/tenants/f981c55e-d765-44d2-a1ed-417d96ecc960/questions"
+  body:
+    type: json
+    data: "{\r
+
+      \  \"priority\": 100,\r
+
+      \  \"text\": {\r
+
+      \    \"en\": \"What's your name?\",\r
+
+      \    \"es\": \"¿Cómo te llamas?\"\r
+
+      \  },\r
+
+      \  \"type\": \"string\",\r
+
+      \  \"variable\": \"name\"\r
+
+      }"
+  auth:
+    type: bearer
+    token: "{{acces_token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
