@@ -1,0 +1,32 @@
+name: JP Pre
+variables:
+  - name: url
+    value: https://fca-global-api-prejp-japaneast.azurefd.net
+  - name: appId
+    value: CPB_HK
+  - secret: true
+    name: appSecret
+  - name: adminEmail
+    value: admin@mail.com
+  - secret: true
+    name: adminPassword
+  - secret: true
+    name: adminSecret
+  - name: issuer
+    value: DTO
+  - name: label
+    value: jpPre
+  - name: acces_token
+    value: ""
+  - name: saEmail
+    value: sa@mail.com
+  - secret: true
+    name: saPassword
+  - secret: true
+    name: saSecret
+  - name: useAdminOrSA
+    value: admin
+  - name: acces_token_app
+    value: ""
+  - name: tenantId
+    value: ""

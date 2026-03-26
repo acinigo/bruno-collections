@@ -1,0 +1,31 @@
+info:
+  name: Store File in folder
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{url}}/api/storage/volume/test"
+  body:
+    type: multipart-form
+    data:
+      - name: fileId
+        type: text
+        value: test.xlsx
+      - name: file
+        type: file
+        value:
+          - /C:/Users/raul2/Downloads/Bshiseido_JP_FCA_RecommendationRules_v11.xlsx
+      - name: anonymize
+        type: text
+        value: "true"
+        disabled: true
+  auth:
+    type: bearer
+    token: "{{acces_token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

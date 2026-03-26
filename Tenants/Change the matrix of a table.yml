@@ -1,0 +1,30 @@
+info:
+  name: Change the matrix of a table
+  type: http
+  seq: 8
+
+http:
+  method: PUT
+  url: "{{url}}/api/tenants/e50ff774-f6de-4402-8c1f-42f8e77f01ee/recommender/matrix"
+  body:
+    type: multipart-form
+    data:
+      - name: name
+        type: text
+        value: explanations
+      - name: priority
+        type: text
+        value: "100"
+      - name: file
+        type: file
+        value:
+          - /Users/acinigo/Downloads/bShiseido_Explanations_v1.3.xlsx
+  auth:
+    type: bearer
+    token: "{{acces_token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

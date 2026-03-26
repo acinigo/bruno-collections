@@ -1,0 +1,21 @@
+info:
+  name: ChannelUsers_2
+  type: http
+  seq: 6
+
+http:
+  method: DELETE
+  url: "{{url}}/api/channelUsers/63064261848b1918dde09cad"
+  headers:
+    - name: tenantId
+      value: "{{tenantId}}"
+      disabled: true
+  auth:
+    type: bearer
+    token: "{{acces_token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

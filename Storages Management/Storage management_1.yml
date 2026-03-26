@@ -1,0 +1,36 @@
+info:
+  name: Storage management_1
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{url}}/api/storages"
+  body:
+    type: json
+    data: "{\r
+
+      \  \"name\": \"AlicloudStorage\",\r
+
+      \  \"storageType\": \"Oss\",\r
+
+      \  \"region\": \"oss-cn-shanghai\",\r
+
+      \  \"bucket\": \"cnafcaoss\",\r
+
+      \  \"connection\": \"oss-cn-shanghai-internal.aliyuncs.com\",\r
+
+      \  \"storageAccessId\": \"LTAI5tGeNxppN8AKsWifvjUg\",\r
+
+      \  \"storageAccessKey\": \"vKxSFmi74wnokPqZOd7M8wWCG0oPlV\"\r
+
+      }"
+  auth:
+    type: bearer
+    token: "{{acces_token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,20 @@
+info:
+  name: Pipelines Block Type
+  type: http
+  seq: 2
+
+http:
+  method: GET
+  url: "{{url}}/api/pipelines"
+  headers:
+    - name: tenantId
+      value: 4223b073-b67e-45d2-8d54-d7e3098f9d32
+  auth:
+    type: bearer
+    token: "{{acces_token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

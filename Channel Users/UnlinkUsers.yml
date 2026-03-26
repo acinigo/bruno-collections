@@ -1,0 +1,30 @@
+info:
+  name: UnlinkUsers
+  type: http
+  seq: 7
+
+http:
+  method: POST
+  url: "{{url}}/api/channelUsers/unlink/"
+  headers:
+    - name: tenantId
+      value: "{{tenantId}}"
+      disabled: true
+  body:
+    type: json
+    data: "{\r
+
+      \    \"channel\": \"Web\",\r
+
+      \    \"channelUserId\": \"9f52e9e5712d552dcbf945f474463ec5\"\r
+
+      }\r\n"
+  auth:
+    type: bearer
+    token: "{{acces_token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

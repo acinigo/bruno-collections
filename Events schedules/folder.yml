@@ -1,0 +1,7 @@
+info:
+  name: Events schedules
+  type: folder
+  seq: 3
+
+request:
+  auth: inherit

@@ -1,0 +1,17 @@
+info:
+  name: Tenant
+  type: http
+  seq: 11
+
+http:
+  method: DELETE
+  url: "{{url}}/api/tenants/cff1d78e-298f-4dd2-b14a-2588aa9a6065"
+  auth:
+    type: bearer
+    token: "{{acces_token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

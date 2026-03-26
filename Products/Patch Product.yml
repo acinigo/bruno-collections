@@ -1,0 +1,24 @@
+info:
+  name: Patch Product
+  type: http
+  seq: 2
+
+http:
+  method: PATCH
+  url: "{{url}}/api/tenants/91d9635b-6270-4caa-bb71-eca5f70770ea/products/6422ea231bf5d53647f290fe"
+  body:
+    type: json
+    data: "{\r
+
+      \        \"tags\": [\"test1\"]\r
+
+      \    }"
+  auth:
+    type: bearer
+    token: "{{acces_token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,17 @@
+info:
+  name: Schedule_2
+  type: http
+  seq: 5
+
+http:
+  method: DELETE
+  url: "{{url}}/api/schedules/688b7f11ede09db105a28f1c"
+  auth:
+    type: bearer
+    token: "{{acces_token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

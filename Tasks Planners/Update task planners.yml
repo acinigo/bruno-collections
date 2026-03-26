@@ -1,0 +1,24 @@
+info:
+  name: Update task planners
+  type: http
+  seq: 6
+
+http:
+  method: GET
+  url: "{{url}}/api/planner/723db05d-ebbf-4717-91db-0a3630ccddc5/taskplanners/64c16ab60f550127c095b555/status"
+  headers:
+    - name: tenants
+      value: f981c55e-d765-44d2-a1ed-417d96ecc960
+      disabled: true
+    - name: collections
+      value: ""
+      disabled: true
+  auth:
+    type: bearer
+    token: "{{acces_token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

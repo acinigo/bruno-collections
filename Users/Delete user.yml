@@ -1,0 +1,17 @@
+info:
+  name: Delete user
+  type: http
+  seq: 4
+
+http:
+  method: DELETE
+  url: "{{url}}/api/users/6329a6a9f99f8bf74ea3d135"
+  auth:
+    type: bearer
+    token: "{{acces_token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

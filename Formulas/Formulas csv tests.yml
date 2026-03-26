@@ -1,0 +1,24 @@
+info:
+  name: Formulas csv tests
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{url}}/api/tenants/2f85947a-ce5b-412c-8ab1-60faeb79fed9/formulas/tests"
+  body:
+    type: multipart-form
+    data:
+      - name: file
+        type: file
+        value:
+          - 1mYPssRnt/EIReleaseTestData.csv
+  auth:
+    type: bearer
+    token: "{{acces_token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

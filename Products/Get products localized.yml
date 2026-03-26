@@ -1,0 +1,17 @@
+info:
+  name: Get products localized
+  type: http
+  seq: 6
+
+http:
+  method: GET
+  url: "{{url}}/api/tenants/91d9635b-6270-4caa-bb71-eca5f70770ea/products/0730852149335/locale/en"
+  auth:
+    type: bearer
+    token: "{{acces_token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

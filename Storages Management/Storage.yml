@@ -1,0 +1,17 @@
+info:
+  name: Storage
+  type: http
+  seq: 4
+
+http:
+  method: DELETE
+  url: "{{url}}/api/storages/633c2c28c8c63fa01313339e"
+  auth:
+    type: bearer
+    token: "{{acces_token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

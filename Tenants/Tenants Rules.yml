@@ -1,0 +1,38 @@
+info:
+  name: Tenants Rules
+  type: http
+  seq: 4
+
+http:
+  method: GET
+  url: "{{url}}/api/tenants/7fe55513-36e5-4a1a-b545-8a385d4ae95b/rules"
+  body:
+    type: multipart-form
+    data:
+      - name: name
+        type: text
+        value: explanations
+      - name: priority
+        type: text
+        value: "100"
+      - name: file
+        type: file
+        value:
+          - /Users/acinigo/Downloads/bShiseido_Explanations_v1.3.xlsx
+  auth:
+    type: bearer
+    token: "{{acces_token}}"
+
+runtime:
+  scripts:
+    - type: after-response
+      code: |-
+        test("Status code is 200", function () {
+            expect(res.getStatus()).to.equal(200);
+        });
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
