@@ -1,0 +1,32 @@
+name: EMEA Pro
+variables:
+  - name: url
+    value: https://fca-global-api-pro-westeurope.azurefd.net
+  - name: appId
+    value: Uptime_monitor_JP_PROD
+  - name: appSecret
+    value: 97babccac2c7c0383916927662bbf66ed83476f6
+  - name: adminEmail
+    value: admin@mail.com
+  - secret: true
+    name: adminPassword
+  - secret: true
+    name: adminSecret
+  - name: issuer
+    value: DTO
+  - name: label
+    value: emeaPro
+  - name: acces_token_app
+    value: ""
+  - name: tenantId
+    value: ""
+  - name: acces_token
+    value: ""
+  - name: saEmail
+    value: sa@mail.com
+  - secret: true
+    name: saPassword
+  - secret: true
+    name: saSecret
+  - name: useAdminOrSA
+    value: admin

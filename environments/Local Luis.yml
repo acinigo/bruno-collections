@@ -1,0 +1,32 @@
+name: Local Luis
+variables:
+  - name: url
+    value: http://localhost:2000
+  - name: appId
+    value: app1
+  - secret: true
+    name: appSecret
+  - name: adminEmail
+    value: admin@mail.com
+  - secret: true
+    name: adminPassword
+  - secret: true
+    name: adminSecret
+  - name: issuer
+    value: DTO
+  - name: label
+    value: jpPre
+  - name: acces_token
+    value: ""
+  - name: acces_token_app
+    value: ""
+  - name: tenantId
+    value: ""
+  - name: saEmail
+    value: sa@mail.com
+  - secret: true
+    name: saPassword
+  - secret: true
+    name: saSecret
+  - name: useAdminOrSA
+    value: admin
